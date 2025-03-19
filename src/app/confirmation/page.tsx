@@ -5,7 +5,7 @@ export default function ConfirmationPage() {
   return (
     <>
       <Header />
-      <main></main>
+      <main className="flex-1"></main>
       <Footer />
     </>
   );
