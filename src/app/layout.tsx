@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const montserrat = Montserrat({
+  weight: ["300", "400", "500"],
+  variable: "--font-montserrat",
+  subsets: ["latin", "cyrillic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const revival = localFont({
+  src: [
+    {
+      weight: "700",
+      path: "../fonts/Revival 565 Bold BT.ttf",
+    },
+  ],
+  variable: "--font-revival",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} ${revival.variable} relative z-[1] flex min-h-screen flex-col antialiased`}
       >
         {children}
       </body>
