@@ -4,7 +4,7 @@ import Header from "@/components/shared/header/Header";
 export default function MenuPage() {
   return (
     <>
-      <Header />
+      <Header variant="black" />
       <main className="flex-1"></main>
       <Footer />
     </>
