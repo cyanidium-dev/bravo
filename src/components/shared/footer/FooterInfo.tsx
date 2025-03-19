@@ -10,7 +10,7 @@ import { headerPhoneRegex } from "@/regex/regex";
 
 export default function FooterInfo() {
   return (
-    <ul className="flex flex-col text-14light leading-[120%] text-white">
+    <ul className="flex flex-col md:flex-row md:justify-between xl:gap-x-10 text-14light md:text-16light leading-[120%] text-white">
       <li>
         <div className="mb-4">
           Тел.:&nbsp;

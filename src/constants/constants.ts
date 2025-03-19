@@ -10,6 +10,12 @@ export const ADDRESS_LINK_FIRST = "";
 
 export const ADDRESS_LINK_SECOND = "";
 
+export const TIKTOK_URL = "";
+
+export const INSTAGRAM_URL = "";
+
+export const TELEGRAM_URL = "";
+
 export const CYANIDIUM_URL = "https://www.cyanidium.dev/";
 
 export const CYANIDIUM_NAME = "cyanidium.dev";
