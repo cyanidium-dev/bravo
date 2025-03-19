@@ -1,5 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 import NavMenuMob from "./NavMenuMob";
+import CallbackInfo from "./CallbackInfo";
+import Logo from "../logo/Logo";
+import CartButton from "./CartButton";
 
 interface BurgerMenuMobTabProps {
   isHeaderMenuOpened: boolean;
@@ -13,12 +16,15 @@ export default function BurgerMenu({
   return (
     <div
       className={`${
-        isHeaderMenuOpened
-          ? "translate-x-0 opacity-100 no-doc-scroll"
-          : "translate-x-full opacity-0"
-      } container absolute z-50 top-0 right-0 w-screen h-dvh pt-[128px] pb-[60px] bg-white
+        isHeaderMenuOpened ? "translate-y-0 no-doc-scroll" : "-translate-y-full"
+      } container max-w-[1024px] absolute z-50 -top-6 right-0 w-screen h-dvh pb-10 bg-white
       transition duration-[1000ms] overflow-y-auto`}
     >
+      <div className="sticky z-[60] top-0 left-[30px] flex items-center justify-between py-6 pr-[54px] sm:pr-[100px] bg-white">
+        <Logo className="text-24bold leading-[120%] relative z-[60] text-black" />
+        <CartButton variant="black" />
+      </div>
+      <CallbackInfo />
       <NavMenuMob setIsHeaderMenuOpened={setIsHeaderMenuOpened} />
     </div>
   );
