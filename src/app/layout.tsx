@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import Providers from "./providers";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -32,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body
-        className={`${montserrat.variable} ${revival.variable} relative z-[1] flex min-h-screen flex-col antialiased`}
+        className={`${montserrat.variable} ${revival.variable} relative z-[1] antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
