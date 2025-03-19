@@ -17,11 +17,11 @@ export default function MenuLink({
   const { title, link } = menuItem;
 
   return (
-    <li className={`text-white text-14reg leading-[120%] ${className}`}>
+    <li className={`text-14reg leading-[120%] ${className}`}>
       <Link
         href={link}
-        className={`transition duration-300 ease-in-out active:text-blue focus-visible:text-blue
-         laptop:hover:text-blue`}
+        className={`text-white transition duration-300 ease-in-out active:text-green focus-visible:text-green
+         lg:hover:text-green`}
       >
         {title}
       </Link>

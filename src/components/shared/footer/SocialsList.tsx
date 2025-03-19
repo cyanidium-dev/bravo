@@ -1,3 +1,3 @@
 export default function SocialsList() {
-  return <div>SocialsList</div>;
+  return <div className="mt-8">SocialsList</div>;
 }
