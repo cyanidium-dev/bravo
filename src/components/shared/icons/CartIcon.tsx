@@ -1,6 +1,6 @@
 import { IconProps } from "../../../types/iconProps";
 
-export default function CartIcon({ className }: IconProps) {
+export default function CartIcon({ className = "" }: IconProps) {
   return (
     <svg
       width="28"

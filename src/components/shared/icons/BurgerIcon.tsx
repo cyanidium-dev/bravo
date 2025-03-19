@@ -1,6 +1,6 @@
 import { IconProps } from "../../../types/iconProps";
 
-export default function BurgerIcon({ className }: IconProps) {
+export default function BurgerIcon({ className = "" }: IconProps) {
   return (
     <svg
       width="40"

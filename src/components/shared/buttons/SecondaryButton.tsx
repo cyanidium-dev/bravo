@@ -13,7 +13,7 @@ export default function SecondaryButton({
    ${className}`}
     >
       <span
-        className="absolute top-0 left-[-150%] w-full h-full bg-gradient-to-r from-white/20 via-blue/30 to-white/20 opacity-70 
+        className="absolute top-0 left-[-150%] w-full h-full bg-gradient-to-r from-white/20 via-green/30 to-white/20 opacity-70 
   skew-x-[-40deg] group-[focus-visible]:left-[120%] xl:group-hover:left-[120%] transition-all duration-[800ms] ease-in-out"
       />
       {children}
