@@ -1,6 +1,6 @@
 export const menuList = [
-  { title: "Головна", link: "/" },
   { title: "Меню", link: "/menu" },
+  { title: "Умови доставки", link: "/delivery" },
   { title: "Про нас", link: "/about" },
   { title: "Блог", link: "/blog" },
   { title: "Контакти", link: "/contacts" },
