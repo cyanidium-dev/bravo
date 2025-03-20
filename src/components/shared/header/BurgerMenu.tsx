@@ -16,8 +16,8 @@ export default function BurgerMenu({
   return (
     <div
       className={`${
-        isHeaderMenuOpened ? "translate-y-0 no-doc-scroll" : "-translate-y-full"
-      } lg:hidden container max-w-[1024px] absolute z-50 -top-6 right-0 w-screen h-dvh pb-10 bg-white text-black
+        isHeaderMenuOpened ? "translate-y-2 no-doc-scroll" : "-translate-y-full"
+      } lg:hidden container max-w-[1024px] absolute z-50 -top-6 right-0 w-screen h-screen pb-10 bg-white text-black
       transition duration-[1000ms] overflow-y-auto`}
     >
       <div className="sticky z-[60] top-0 left-[30px] flex items-center justify-between py-6 pr-[54px] sm:pr-[100px] bg-white">

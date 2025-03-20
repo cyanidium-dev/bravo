@@ -69,6 +69,7 @@ export default {
         green: "#23921B",
         pink: "#F31260",
       },
+      boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
     },
   },
   plugins: [heroui()],

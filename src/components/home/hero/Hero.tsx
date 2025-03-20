@@ -1,21 +1,40 @@
 import PageTitle from "@/components/shared/titles/PageTitle";
 import HeroImages from "./HeroImages";
+import MainButton from "@/components/shared/buttons/MainButton";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] overflow-hidden">
-      <HeroImages />
-      <div className="container xl:max-w-[1280px]">
-        {" "}
-        <PageTitle className="mb-6">
-          Смакуй нешкідливе – замовляй смачну їжу вже зараз!
-        </PageTitle>
-        <p className="text-white">
-          Готуємо для вас свіжу, збалансовану та корисну їжу, яка дарує енергію
-          та насолоду без шкоди для здоров’я. Замовляйте легко – отримуйте
-          швидко!
-        </p>
-        <p className="text-20bold text-white uppercase text-center">
+    <section className="relative overflow-hidden">
+      <Image
+        src="/images/home/hero/heroBg.webp"
+        alt="background"
+        width={2560}
+        height={1664}
+        priority
+        className="absolute -z-30 top-0 left-0 w-full h-full object-cover"
+      />
+      <div className="relative container xl:max-w-[1280px] flex flex-col gap-y-[50px] pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] md:flex-row md:justify-between">
+        <HeroImages />
+
+        <div>
+          <PageTitle className="mb-6">
+            Смакуй нешкідливе – замовляй смачну їжу вже зараз!
+          </PageTitle>
+          <p className="mb-12 text-white">
+            Готуємо для вас свіжу, збалансовану та корисну їжу, яка дарує
+            енергію та насолоду без шкоди для здоров’я. Замовляйте легко –
+            отримуйте швидко!
+          </p>
+          <Link
+            href="/menu"
+            className="block w-full max-w-[326px] mx-auto md:mx-0"
+          >
+            <MainButton className="w-full">Зробити замовлення</MainButton>
+          </Link>
+        </div>
+        <p className="text-20bold leading-[123%] text-white uppercase text-center">
           Швидка доставка до 30 хв нешкідливих страв для вас!
         </p>
       </div>

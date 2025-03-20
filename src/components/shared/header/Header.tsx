@@ -25,7 +25,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
       shouldHideOnScroll
       maxWidth="2xl"
       classNames={{ base: "justify-center" }}
-      className={`fixed z-10 justify-center py-6 lg:py-8 backdrop-blur-lg supports-[backdrop-blur]:before:backdrop-blur-lg will-change-transform ${
+      className={`fixed z-10 justify-center py-4 lg:py-8 backdrop-blur-lg supports-[backdrop-blur]:before:backdrop-blur-lg will-change-transform ${
         variant === "white" ? "text-white bg-black bg-opacity-30" : "text-black"
       }`}
     >
