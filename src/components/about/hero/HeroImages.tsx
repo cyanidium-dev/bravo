@@ -3,7 +3,10 @@ import Image from "next/image";
 export default function HeroImages() {
   return (
     <>
-      <div className="absolute -z-20 top-[103px] md:top-[140px] xl:top-[107px] left-[-215px] xl:left-[-319px] w-[575px] md:w-[730px] xl:w-[1068px] h-[582px] md:h-[739px] xl:h-[1114px] backdrop-blur-[16px] rounded-full shadow-inner-custom">
+      <div
+        className="absolute -z-20 top-[103px] md:top-[140px] xl:top-[107px] left-[-215px] xl:left-[-319px] w-[575px] md:w-[730px] 
+      xl:w-[1068px] h-[582px] md:h-[739px] xl:h-[1114px] backdrop-blur-[16px] rounded-full bg-white bg-opacity-[12%] shadow-inner-custom"
+      >
         <Image
           src="/images/about/hero/tomatoesSmallDesk.webp"
           alt="tomatoe"
