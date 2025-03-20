@@ -3,12 +3,12 @@ interface BurgerMenuButtonProps {
   toggleHeaderMenuOpen?: () => void;
 }
 
-const firstLineBaseStyles = "top-[2px] left-0 opacity-100";
-const firstLineTransformStyles = "top-[-2px] left-[3px] opacity-0";
-const secondLineBaseStyles = "top-[11px] left-0";
-const secondLineTransformStyles = "rotate-[-45deg] top-[11px]";
-const thirdLineBaseStyles = "top-[20px] left-0";
-const thirdLineTransformStyles = "rotate-45 top-[11px]";
+const firstLineBaseStyles = "top-[2px] left-0 opacity-100 bg-current";
+const firstLineTransformStyles = "top-[-2px] left-[3px] opacity-0 bg-black";
+const secondLineBaseStyles = "top-[11px] left-0 bg-current";
+const secondLineTransformStyles = "rotate-[-45deg] top-[11px] bg-black";
+const thirdLineBaseStyles = "top-[20px] left-0 bg-current";
+const thirdLineTransformStyles = "rotate-45 top-[11px] bg-black";
 
 export default function BurgerMenuButton({
   isHeaderMenuOpened,
@@ -25,24 +25,24 @@ export default function BurgerMenuButton({
     >
       <div className="w-full h-full rotate-0 ">
         <span
-          className={`block absolute w-full h-[1.8px] rounded-md bg-current rotate-0 
-                  transition duration-[600ms] ease-out ${
+          className={`block absolute w-full h-[1.8px] rounded-md  rotate-0 
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? firstLineTransformStyles
                       : firstLineBaseStyles
                   }`}
         ></span>
         <span
-          className={`block absolute left-0 w-full h-[1.8px] rounded-md bg-current rotate-0 
-                  transition duration-[600ms] ease-out ${
+          className={`block absolute left-0 w-full h-[1.8px] rounded-md rotate-0 
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? secondLineTransformStyles
                       : secondLineBaseStyles
                   }`}
         ></span>
         <span
-          className={`block absolute left-0 w-full h-[1.6px] rounded-md bg-current rotate-0  
-                  transition duration-[600ms] ease-out ${
+          className={`block absolute left-0 w-full h-[1.6px] rounded-md rotate-0  
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? thirdLineTransformStyles
                       : thirdLineBaseStyles
