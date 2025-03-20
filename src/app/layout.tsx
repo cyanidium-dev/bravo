@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body
-        className={`${montserrat.variable} ${revival.variable} relative z-[1] antialiased text-14reg lg:text-16reg leading-[130%]`}
+        className={`${montserrat.variable} ${revival.variable} relative z-[1] antialiased text-14reg lg:text-16reg leading-[123%]`}
       >
         <Providers>{children}</Providers>
       </body>
