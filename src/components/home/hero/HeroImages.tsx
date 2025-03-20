@@ -20,7 +20,10 @@ export default function HeroImages() {
         priority
         className="absolute -z-10 bottom-[-135px] xl:bottom-[-115px] left-[-110px] xl:left-auto xl:right-[-132px] w-[275px] h-auto"
       />
-      <div className="absolute -z-20 top-[75px] xl:top-[-308px] left-[-228px] xl:left-[-248px] w-[593px] xl:w-[1099px] h-[601px] xl:h-[1114px] backdrop-blur-[16px] rounded-full shadow-inner-custom">
+      <div
+        className="absolute -z-20 top-[75px] xl:top-[-308px] left-[-228px] xl:left-[-248px] w-[593px] xl:w-[1099px] h-[601px] 
+      xl:h-[1114px] backdrop-blur-[16px] rounded-full bg-white bg-opacity-[12%] shadow-inner-custom"
+      >
         <Image
           src="/images/home/hero/tomatoeSmallMob.webp"
           alt="tomatoe"

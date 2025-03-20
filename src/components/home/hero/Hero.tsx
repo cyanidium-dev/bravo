@@ -17,7 +17,6 @@ export default function Hero() {
       />
       <div className="relative container xl:max-w-[1280px] flex flex-col gap-y-[50px] pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] md:flex-row md:justify-between">
         <HeroImages />
-
         <div className="md:mb-auto xl:pb-[77px]">
           <PageTitle className="max-w-[321px] xl:max-w-[510px] mb-6">
             Смакуй нешкідливе – замовляй смачну їжу вже зараз!
