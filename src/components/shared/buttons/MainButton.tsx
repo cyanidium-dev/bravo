@@ -8,7 +8,7 @@ export default function MainButton({
   return (
     <button
       onClick={onClick}
-      className={`group relative overflow-hidden flex items-center justify-center py-[14px] px-4 text-14med leading-[130%] rounded-full 
+      className={`group relative overflow-hidden flex items-center justify-center py-4 px-4 text-16med leading-[130%] rounded-full 
         bg-white transition duration-300 ease-out active:scale-95      
    ${className}`}
     >

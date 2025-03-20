@@ -1,7 +1,7 @@
 interface SectionTitleProps {
   children: string;
   className?: string;
-  variant: "white" | "black";
+  variant?: "white" | "black";
 }
 
 export default function SectionTitle({
