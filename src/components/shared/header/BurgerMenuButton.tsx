@@ -26,7 +26,7 @@ export default function BurgerMenuButton({
       <div className="w-full h-full rotate-0 ">
         <span
           className={`block absolute w-full h-[1.8px] rounded-md  rotate-0 
-                  transition duration-[600ms] ease-out ${
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? firstLineTransformStyles
                       : firstLineBaseStyles
@@ -34,7 +34,7 @@ export default function BurgerMenuButton({
         ></span>
         <span
           className={`block absolute left-0 w-full h-[1.8px] rounded-md rotate-0 
-                  transition duration-[600ms] ease-out ${
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? secondLineTransformStyles
                       : secondLineBaseStyles
@@ -42,7 +42,7 @@ export default function BurgerMenuButton({
         ></span>
         <span
           className={`block absolute left-0 w-full h-[1.6px] rounded-md rotate-0  
-                  transition duration-[600ms] ease-out ${
+                  transition duration-[1000ms] ease-out ${
                     isHeaderMenuOpened
                       ? thirdLineTransformStyles
                       : thirdLineBaseStyles

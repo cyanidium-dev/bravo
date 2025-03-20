@@ -24,12 +24,11 @@ export default function Header({ variant = "white" }: HeaderProps) {
     <Navbar
       shouldHideOnScroll
       maxWidth="2xl"
-      classNames={{ base: "justify-center" }}
-      className={`fixed z-10 justify-center py-4 lg:py-8 backdrop-blur-lg supports-[backdrop-blur]:before:backdrop-blur-lg will-change-transform ${
+      className={`fixed top-0 left-0 z-10 justify-center backdrop-blur-lg supports-[backdrop-blur]:before:backdrop-blur-lg will-change-transform ${
         variant === "white" ? "text-white bg-black bg-opacity-30" : "text-black"
       }`}
     >
-      <div className="flex items-center container xl:max-w-[1280px]">
+      <div className="flex items-center container xl:max-w-[1280px] py-4 lg:py-8 ">
         <NavbarBrand className="mr-10 xl:mr-20">
           <Logo className="text-24bold leading-[120%]" />
         </NavbarBrand>
