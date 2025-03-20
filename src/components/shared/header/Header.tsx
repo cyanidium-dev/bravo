@@ -51,6 +51,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
               target="_blank"
               rel="noopener noreferrer nofollow"
               aria-label="phone number"
+              className="hidden lg:block"
             >
               <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
                 <Image

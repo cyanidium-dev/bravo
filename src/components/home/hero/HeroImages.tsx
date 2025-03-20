@@ -8,7 +8,7 @@ export default function HeroImages() {
         alt="background"
         width={2560}
         height={1664}
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute -z-10 top-0 left-0 w-full h-full object-cover"
       />
     </>
   );
