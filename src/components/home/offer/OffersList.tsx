@@ -1,3 +1,5 @@
+import OfferItem from "./OfferItem";
+
 export default function OffersList() {
   const offersList = [
     {
@@ -19,5 +21,13 @@ export default function OffersList() {
       text: "Клієнтів використовують це",
     },
   ];
-  return <ul>s</ul>;
+  return (
+    <div className="flex justify-center items-center">
+      <ul className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full">
+        {offersList.map((offer, idx) => (
+          <OfferItem key={idx} offer={offer} />
+        ))}
+      </ul>
+    </div>
+  );
 }

@@ -23,10 +23,10 @@ export default function Header({ variant = "white" }: HeaderProps) {
       maxWidth="2xl"
       classNames={{ base: "justify-center" }}
       className={`fixed z-10 justify-center py-6 lg:py-8 backdrop-blur-lg supports-[backdrop-blur]:before:backdrop-blur-lg will-change-transform ${
-        variant === "white" ? "text-white" : "text-black"
+        variant === "white" ? "text-white bg-black bg-opacity-30" : "text-black"
       }`}
     >
-      <div className="flex items-center container max-w-[1280px]">
+      <div className="flex items-center container xl:max-w-[1280px]">
         <NavbarBrand className="mr-10 xl:mr-20">
           <Logo className="text-24bold leading-[120%]" />
         </NavbarBrand>

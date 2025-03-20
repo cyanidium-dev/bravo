@@ -11,7 +11,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <h2
-      className={`text-28bold lg:text-48bold leading-[130%] uppercase ${
+      className={`text-28bold xl:text-48bold leading-[123%] uppercase ${
         variant === "black" ? "text-black" : "text-white"
       } ${className}`}
     >
