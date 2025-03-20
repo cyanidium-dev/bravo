@@ -4,16 +4,16 @@ import Image from "next/image";
 export default function Mission() {
   return (
     <section className="container xl:max-w-[1280px] py-[120px]">
-      <div className="flex flex-col md:flex-row md:justify-between gap-y-[18px] mb-[60px] tab:mb-[58px]">
-        <SectionTitle>Наша місія</SectionTitle>
-        <p>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-y-[18px] mb-[60px] tab:mb-[58px]">
+        <SectionTitle className="md:w-[53.6%]">Наша місія</SectionTitle>
+        <p className="md:w-[39%]">
           Ми хочемо зробити здоровий спосіб життя простим і приємним. Готуючи
           для вас, ми обираємо тільки натуральні, свіжі та екологічні продукти,
           щоб кожен прийом їжі приносив максимум користі.
         </p>
       </div>
-      <div className="flex flex-col gap-y-5 md:flex-row justify-between mb-[341px]">
-        <div className="w-full aspect-[300/200] rounded-[12px] md:rounded-[18px] overflow-hidden">
+      <div className="flex flex-col gap-y-5 md:flex-row justify-between mb-[341px] md:mb-[123px]">
+        <div className="w-full md:w-[53.6%] aspect-[300/200] md:aspect-[611/407] rounded-[12px] md:rounded-[18px] overflow-hidden">
           <Image
             src="/images/about/mission/imageFirst.webp"
             alt="woman with phone"
@@ -22,8 +22,8 @@ export default function Mission() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div>
-          <div className="w-full aspect-[300/200] mb-5 rounded-[12px] md:rounded-[18px] overflow-hidden">
+        <div className="md:w-[44.6%]">
+          <div className="w-full aspect-[300/200] md:aspect-[509/328] mb-5 rounded-[12px] md:rounded-[18px] overflow-hidden">
             <Image
               src="/images/about/mission/imageSecond.webp"
               alt="two people"
@@ -35,9 +35,11 @@ export default function Mission() {
           <SectionTitle>Радість смаку</SectionTitle>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-y-[60px]">
-        <div className="flex flex-col gap-y-[18px] md:flex-col-reverse md:gap-y-[62px]">
-          <SectionTitle>Насолода кожного моменту</SectionTitle>
+      <div className="flex flex-col md:flex-row md:justify-between gap-y-[60px] md:gap-x-5">
+        <div className="flex flex-col gap-y-[18px] md:flex-col-reverse md:justify-end md:gap-y-[62px] md:w-[53.6%]">
+          <SectionTitle className="md:max-w-[201px] xl:max-w-[321px] md:ml-auto md:mb-[62px]">
+            Насолода кожного моменту
+          </SectionTitle>
           <p>
             Ласкаво просимо до Bravo – місця, де здорове харчування поєднується
             зі смаком, якістю та зручністю! Ми створили цей сервіс для тих, хто
@@ -47,7 +49,7 @@ export default function Mission() {
             настрій кожного нашого клієнта.
           </p>
         </div>
-        <div className="w-full aspect-[300/200] rounded-[12px] md:rounded-[18px] overflow-hidden">
+        <div className="w-full md:w-[44.6%] aspect-[300/200] md:aspect-[509/458] rounded-[12px] md:rounded-[18px] overflow-hidden">
           <Image
             src="/images/about/mission/imageThird.webp"
             alt="two people"
