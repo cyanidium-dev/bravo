@@ -18,11 +18,11 @@ export default function Hero() {
       <div className="relative container xl:max-w-[1280px] flex flex-col gap-y-[50px] pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] md:flex-row md:justify-between">
         <HeroImages />
 
-        <div>
-          <PageTitle className="mb-6">
+        <div className="md:mb-auto xl:pb-[77px]">
+          <PageTitle className="max-w-[321px] xl:max-w-[510px] mb-6">
             Смакуй нешкідливе – замовляй смачну їжу вже зараз!
           </PageTitle>
-          <p className="mb-12 text-white">
+          <p className="max-w-[300px] xl:max-w-[460px] mb-12 text-white">
             Готуємо для вас свіжу, збалансовану та корисну їжу, яка дарує
             енергію та насолоду без шкоди для здоров’я. Замовляйте легко –
             отримуйте швидко!
@@ -34,7 +34,7 @@ export default function Hero() {
             <MainButton className="w-full">Зробити замовлення</MainButton>
           </Link>
         </div>
-        <p className="text-20bold leading-[123%] text-white uppercase text-center">
+        <p className="md:max-w-[225px] md:mt-auto text-20bold xl:text-32bold leading-[123%] text-white uppercase text-center md:text-left">
           Швидка доставка до 30 хв нешкідливих страв для вас!
         </p>
       </div>

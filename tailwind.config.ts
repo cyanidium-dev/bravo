@@ -18,7 +18,7 @@ export default {
         center: true,
         padding: {
           DEFAULT: "30px",
-          lg: "70px",
+          xl: "70px",
         },
       },
 
