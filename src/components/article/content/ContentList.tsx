@@ -5,7 +5,6 @@ interface ContentListProps {
 }
 
 export default function ContentList({ content }: ContentListProps) {
-  console.log(content);
   return (
     <ul className="flex flex-col gap-y-12">
       {content.map((item, idx) => (

@@ -15,18 +15,22 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const res = await getDataFromCmsByField(GET_ARTICLE_BY_SLUG, article);
   const currentArticle = res?.data?.allArticles[0];
 
-  console.log(currentArticle);
-
-  if (!currentArticle) {
-    return null;
-  }
-
   return (
     <>
       <Header />
       <main className="flex-1">
-        <Hero article={currentArticle} />
-        <Content article={currentArticle} />
+        {!currentArticle ? (
+          <section className="container pt-[220px] pb-[120px]">
+            <p className="text-32bold leading-[123%] uppercase text-center">
+              На жаль, даної статті не існує
+            </p>
+          </section>
+        ) : (
+          <>
+            <Hero article={currentArticle} />
+            <Content article={currentArticle} />
+          </>
+        )}
       </main>
       <Footer />
     </>
