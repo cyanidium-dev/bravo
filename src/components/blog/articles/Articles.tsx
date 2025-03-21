@@ -1,9 +1,9 @@
-import { getBlogArticles } from "@/utils/getBlogArticles";
+import { getDataFromCms } from "@/utils/getDataFromCms";
 import { GET_BLOG_ARTICLES_QUERY } from "@/lib/datoCmsQueries";
 import ArticlesList from "./ArticlesList";
 
 export default async function Articles() {
-  const res = await getBlogArticles(GET_BLOG_ARTICLES_QUERY);
+  const res = await getDataFromCms(GET_BLOG_ARTICLES_QUERY);
   const articles = res?.data?.allArticles;
 
   if (!articles) {

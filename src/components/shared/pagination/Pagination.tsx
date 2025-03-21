@@ -78,7 +78,7 @@ export default function Pagination<T>({
       <div className="w-full max-w-[320px] sm:max-w-[660px] lg:max-w-[1000px] xl:max-w-full mb-10 xl:mb-[62px]">
         {renderItems(currentItems)}
       </div>
-      <div className="inline-flex justify-center items-center gap-[35px]">
+      <div className="inline-flex justify-center items-center gap-[33px]">
         <button
           className={`flex justify-center items-center p-[16.5px] size-[66px] rounded-[16px] 
           border-2 border-black transition duration-300 ease-in-out
@@ -94,7 +94,7 @@ export default function Pagination<T>({
           {pageNumbers.map((page) => (
             <button
               key={page}
-              className={`px-[9px] py-2 text-16med leading-[123%] transition duration-300 ease-in-out
+              className={`px-[8px] py-2 text-16med leading-[123%] transition duration-300 ease-in-out
             ${page === currentPage ? " text-green" : "  hover:text-green"}`}
               onClick={() => handlePageChange(page)}
             >
