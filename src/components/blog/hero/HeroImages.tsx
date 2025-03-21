@@ -25,7 +25,7 @@ export default function HeroImages() {
         width={88}
         height={91}
         priority
-        className="absolute z-10 bottom-[183px] xl:bottom-[189px] left-[calc(50%-44px+133px)] xl:left-[calc(50%-44px+227px)] w-[44px] xl:w-[83px] h-auto"
+        className="absolute -z-10 bottom-[183px] xl:bottom-[189px] left-[calc(50%-44px+133px)] xl:left-[calc(50%-44px+227px)] w-[44px] xl:w-[83px] h-auto"
       />
       <div
         className="absolute -z-20 bottom-[-780px] xl:bottom-[-698px] left-[calc(50%-528px)] w-[1055px] h-[1068px] 

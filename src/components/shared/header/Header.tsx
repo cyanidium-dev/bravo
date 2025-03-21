@@ -24,6 +24,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
     <Navbar
       shouldHideOnScroll
       maxWidth="2xl"
+      classNames={{ wrapper: "px-0" }}
       className={`fixed top-0 left-0 z-10 justify-center will-change-transform backdrop-blur-lg ${
         variant === "white" ? "text-white bg-black bg-opacity-30" : "text-black"
       }`}
