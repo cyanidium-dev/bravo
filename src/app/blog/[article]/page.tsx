@@ -26,7 +26,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <Header />
       <main className="flex-1">
         <Hero article={currentArticle} />
-        <Content />
+        <Content article={currentArticle} />
       </main>
       <Footer />
     </>

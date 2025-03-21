@@ -3,7 +3,7 @@ interface Image {
   url: string;
 }
 
-interface Paragraph {
+export interface Paragraph {
   paragraph: string;
 }
 export interface Article {

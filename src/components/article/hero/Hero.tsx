@@ -1,4 +1,3 @@
-import PageTitle from "@/components/shared/titles/PageTitle";
 import { Article } from "@/types/article";
 import Image from "next/image";
 import { calculateReadingTime } from "@/utils/calculateReadingTime";
