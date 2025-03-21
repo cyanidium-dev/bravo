@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Mission() {
   return (
-    <section className="container xl:max-w-[1280px] py-[120px]">
+    <section className="container xl:max-w-[1280px] py-[120px] overflow-hidden md:overflow-visible">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-y-[18px] mb-[60px] tab:mb-[58px]">
         <SectionTitle className="md:w-[53.6%]">Наша місія</SectionTitle>
         <p className="md:w-[39%]">
@@ -22,7 +22,7 @@ export default function Mission() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="md:w-[44.6%]">
+        <div className="relative md:w-[44.6%]">
           <div className="w-full aspect-[300/200] md:aspect-[509/328] mb-5 rounded-[12px] md:rounded-[18px] overflow-hidden">
             <Image
               src="/images/about/mission/imageSecond.webp"
@@ -33,9 +33,16 @@ export default function Mission() {
             />
           </div>
           <SectionTitle>Радість смаку</SectionTitle>
+          <Image
+            src="/images/about/mission/tomatoes.webp"
+            alt="tomatoe"
+            width={696}
+            height={614}
+            className="md:hidden absolute -z-10 bottom-[-312px] left-[-87px] w-[348px] h-auto"
+          />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-y-[60px] md:gap-x-5">
+      <div className="relative flex flex-col md:flex-row md:justify-between gap-y-[60px] md:gap-x-5">
         <div className="flex flex-col gap-y-[18px] md:flex-col-reverse md:justify-end md:gap-y-[62px] md:w-[53.6%]">
           <SectionTitle className="md:max-w-[201px] xl:max-w-[321px] md:ml-auto md:mb-[62px]">
             Насолода кожного моменту
@@ -52,12 +59,19 @@ export default function Mission() {
         <div className="w-full md:w-[44.6%] aspect-[300/200] md:aspect-[509/458] rounded-[12px] md:rounded-[18px] overflow-hidden">
           <Image
             src="/images/about/mission/imageThird.webp"
-            alt="two people"
+            alt="shawerma"
             width={910}
             height={1365}
             className="w-full h-full object-cover"
           />
         </div>
+        <Image
+          src="/images/about/mission/tomatoes.webp"
+          alt="tomatoe"
+          width={696}
+          height={614}
+          className="hidden md:block absolute -z-10 bottom-[-72px] left-[-197px] lg:left-[-127px] xl:left-[-197px] md:w-[384px] xl:w-[481px] h-auto"
+        />
       </div>
     </section>
   );
