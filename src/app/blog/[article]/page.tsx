@@ -13,7 +13,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const { article } = await params;
 
   const res = await getDataFromCmsByField(GET_ARTICLE_BY_SLUG, article);
-  const currentArticle = res?.data?.allArticles;
+  const currentArticle = res?.data?.allArticles[0];
 
   console.log(currentArticle);
 
@@ -25,7 +25,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     <>
       <Header />
       <main className="flex-1">
-        <Hero />
+        <Hero article={currentArticle} />
         <Content />
       </main>
       <Footer />
