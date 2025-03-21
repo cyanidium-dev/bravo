@@ -69,6 +69,10 @@ export default {
         green: "#23921B",
         pink: "#F31260",
       },
+      backgroundImage: {
+        article:
+          "linear-gradient(297.81deg, rgba(0, 0, 0, 0) 12.32%, rgba(0, 0, 0, 0.7) 83.61%)",
+      },
       boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
     },
   },
