@@ -13,7 +13,7 @@ export default async function Articles() {
   console.log(articles);
 
   return (
-    <section className="container xl:max-w-[1280px] pt-[90px] pb-[120px] xl:pt-[120px]">
+    <section className="container xl:max-w-[1280px] pt-[90px] pb-[120px] xl:pt-[120px] overflow-hidden">
       <ArticlesList articles={articles} />
       <Pagination />
     </section>
