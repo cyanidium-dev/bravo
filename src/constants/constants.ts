@@ -19,3 +19,5 @@ export const TELEGRAM_URL = "";
 export const CYANIDIUM_URL = "https://www.cyanidium.dev/";
 
 export const CYANIDIUM_NAME = "cyanidium.dev";
+
+export const DATOCMS_URL = "https://graphql.datocms.com/";
