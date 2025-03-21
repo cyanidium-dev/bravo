@@ -24,6 +24,15 @@ export default function HeroImages() {
         priority
         className="md:hidden absolute -z-10 bottom-0 left-[62px] w-[229px] h-auto"
       />
+
+      <Image
+        src="/images/about/hero/tomatoeBottomMob.webp"
+        alt="tomatoe"
+        width={544}
+        height={544}
+        priority
+        className="md:hidden absolute -z-30 bottom-[-42px] left-[-101px] xl:left-auto xl:right-[-132px] w-[275px] h-auto"
+      />
       <Image
         src="/images/about/hero/tomatoesLargeDesk.webp"
         alt="tomatoe"
