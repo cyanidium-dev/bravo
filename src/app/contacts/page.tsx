@@ -7,7 +7,7 @@ export default function ContactsPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 over">
         <Hero />
         <ContactsInfo />
       </main>
