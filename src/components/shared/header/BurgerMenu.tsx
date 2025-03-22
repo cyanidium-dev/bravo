@@ -16,12 +16,13 @@ export default function BurgerMenu({
   return (
     <div
       className={`${
-        isHeaderMenuOpened ? "translate-y-0 no-doc-scroll" : "-translate-y-full"
+        isHeaderMenuOpened
+          ? "translate-x-0 no-doc-scroll opacity-100"
+          : "-translate-x-full opacity-0"
       } lg:hidden absolute z-50 top-0 right-0 w-[100vw] h-[100dvh] pb-10 bg-white text-black
-      transition duration-[1000ms] overflow-y-auto`}
+      transition duration-[600ms] overflow-y-auto`}
     >
       <div className="container">
-        {" "}
         <div className="container sticky z-[60] top-0 left-[30px] flex items-center justify-between py-4 pr-[54px] sm:pr-[100px] mx-auto bg-white">
           <Logo
             setIsHeaderMenuOpened={setIsHeaderMenuOpened}
