@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import SecondaryButton from "../buttons/SecondaryButton";
 import Logo from "../logo/Logo";
@@ -11,6 +10,7 @@ import BurgerMenu from "./BurgerMenu";
 import BurgerMenuButton from "./BurgerMenuButton";
 import { PHONE } from "@/constants/constants";
 import { headerPhoneRegex } from "@/regex/regex";
+import PhoneIcon from "../icons/PhoneIcon";
 
 interface HeaderProps {
   variant?: "white" | "black";
@@ -54,12 +54,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
               className="hidden lg:block"
             >
               <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
-                <Image
-                  src="/images/icons/phone.svg"
-                  alt="phone icon"
-                  width={20}
-                  height={20}
-                />
+                <PhoneIcon className="size-5" />
                 {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
               </SecondaryButton>
             </a>
