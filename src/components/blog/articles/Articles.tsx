@@ -4,6 +4,7 @@ import ArticlesList from "./ArticlesList";
 
 export default async function Articles() {
   const res = await getDataFromCms(GET_BLOG_ARTICLES_QUERY);
+
   const articles = res?.data?.allArticles;
 
   if (!articles) {
