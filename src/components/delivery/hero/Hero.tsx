@@ -12,11 +12,11 @@ export default function Hero() {
         priority
         className="absolute -z-30 top-0 left-0 w-full h-full object-cover"
       />
-      <div className="relative container xl:max-w-[1280px] xl:pt-[334px] xl:pb-[73px]">
-        <h2 className="xl:max-w-[501px] mb-5 mx-auto xl:text-48bold leading-[123%] uppercase text-center text-white">
+      <div className="relative container xl:max-w-[1280px] pt-[404px] pb-[60px] xl:pt-[334px] xl:pb-[73px]">
+        <h2 className="max-w-[274px] lg:max-w-[501px] mb-5 mx-auto text-36bold xl:text-48bold leading-[123%] uppercase text-center text-white">
           Умови доставки
         </h2>
-        <p className="xl:max-w-[495px] mx-auto text-white text-center">
+        <p className="max-w-[280px] xl:max-w-[495px] mx-auto text-white text-center">
           Ми дбаємо про ваш комфорт та здоров’я, тому пропонуємо швидку та
           зручну доставку корисного харчування прямо до ваших дверей.
         </p>
