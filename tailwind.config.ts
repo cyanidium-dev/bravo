@@ -55,7 +55,7 @@ export default {
         "32bold": ["32px", { fontWeight: "700" }],
         "36bold": ["36px", { fontWeight: "700" }],
         "40semi": ["40px", { fontWeight: "600" }],
-        "40bold": ["36px", { fontWeight: "700" }],
+        "40bold": ["40px", { fontWeight: "700" }],
         "48bold": ["48px", { fontWeight: "700" }],
         "48extra": ["48px", { fontWeight: "800" }],
         "62bold": ["62px", { fontWeight: "700" }],
@@ -72,6 +72,10 @@ export default {
       backgroundImage: {
         article:
           "linear-gradient(297.81deg, rgba(0, 0, 0, 0) 12.32%, rgba(0, 0, 0, 0.7) 83.61%)",
+        discount:
+          "linear-gradient(174.34deg, #062614 11.8%, #0A771C 61.48%, #21AA38 101.75%, #176023 159.11%, #06280C 190.68%)",
+        discountText:
+          "linear-gradient(89.73deg, #062614 1.83%, #0A771C 28.37%, #21AA38 49.89%, #176023 80.53%, #06280C 97.4%)",
       },
       boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
     },
