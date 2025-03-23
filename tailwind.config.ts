@@ -73,7 +73,9 @@ export default {
         article:
           "linear-gradient(297.81deg, rgba(0, 0, 0, 0) 12.32%, rgba(0, 0, 0, 0.7) 83.61%)",
         discount:
-          "linear-gradient(154.34deg, #062614 11.8%, #0A771C 61.48%, #21AA38 101.75%, #176023 159.11%, #06280C 190.68%)",
+          "linear-gradient(174.34deg, #062614 11.8%, #0A771C 61.48%, #21AA38 101.75%, #176023 159.11%, #06280C 190.68%)",
+        discountText:
+          "linear-gradient(89.73deg, #062614 1.83%, #0A771C 28.37%, #21AA38 49.89%, #176023 80.53%, #06280C 97.4%)",
       },
       boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
     },
