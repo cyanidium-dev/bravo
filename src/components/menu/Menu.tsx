@@ -1,17 +1,20 @@
-import { getDataFromCms } from "@/utils/getDataFromCms";
-import Hero from "./hero/Hero";
-import MenuItems from "./menuItems/MenuItems";
-import { GET_MENU_BANNER } from "@/lib/datoCmsQueries";
+"use client";
+import MenuNavigationMob from "./menuItems/menuNavigation/MenuNavigationMob";
+import MenuNavigationDesk from "./menuItems/menuNavigation/MenuNavigationDesk";
+import DishesList from "./menuItems/DishesList";
 
-export default async function Menu() {
-  const res = await getDataFromCms(GET_MENU_BANNER);
+interface MenuProps {
+  slug: string;
+}
 
-  const banner = res?.data?.banner;
-
+export default function Menu({ slug }: MenuProps) {
   return (
-    <>
-      <Hero banner={banner} />
-      <MenuItems />
-    </>
+    <section className="overflow-hidden">
+      <MenuNavigationMob currentCategory={slug} />
+      <div className="container xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px] overflow-auto">
+        <MenuNavigationDesk currentCategory={slug} />
+        <DishesList />
+      </div>
+    </section>
   );
 }

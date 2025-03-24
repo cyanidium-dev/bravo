@@ -50,3 +50,72 @@ export const GET_MENU_BANNER = `query GetMenuBanner {
     }
   }
 }`;
+
+export const GET_ALL_DISHES = `query GetAllDishes {
+
+  banner {
+    bannerDesk {
+      alt
+      url
+    }
+    bannerMob {
+      alt
+      url
+    }
+  }
+
+  allCategories {
+    url
+    title
+    order
+    id
+    dishes {
+      title
+      price
+      description
+      calories
+      id
+      image {
+        url
+        alt
+      }
+    }
+  }
+}`;
+
+export const GET_DISHES_IN_CATEGORY = `query GetDishesInCategory($code: String!) {
+
+  banner {
+    bannerDesk {
+      alt
+      url
+    }
+    bannerMob {
+      alt
+      url
+    }
+  }
+
+   allCategories {
+    title
+    url
+    order
+  }
+
+  category: allCategories(filter: {url: {eq: $code}}) {
+    url
+    title
+    id
+    dishes {
+      title
+      price
+      image {
+        alt
+        url
+      }
+      id
+      description
+      calories
+    }
+  }
+}`;
