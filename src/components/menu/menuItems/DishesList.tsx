@@ -28,7 +28,7 @@ export default function DishesList({ currentCategory }: DishesListProps) {
     return <NoDishes>На жаль, такої сторінки не існує</NoDishes>;
   }
   if (!dishesList?.length) {
-    return <NoDishes>В даній категорій ще немає страв</NoDishes>;
+    return <NoDishes>В даній категорії ще немає страв</NoDishes>;
   }
   return (
     <div
