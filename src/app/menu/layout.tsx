@@ -41,8 +41,8 @@ export default async function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         <Suspense fallback={<Loader />}>
           <Hero banner={banner} />
+          <HydrateStore categories={allCategories}> {children}</HydrateStore>
         </Suspense>
-        <HydrateStore categories={allCategories}> {children}</HydrateStore>
       </main>
       <Footer />
     </div>
