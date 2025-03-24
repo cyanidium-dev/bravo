@@ -1,19 +1,28 @@
+"use client";
+import { useMenuStore } from "@/store/menuStore";
 import MenuItemDesk from "./MenuItemDesk";
 
 interface MenuNavigationDeskProps {
-  currentCategory: { title: string; url: string };
-  categories: { title: string; url: string; order: number }[];
+  currentCategory: string;
 }
 
 export default function MenuNavigationDesk({
   currentCategory,
-  categories,
 }: MenuNavigationDeskProps) {
+  const { categories } = useMenuStore((state) => state);
+  if (!categories.length) {
+    return null;
+  }
+
+  const sortedCategories = [
+    { title: "Всі страви", url: "all-dishes", order: 0 },
+    ...categories,
+  ].sort((a, b) => a.order - b.order);
+
   return (
-    <nav>
-      {" "}
-      <ul className="hidden xl:block">
-        {categories.map((category, idx) => (
+    <nav className="hidden xl:block">
+      <ul className="flex flex-col gap-y-3">
+        {sortedCategories.map((category, idx) => (
           <MenuItemDesk
             key={idx}
             currentCategory={currentCategory}

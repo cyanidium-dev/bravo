@@ -38,10 +38,12 @@ export default async function Layout({ children }: LayoutProps) {
   return (
     <div>
       <Header variant="black" />
-      <Suspense fallback={<Loader />}>
-        <Hero banner={banner} />
-      </Suspense>
-      <HydrateStore categories={allCategories}> {children}</HydrateStore>
+      <main className="flex-1">
+        <Suspense fallback={<Loader />}>
+          <Hero banner={banner} />
+        </Suspense>
+        <HydrateStore categories={allCategories}> {children}</HydrateStore>
+      </main>
       <Footer />
     </div>
   );

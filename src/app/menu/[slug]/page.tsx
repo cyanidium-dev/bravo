@@ -10,9 +10,7 @@ export default async function MenuCategoryPage({
   const { slug } = await params;
   return (
     <>
-      <main className="flex-1">
-        <Menu slug={slug} />
-      </main>
+      <Menu slug={slug} />
     </>
   );
 }
