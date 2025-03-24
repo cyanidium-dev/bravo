@@ -26,6 +26,8 @@ export default {
 
       fontSize: {
         "6med": ["6px", { fontWeight: "500" }],
+        "8reg": ["8px", { fontWeight: "400" }],
+        "8semi": ["8px", { fontWeight: "600" }],
         "10reg": ["10px", { fontWeight: "400" }],
         "11med": ["11px", { fontWeight: "500" }],
         "12light": ["12px", { fontWeight: "300" }],

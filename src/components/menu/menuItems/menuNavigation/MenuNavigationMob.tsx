@@ -10,9 +10,12 @@ export default function MenuNavigationMob({
   currentCategory,
 }: MenuNavigationMobProps) {
   const { categories } = useMenuStore((state) => state);
-  if (!categories.length) {
+
+  if (!categories?.length) {
     return null;
   }
+
+  console.log(categories);
 
   const sortedCategories = [
     { title: "Всі страви", url: "all-dishes", order: 0 },
