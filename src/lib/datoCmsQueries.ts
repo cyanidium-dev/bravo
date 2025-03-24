@@ -18,7 +18,7 @@ export const GET_BLOG_ARTICLES_QUERY = `query GetBlogArticles {
   }
 }`;
 
-export const GET_ARTICLE_BY_SLUG = `query MyQuery($code: String!) {
+export const GET_ARTICLE_BY_SLUG = `query GetArticle($code: String!) {
   allArticles(filter: {slug: {eq: $code}}) {
     id,
     title,
@@ -35,5 +35,18 @@ export const GET_ARTICLE_BY_SLUG = `query MyQuery($code: String!) {
       url
     }
     slug
+  }
+}`;
+
+export const GET_MENU_BANNER = `query GetMenuBanner {
+  banner {
+    bannerDesk {
+      alt
+      url
+    }
+    bannerMob {
+      alt
+      url
+    }
   }
 }`;
