@@ -74,48 +74,12 @@ export const GET_ALL_DISHES = `query GetAllDishes {
       price
       description
       calories
+      weight
       id
       image {
         url
         alt
       }
-    }
-  }
-}`;
-
-export const GET_DISHES_IN_CATEGORY = `query GetDishesInCategory($code: String!) {
-
-  banner {
-    bannerDesk {
-      alt
-      url
-    }
-    bannerMob {
-      alt
-      url
-    }
-  }
-
-   allCategories {
-    title
-    url
-    order
-  }
-
-  category: allCategories(filter: {url: {eq: $code}}) {
-    url
-    title
-    id
-    dishes {
-      title
-      price
-      image {
-        alt
-        url
-      }
-      id
-      description
-      calories
     }
   }
 }`;

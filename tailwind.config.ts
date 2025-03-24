@@ -11,7 +11,7 @@ export default {
   ],
   theme: {
     extend: {
-      screens: {},
+      screens: { xs: "520px" },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
         revival: ["var(--font-revival)"],
@@ -26,9 +26,12 @@ export default {
 
       fontSize: {
         "6med": ["6px", { fontWeight: "500" }],
+        "8reg": ["8px", { fontWeight: "400" }],
+        "8semi": ["8px", { fontWeight: "600" }],
         "10reg": ["10px", { fontWeight: "400" }],
         "11med": ["11px", { fontWeight: "500" }],
         "12light": ["12px", { fontWeight: "300" }],
+        "12reg": ["12px", { fontWeight: "400" }],
         "12med": ["12px", { fontWeight: "500" }],
         "12semi": ["12px", { fontWeight: "600" }],
         "12bold": ["12px", { fontWeight: "700" }],

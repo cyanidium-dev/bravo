@@ -2,20 +2,23 @@
 import { useState, useLayoutEffect, ReactNode } from "react";
 import ArrowInCircleIcon from "../icons/ArrowinCircleIcon";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useItemsPerPage } from "@/hooks/useItemsPerPage";
 
 interface PaginationProps<T> {
   items: T[];
   renderItems: (items: T[]) => ReactNode;
   scrollTargetId: string;
+  useItemsPerPage: () => number;
   maxVisiblePages?: number;
+  className?: string;
 }
 
 export default function Pagination<T>({
   items,
   renderItems,
   scrollTargetId,
+  useItemsPerPage,
   maxVisiblePages = 4,
+  className = "",
 }: PaginationProps<T>) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -75,12 +78,10 @@ export default function Pagination<T>({
 
   return (
     <>
-      <div className="w-full max-w-[320px] sm:max-w-[660px] lg:max-w-[1000px] xl:max-w-full mb-10 xl:mb-[62px]">
-        {renderItems(currentItems)}
-      </div>
+      <div className={`${className}`}>{renderItems(currentItems)}</div>
       <div className="inline-flex justify-center items-center gap-[33px]">
         <button
-          className={`flex justify-center items-center p-[16.5px] size-[66px] rounded-[16px] 
+          className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] 
           border-2 border-black transition duration-300 ease-in-out
           enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
           ${page === 1 ? "bg-white text-black" : "bg-black text-white"}`}
@@ -104,7 +105,7 @@ export default function Pagination<T>({
         </div>
 
         <button
-          className={`flex justify-center items-center p-[16.5px] size-[66px] rounded-[16px] transition duration-300 ease-in-out
+          className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] transition duration-300 ease-in-out
            border-2 border-black enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
           ${
             currentPage === totalPages

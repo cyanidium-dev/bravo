@@ -10,7 +10,8 @@ export default function MenuNavigationDesk({
   currentCategory,
 }: MenuNavigationDeskProps) {
   const { categories } = useMenuStore((state) => state);
-  if (!categories.length) {
+
+  if (!categories?.length) {
     return null;
   }
 
