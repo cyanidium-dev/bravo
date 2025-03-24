@@ -19,6 +19,7 @@ export default function Hero({ banner }: HeroProps) {
   }
 
   const { bannerMob, bannerDesk } = banner;
+
   return (
     <section className="container xl:max-w-[1280px] overflow-hidden pt-[108px] pb-[84px] md:pb-[52px]">
       <div

@@ -82,7 +82,7 @@ export default function Pagination<T>({
       <div className="inline-flex justify-center items-center gap-[33px]">
         <button
           className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] 
-          border-2 border-black transition duration-300 ease-in-out
+          border-[1.5px] xl:border-2 border-black transition duration-300 ease-in-out
           enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
           ${page === 1 ? "bg-white text-black" : "bg-black text-white"}`}
           onClick={() => handlePageChange(currentPage - 1)}
@@ -106,7 +106,7 @@ export default function Pagination<T>({
 
         <button
           className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] transition duration-300 ease-in-out
-           border-2 border-black enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
+           border-[1.5px] xl:border-2 border-black enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
           ${
             currentPage === totalPages
               ? "text-black bg-white"

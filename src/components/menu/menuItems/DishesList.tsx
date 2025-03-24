@@ -28,7 +28,7 @@ export default function DishesList({ currentCategory }: DishesListProps) {
     return <NoDishes>На жаль, такої сторінки не існує</NoDishes>;
   }
   if (!dishesList?.length) {
-    return <NoDishes>В даній категорій ще немає страв</NoDishes>;
+    return <NoDishes>В даній категорії ще немає страв</NoDishes>;
   }
   return (
     <div
@@ -39,7 +39,7 @@ export default function DishesList({ currentCategory }: DishesListProps) {
         items={dishesList}
         scrollTargetId={SECTION_ID}
         useItemsPerPage={useDishesPerPage}
-        className="mb-[26px] xl:mb-[70px]"
+        className="w-full mb-[26px] xl:mb-[70px]"
         renderItems={(currentItems) => (
           <ul className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0">
             {currentItems.map((dish, idx) => (
