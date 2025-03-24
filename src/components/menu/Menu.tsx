@@ -11,9 +11,9 @@ export default function Menu({ slug }: MenuProps) {
   return (
     <section className="overflow-hidden">
       <MenuNavigationMob currentCategory={slug} />
-      <div className="container xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px] overflow-auto">
+      <div className="container w-full xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px] overflow-auto xl:overflow-visible">
         <MenuNavigationDesk currentCategory={slug} />
-        <DishesList />
+        <DishesList currentCategory={slug} />
       </div>
     </section>
   );
