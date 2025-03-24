@@ -7,7 +7,6 @@ interface DishCardProps {
 }
 
 export default function DishCard({ dish }: DishCardProps) {
-  console.log(dish);
   const { image, title, price, weight } = dish;
 
   return (
