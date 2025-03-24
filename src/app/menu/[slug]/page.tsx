@@ -1,19 +1,18 @@
-import Footer from "@/components/shared/footer/Footer";
-import Header from "@/components/shared/header/Header";
-import Loader from "@/components/shared/loader/Loader";
 import Menu from "@/components/menu/Menu";
-import { Suspense } from "react";
 
-export default function MenuCategoryPage() {
+interface MenuCategoryPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function MenuCategoryPage({
+  params,
+}: MenuCategoryPageProps) {
+  const { slug } = await params;
   return (
     <>
-      <Header variant="black" />
       <main className="flex-1">
-        <Suspense fallback={<Loader />}>
-          <Menu />
-        </Suspense>
+        <Menu slug={slug} />
       </main>
-      <Footer />
     </>
   );
 }

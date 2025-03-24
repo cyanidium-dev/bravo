@@ -1,17 +1,25 @@
-import Hero from "./hero/Hero";
-import MenuItems from "./menuItems/MenuItems";
-import { GET_MENU_BANNER } from "@/lib/datoCmsQueries";
-import { getDataFromCms } from "@/utils/getDataFromCms";
+"use client";
+import { useMenuStore } from "@/store/menuStore";
+import DishesList from "./menuItems/DishesList";
+import MenuNavigationMob from "./menuItems/menuNavigation/MenuNavigationMob";
+import MenuNavigationDesk from "./menuItems/menuNavigation/MenuNavigationDesk";
 
-export default async function Menu() {
-  const res = await getDataFromCms(GET_MENU_BANNER);
+interface MenuProps {
+  slug: string;
+}
 
-  const banner = res?.data?.banner;
+export default function Menu({ slug }: MenuProps) {
+  const { categories } = useMenuStore((state) => state);
+
+  console.log(categories);
 
   return (
-    <>
-      <Hero banner={banner} />
-      <MenuItems />
-    </>
+    <section className="overflow-hidden">
+      <MenuNavigationMob currentCategory={slug} />
+      <div className="container xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px]">
+        {/* <MenuNavigationDesk /> */}
+        {/* <DishesList /> */}
+      </div>
+    </section>
   );
 }
