@@ -27,7 +27,7 @@ export default function DishesList({ currentCategory }: DishesListProps) {
     return <NoDishes>В даній категорій ще немає страв</NoDishes>;
   }
   return (
-    <ul className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10">
+    <ul className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0">
       {dishesList.map((dish, idx) => (
         <DishCard key={idx} dish={dish} />
       ))}
