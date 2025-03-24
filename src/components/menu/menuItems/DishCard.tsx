@@ -23,7 +23,7 @@ export default function DishCard({ dish }: DishCardProps) {
       />
       <div className="px-2 xl:px-4 py-[7px] xl:py-5">
         <div className="px-[10px] xl:px-[18px] py-2 xl:py-[15px] rounded-[6px] bg-white bg-opacity-[16%] backdrop-blur-[30px] shadow-inner-custom">
-          <h3 className="min-h-[29.5px] mb-[6px] xl:mb-2 text-12bold xl:text-18bold leading-[123%] text-white line-clamp-2">
+          <h3 className="min-h-[29.5px] xl:min-h-[44px] mb-[6px] xl:mb-2 text-12bold xl:text-18bold leading-[123%] text-white line-clamp-2">
             {title}
           </h3>
           <div className="mb-[17px] flex items-center justify-between text-white">
