@@ -38,7 +38,7 @@ export default function MenuItemMob({
   return (
     <li
       ref={itemRef}
-      className={`px-6 py-[15px] rounded-full border transition duration-300 ease-in-out ${
+      className={`px-6 py-[15px] rounded-full border active:scale-95 transition duration-300 ease-in-out ${
         category.url === currentCategory
           ? "text-white border-green bg-green"
           : "text-black border-black bg-white"
