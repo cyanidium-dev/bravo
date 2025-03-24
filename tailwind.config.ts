@@ -11,7 +11,7 @@ export default {
   ],
   theme: {
     extend: {
-      screens: { xs: "460px" },
+      screens: { xs: "520px" },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
         revival: ["var(--font-revival)"],
