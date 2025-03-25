@@ -4,6 +4,7 @@ import Modal from "@/components/shared/modals/Modal";
 import { Dish } from "@/types/dish";
 import GreenButton from "@/components/shared/buttons/GreenButton";
 import { useCartStore } from "@/store/cartStore";
+import Counter from "./Counter";
 
 interface DishModalProps {
   dish: Dish | null;
@@ -16,12 +17,14 @@ export default function DishModal({
   setIsDishModalOpened,
   dish,
 }: DishModalProps) {
-  const { addToCart } = useCartStore();
+  const { cartItems, addToCart } = useCartStore();
 
   if (!dish) {
     return null;
   }
   const { id, image, title, price, weight, calories, description } = dish;
+
+  const isDishInCart = cartItems.find((cartItem) => cartItem.id === id);
 
   return (
     <>
@@ -57,14 +60,19 @@ export default function DishModal({
               <p className="mb-10 lg:mb-9 text-12light lg:text-14light leading-[123%]">
                 {description}
               </p>
-              <GreenButton
-                onClick={() =>
-                  addToCart({ id, title, price, image, quantity: 1 })
-                }
-                className="w-full text-12med py-[10px]"
-              >
-                Додати в кошик
-              </GreenButton>
+
+              {isDishInCart ? (
+                <Counter dish={dish} />
+              ) : (
+                <GreenButton
+                  onClick={() =>
+                    addToCart({ id, title, price, image, quantity: 1 })
+                  }
+                  className="w-full text-12med py-[10px] lg:py-3"
+                >
+                  Додати в кошик
+                </GreenButton>
+              )}
             </div>
             <p className="mt-3 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
               *Страва містить алергени, якщо бажаєте їх прибрати, повідомте про
