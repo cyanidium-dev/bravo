@@ -1,13 +1,26 @@
+"use client";
+import { Dispatch, SetStateAction } from "react";
 import DishCardButton from "@/components/shared/buttons/DishCardButton";
 import { Dish } from "@/types/dish";
 import Image from "next/image";
 
 interface DishCardProps {
   dish: Dish;
+  setIsDishModalOpened: Dispatch<SetStateAction<boolean>>;
+  setSelectedDish: Dispatch<SetStateAction<Dish>>;
 }
 
-export default function DishCard({ dish }: DishCardProps) {
+export default function DishCard({
+  dish,
+  setIsDishModalOpened,
+  setSelectedDish,
+}: DishCardProps) {
   const { image, title, price, weight } = dish;
+
+  const handleClick = () => {
+    setSelectedDish(dish);
+    setIsDishModalOpened(true);
+  };
 
   return (
     <li
@@ -34,7 +47,7 @@ export default function DishCard({ dish }: DishCardProps) {
               {weight}&nbsp;г
             </p>
           </div>
-          <DishCardButton>Замовити страву</DishCardButton>
+          <DishCardButton onClick={handleClick}>Замовити страву</DishCardButton>
         </div>
       </div>
     </li>

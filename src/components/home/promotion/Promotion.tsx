@@ -13,7 +13,9 @@ export default function Promotion() {
           href="/menu"
           className="block w-full max-w-[326px] mx-auto md:mx-0"
         >
-          <GreenButton className="w-full">Переглянути меню</GreenButton>
+          <GreenButton className="w-full text-16med py-4">
+            Переглянути меню
+          </GreenButton>
         </Link>
       </div>
     </section>
