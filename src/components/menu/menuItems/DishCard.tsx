@@ -24,7 +24,8 @@ export default function DishCard({
 
   return (
     <li
-      className="relative flex flex-col justify-end overflow-hidden w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
+      onClick={handleClick}
+      className="cursor-pointer relative flex flex-col justify-end overflow-hidden w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
     xl:w-[calc(33.3%-13.3px)] aspect-[140/250] xl:aspect-[270/432] rounded-[8px] xl:rounded-[16px]"
     >
       <Image

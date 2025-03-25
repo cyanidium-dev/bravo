@@ -4,7 +4,7 @@ import Modal from "@/components/shared/modals/Modal";
 import { Dish } from "@/types/dish";
 import GreenButton from "@/components/shared/buttons/GreenButton";
 import { useCartStore } from "@/store/cartStore";
-import Counter from "./Counter";
+import Counter from "../../menu/menuItems/Counter";
 
 interface DishModalProps {
   dish: Dish | null;
