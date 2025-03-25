@@ -59,6 +59,7 @@ export default {
         "28bold": ["28px", { fontWeight: "700" }],
         "32semi": ["32px", { fontWeight: "600" }],
         "32bold": ["32px", { fontWeight: "700" }],
+        "36semi": ["36px", { fontWeight: "600" }],
         "36bold": ["36px", { fontWeight: "700" }],
         "40semi": ["40px", { fontWeight: "600" }],
         "40bold": ["40px", { fontWeight: "700" }],

@@ -1,10 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import MainButton from "../../buttons/MainButton";
 import { useCartStore } from "@/store/cartStore";
 
-export default function CartTotal() {
+interface CartTotalProps {
+  setIsPopUpShown: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function CartTotal({ setIsPopUpShown }: CartTotalProps) {
   const { getTotalAmount, cartItems } = useCartStore();
   const [total, setTotal] = useState(0);
 
@@ -20,7 +24,7 @@ export default function CartTotal() {
           {total}&nbsp;грн
         </p>
       </div>
-      <Link href="/checkout">
+      <Link href="/checkout" onClick={() => setIsPopUpShown(false)}>
         <MainButton disabled={!cartItems?.length} className="w-full">
           Оформити замовлення
         </MainButton>
