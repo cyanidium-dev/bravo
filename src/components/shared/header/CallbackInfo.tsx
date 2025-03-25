@@ -24,7 +24,7 @@ export default function CallbackInfo({
         className="block sm:mx-auto"
         onClick={() => setIsHeaderMenuOpened(false)}
       >
-        <GreenButton className="flex gap-x-[14px] items-center w-full max-w-[360px] mb-12 sm:mx-auto text-white">
+        <GreenButton className="flex gap-x-[14px] items-center w-full max-w-[360px] mb-12 sm:mx-auto text-white text-16med py-4">
           <PhoneIcon className="size-6" />
           {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
         </GreenButton>

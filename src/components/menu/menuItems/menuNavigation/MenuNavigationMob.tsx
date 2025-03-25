@@ -22,7 +22,9 @@ export default function MenuNavigationMob({
 
   return (
     <nav
-      className="xl:hidden pl-[30px] xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] md:ml-[calc((100vw-708px-60px)/2)] lg:ml-[calc((100vw-964px-60px)/2)] overflow-x-auto scrollbar scrollbar-h-[2px] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-transparent 
+      className="xl:hidden pl-[30px] xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] 
+      md:ml-[calc((100vw-708px-60px)/2)] lg:ml-[calc((100vw-964px-60px)/2)] overflow-x-auto 
+      scrollbar scrollbar-h-[2px] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-transparent 
       scrollbar-track-transparent"
     >
       <ul className="flex gap-x-2">
