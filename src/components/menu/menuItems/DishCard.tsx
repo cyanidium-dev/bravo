@@ -24,7 +24,7 @@ export default function DishCard({
 
   return (
     <li
-      className="relative flex flex-col justify-end overflow-hidden w-[46.67%] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
+      className="relative flex flex-col justify-end overflow-hidden w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
     xl:w-[calc(33.3%-13.3px)] aspect-[140/250] xl:aspect-[270/432] rounded-[8px] xl:rounded-[16px]"
     >
       <Image
@@ -47,7 +47,7 @@ export default function DishCard({
               {weight}&nbsp;г
             </p>
           </div>
-          <DishCardButton onClick={handleClick}>Замовити страву</DishCardButton>
+          <DishCardButton onClick={handleClick}>Замовити</DishCardButton>
         </div>
       </div>
     </li>
