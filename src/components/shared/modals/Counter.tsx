@@ -3,17 +3,16 @@ import IconMinus from "@/components/shared/icons/IconMinus";
 import { CartItem } from "@/types/cartItem";
 import { useState, useEffect } from "react";
 import { useCartStore } from "@/store/cartStore";
-import { Dish } from "@/types/dish";
 import IconPlus from "@/components/shared/icons/IconPlus";
 
 interface CounterProps {
-  dish: Dish;
+  id: string;
+  className?: string;
 }
 
-export default function Counter({ dish }: CounterProps) {
+export default function Counter({ id, className = "" }: CounterProps) {
   const { increaseQuantity, decreaseQuantity, cartItems } = useCartStore();
   const [count, setCount] = useState(1);
-  const { id } = dish;
   const getItemCount = (items: CartItem[], itemId: string): number => {
     return items.find((item) => item.id === itemId)?.quantity || 0;
   };
@@ -33,7 +32,9 @@ export default function Counter({ dish }: CounterProps) {
   };
 
   return (
-    <div className="flex items-center justify-between w-full px-6 py-[7px] lg:py-[9px] border-[1.5px] border-black rounded-full">
+    <div
+      className={`flex items-center justify-between py-[7px] lg:py-[9px] border-[1.5px] border-black rounded-full ${className}`}
+    >
       <button
         className="group flex items-center justify-center size-5 enabled:active:scale-95 transition duration-300 ease-out"
         onClick={onMinusClick}

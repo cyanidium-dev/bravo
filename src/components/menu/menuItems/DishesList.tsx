@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import DishCard from "./DishCard";
 import Pagination from "@/components/shared/pagination/Pagination";
 import { useDishesPerPage } from "@/hooks/useDishesPerPage";
-import DishModal from "./DishModal";
+import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import { Dish } from "@/types/dish";
 

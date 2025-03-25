@@ -11,6 +11,8 @@ import BurgerMenuButton from "./BurgerMenuButton";
 import { PHONE } from "@/constants/constants";
 import { headerPhoneRegex } from "@/regex/regex";
 import PhoneIcon from "../icons/PhoneIcon";
+import CartModal from "../modals/cartModal/CartModal";
+import Backdrop from "../backdrop/Backdrop";
 
 interface HeaderProps {
   variant?: "white" | "black";
@@ -18,58 +20,75 @@ interface HeaderProps {
 
 export default function Header({ variant = "white" }: HeaderProps) {
   const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
+  const [isCartModalOpened, setIsCartModalOpened] = useState(false);
   const toggleHeaderMenuOpen = () => setIsHeaderMenuOpened(!isHeaderMenuOpened);
 
   return (
-    <Navbar
-      shouldHideOnScroll
-      maxWidth="2xl"
-      classNames={{ wrapper: "px-0" }}
-      className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform backdrop-blur-lg ${
-        variant === "white" ? "text-white bg-black bg-opacity-30" : "text-black"
-      }`}
-    >
-      <div className="flex items-center container xl:max-w-[1280px] py-4 lg:py-6 ">
-        <NavbarBrand className="mr-10 xl:mr-20">
-          <Logo className="text-24bold leading-[120%]" />
-        </NavbarBrand>
-        <NavbarContent className="hidden lg:flex gap-x-6 xl:gap-x-[44px]">
-          {menuList.map(({ title, link }, idx) => (
-            <NavbarItem
-              key={idx}
-              className="xl:hover:text-green focus-visible:text-green transition duration-300 ease-in-out"
-            >
-              <Link href={link}>{title}</Link>
-            </NavbarItem>
-          ))}
-        </NavbarContent>
-        <NavbarContent className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
-          <div className="flex items-center gap-x-6 ">
-            <CartButton variant={variant} />
-            <a
-              href={`tel:+${PHONE.replace(/\D/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              aria-label="phone number"
-              className="hidden lg:block"
-            >
-              <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
-                <PhoneIcon className="size-5" />
-                {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
-              </SecondaryButton>
-            </a>
-          </div>
-        </NavbarContent>
-        <BurgerMenuButton
-          isHeaderMenuOpened={isHeaderMenuOpened}
-          toggleHeaderMenuOpen={toggleHeaderMenuOpen}
-        />
+    <>
+      <Navbar
+        shouldHideOnScroll
+        maxWidth="2xl"
+        classNames={{ wrapper: "px-0" }}
+        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform backdrop-blur-lg ${
+          variant === "white"
+            ? "text-white bg-black bg-opacity-30"
+            : "text-black"
+        }`}
+      >
+        <div className="flex items-center container xl:max-w-[1280px] py-4 lg:py-6 ">
+          <NavbarBrand className="mr-10 xl:mr-20">
+            <Logo className="text-24bold leading-[120%]" />
+          </NavbarBrand>
+          <NavbarContent className="hidden lg:flex gap-x-6 xl:gap-x-[44px]">
+            {menuList.map(({ title, link }, idx) => (
+              <NavbarItem
+                key={idx}
+                className="xl:hover:text-green focus-visible:text-green transition duration-300 ease-in-out"
+              >
+                <Link href={link}>{title}</Link>
+              </NavbarItem>
+            ))}
+          </NavbarContent>
+          <NavbarContent className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
+            <div className="flex items-center gap-x-6 ">
+              <CartButton
+                variant={variant}
+                onClick={() => setIsCartModalOpened(true)}
+              />
+              <a
+                href={`tel:+${PHONE.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                aria-label="phone number"
+                className="hidden lg:block"
+              >
+                <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
+                  <PhoneIcon className="size-5" />
+                  {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
+                </SecondaryButton>
+              </a>
+            </div>
+          </NavbarContent>
+          <BurgerMenuButton
+            isHeaderMenuOpened={isHeaderMenuOpened}
+            toggleHeaderMenuOpen={toggleHeaderMenuOpen}
+          />
 
-        <BurgerMenu
-          isHeaderMenuOpened={isHeaderMenuOpened}
-          setIsHeaderMenuOpened={setIsHeaderMenuOpened}
-        />
-      </div>
-    </Navbar>
+          <BurgerMenu
+            isHeaderMenuOpened={isHeaderMenuOpened}
+            setIsHeaderMenuOpened={setIsHeaderMenuOpened}
+            setIsCartModalOpened={setIsCartModalOpened}
+          />
+        </div>
+      </Navbar>
+      <CartModal
+        isPopUpShown={isCartModalOpened}
+        setIsPopUpShown={setIsCartModalOpened}
+      />
+      <Backdrop
+        isVisible={isCartModalOpened}
+        onClick={() => setIsCartModalOpened(false)}
+      />
+    </>
   );
 }
