@@ -3,6 +3,7 @@ import Image from "next/image";
 import Modal from "@/components/shared/modals/Modal";
 import { Dish } from "@/types/dish";
 import GreenButton from "@/components/shared/buttons/GreenButton";
+import { useCartStore } from "@/store/cartStore";
 
 interface DishModalProps {
   dish: Dish | null;
@@ -15,10 +16,12 @@ export default function DishModal({
   setIsDishModalOpened,
   dish,
 }: DishModalProps) {
+  const { addToCart } = useCartStore();
+
   if (!dish) {
     return null;
   }
-  const { image, title, price, weight, calories, description } = dish;
+  const { id, image, title, price, weight, calories, description } = dish;
 
   return (
     <>
@@ -39,7 +42,6 @@ export default function DishModal({
           </div>
           <div className="lg:flex flex-col justify-between lg:w-[472px] px-5 lg:px-9 py-6 lg:py-12 mt-3 lg:mt-0">
             <div>
-              {" "}
               <h3 className="mb-2 lg:mb-3 text-20bold lg:text-24bold uppercase leading-[123%]">
                 {title}
               </h3>
@@ -55,7 +57,12 @@ export default function DishModal({
               <p className="mb-10 lg:mb-9 text-12light lg:text-14light leading-[123%]">
                 {description}
               </p>
-              <GreenButton className="w-full text-12med py-[10px]">
+              <GreenButton
+                onClick={() =>
+                  addToCart({ id, title, price, image, quantity: 1 })
+                }
+                className="w-full text-12med py-[10px]"
+              >
                 Додати в кошик
               </GreenButton>
             </div>

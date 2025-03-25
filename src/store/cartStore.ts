@@ -17,7 +17,26 @@ export const useCartStore = create<CartState>()(
       cartItems: [],
 
       addToCart: (newItem) => {
-        set({ cartItems: [newItem, ...get().cartItems] });
+        set((state) => {
+          const existingItemIndex = state.cartItems.findIndex(
+            (item) => item.id === newItem.id
+          );
+
+          if (existingItemIndex !== -1) {
+            // Товар вже є в кошику; збільшуємо його кількість
+            const updatedCartItems = state.cartItems.map((item, index) =>
+              index === existingItemIndex
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
+            );
+            return { cartItems: updatedCartItems };
+          } else {
+            // Товару ще немає в кошику; додаємо його з кількістю 1
+            return {
+              cartItems: [...state.cartItems, { ...newItem, quantity: 1 }],
+            };
+          }
+        });
       },
 
       removeFromCart: (itemId) => {
