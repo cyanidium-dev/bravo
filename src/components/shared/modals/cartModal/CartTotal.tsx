@@ -1,10 +1,17 @@
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import MainButton from "../../buttons/MainButton";
 import { useCartStore } from "@/store/cartStore";
 
 export default function CartTotal() {
   const { getTotalAmount, cartItems } = useCartStore();
-  const total = getTotalAmount();
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    setTotal(getTotalAmount());
+  }, [getTotalAmount, cartItems]);
+
   return (
     <div className="fixed bottom-0 left-0 w-full px-[30px] lg:px-9 py-9 bg-black rounded-tr-[16px] rounded-tl-[16px]">
       <div className="flex flex-row justify-between mb-8 lg:mb-7 text-white">
