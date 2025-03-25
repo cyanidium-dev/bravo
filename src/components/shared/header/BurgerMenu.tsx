@@ -7,11 +7,13 @@ import CartButton from "./CartButton";
 interface BurgerMenuMobTabProps {
   isHeaderMenuOpened: boolean;
   setIsHeaderMenuOpened: Dispatch<SetStateAction<boolean>>;
+  setIsCartModalOpened: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function BurgerMenu({
   isHeaderMenuOpened,
   setIsHeaderMenuOpened,
+  setIsCartModalOpened,
 }: BurgerMenuMobTabProps) {
   return (
     <div
@@ -28,7 +30,10 @@ export default function BurgerMenu({
             setIsHeaderMenuOpened={setIsHeaderMenuOpened}
             className="text-24bold leading-[120%] relative z-[60] text-black"
           />
-          <CartButton variant="black" />
+          <CartButton
+            variant="black"
+            onClick={() => setIsCartModalOpened(true)}
+          />
         </div>
         <CallbackInfo setIsHeaderMenuOpened={setIsHeaderMenuOpened} />
         <NavMenuMob setIsHeaderMenuOpened={setIsHeaderMenuOpened} />

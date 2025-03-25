@@ -3,15 +3,22 @@ import { useCartStore } from "@/store/cartStore";
 
 interface CartButtonProps {
   className?: string;
+  onClick: () => void;
   variant: "white" | "black";
 }
 
-export default function CartButton({ variant, className }: CartButtonProps) {
+export default function CartButton({
+  variant,
+  className,
+  onClick,
+}: CartButtonProps) {
   const { cartItems } = useCartStore();
 
   return (
     <button
+      onClick={onClick}
       data-label={cartItems?.length.toString()}
+      disabled={!cartItems?.length}
       className={`relative flex items-center justify-center size-[44px] rounded-[14px] ${
         variant === "white" ? "text-black bg-white" : "text-white bg-black"
       } ${className}`}

@@ -25,7 +25,7 @@ export default function Modal({
       } fixed left-1/2 bottom-0 transform -translate-x-1/2 transition duration-[600ms] ease-out z-50 max-h-[100dvh] overflow-y-auto bg-white rounded-[16px] scrollbar scrollbar-w-[3px] scrollbar-thumb-rounded-full 
       scrollbar-track-rounded-full scrollbar-thumb-transparent scrollbar-track-green/70 popup-scroll ${className}`}
     >
-      <div className="absolute z-[60] top-0 right-0 size-[44px] lg:size-[50px]">
+      <div className="absolute z-[70] top-0 right-0 size-[44px] lg:size-[50px]">
         <IconButton
           handleClick={() => setIsPopUpShown(false)}
           className="p-[10px] bg-white rounded-[8px]"
