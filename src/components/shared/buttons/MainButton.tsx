@@ -11,7 +11,7 @@ export default function MainButton({
       onClick={onClick}
       disabled={disabled}
       className={`group relative overflow-hidden flex items-center justify-center py-4 px-4 text-16med leading-[130%] rounded-full 
-        bg-white disabled:bg-white/80 disabled:text-black/30 transition duration-300 ease-out enabled:active:scale-95      
+        bg-white disabled:bg-white/90 disabled:text-black/40 transition duration-300 ease-out enabled:active:scale-95      
    ${className}`}
     >
       <span
