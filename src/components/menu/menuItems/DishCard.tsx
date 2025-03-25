@@ -7,7 +7,7 @@ import Image from "next/image";
 interface DishCardProps {
   dish: Dish;
   setIsDishModalOpened: Dispatch<SetStateAction<boolean>>;
-  setSelectedDish: Dispatch<SetStateAction<Dish | null>>;
+  setSelectedDish: Dispatch<SetStateAction<Dish>>;
 }
 
 export default function DishCard({
