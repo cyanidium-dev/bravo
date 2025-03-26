@@ -8,7 +8,7 @@ export default function DishCardButton({
   return (
     <button
       onClick={onClick}
-      className={`group relative overflow-hidden flex items-center justify-center w-full py-[6px] sm:py-[10px] px-4 text-8med sm:text-11med leading-[130%] rounded-full 
+      className={`group relative overflow-hidden flex items-center justify-center w-full py-[6px] lg:py-[10px] px-4 text-10med lg:text-12med leading-[130%] rounded-full 
         bg-white transition duration-300 ease-out active:scale-95      
    ${className}`}
     >
