@@ -13,7 +13,7 @@ export default function Promotion() {
             Акційні товари
           </SectionTitle>
           <Link
-            href="/menu"
+            href="/menu/all-dishes"
             className="block w-full max-w-[326px] mx-auto md:mx-0"
           >
             <GreenButton className="w-full text-16med py-4">

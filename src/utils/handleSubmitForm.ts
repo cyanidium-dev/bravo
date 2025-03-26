@@ -51,7 +51,7 @@ export const handleSubmitForm = async <T>(
   const orderedListProducts = cartItems
     .map(
       (cartItem) =>
-        `- ${cartItem.title}, ціна: ${cartItem.price}, кількість: ${cartItem.quantity}`
+        `- ${cartItem.title}, ціна: ${cartItem.price} грн, кількість: ${cartItem.quantity}`
     )
     .join("\n");
 
