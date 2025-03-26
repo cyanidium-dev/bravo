@@ -1,7 +1,8 @@
 import SectionTitle from "@/components/shared/titles/SectionTitle";
 import GreenButton from "@/components/shared/buttons/GreenButton";
 import Link from "next/link";
-import PromotionList from "./PromotionList";
+import PromotionDesk from "./PromotionDesk";
+import PromotionMob from "./PromotionMob";
 
 export default function Promotion() {
   return (
@@ -20,8 +21,9 @@ export default function Promotion() {
             </GreenButton>
           </Link>
         </div>
-        <PromotionList />
+        <PromotionDesk />
       </div>
+      <PromotionMob />
     </section>
   );
 }

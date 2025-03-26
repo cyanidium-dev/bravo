@@ -17,7 +17,7 @@ export default function PromotionListDesk({
 
   return (
     <>
-      <ul className="hidden md:flex gap-x-5">
+      <ul className="hidden sm:flex gap-x-5">
         {promotion.slice(0, 4).map((dish) => (
           <DishCard
             key={dish.id}

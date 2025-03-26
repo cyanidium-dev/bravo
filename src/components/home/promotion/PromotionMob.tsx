@@ -1,8 +1,8 @@
 "use client";
 import { useMenuStore } from "@/store/menuStore";
-import PromotionListDesk from "./PromotionListDesk";
+import PromotionListMob from "./PromotionListMob";
 
-export default function PromotionList() {
+export default function PromotionMob() {
   const { promotion } = useMenuStore();
 
   if (!promotion?.length) {
@@ -10,7 +10,7 @@ export default function PromotionList() {
   }
   return (
     <>
-      <PromotionListDesk promotion={promotion} />
+      <PromotionListMob promotion={promotion} />
     </>
   );
 }
