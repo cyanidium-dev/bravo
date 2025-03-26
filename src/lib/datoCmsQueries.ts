@@ -82,4 +82,17 @@ export const GET_ALL_DISHES = `query GetAllDishes {
       }
     }
   }
+
+    allDishes(filter: {shownOnMain: {eq: "true"}}) {
+    image {
+      alt
+      url
+    }
+    id
+    description
+    calories
+    price
+    title
+    weight
+  }
 }`;
