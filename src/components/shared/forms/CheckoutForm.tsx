@@ -1,6 +1,9 @@
 import CustomizedInput from "@/components/shared/forms/formComponents/CustomizedInput";
 import MaskedInput from "react-text-mask";
 import { PHONE_NUMBER_MASK } from "@/regex/regex";
+import RadioButtonInput from "./formComponents/RadioButtonInput";
+import { FormikProps } from "formik";
+import { ValuesCheckoutFormType } from "@/components/checkout/Checkout";
 
 interface CheckoutFormProps {
   formik: FormikProps<ValuesCheckoutFormType>;
@@ -46,8 +49,39 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
           />
         </div>
       </div>
-      <div className="h-fit xl:w-[349px] p-7 border border-black rounded-[8px]">
-        <h2 className="mb-7 xl:mb-6 text-20med leading-[123%]">Оплата</h2>
+      <div
+        role="group"
+        aria-labelledby="radio-group"
+        className="h-fit xl:w-[349px] p-7 border border-black rounded-[8px]"
+      >
+        <h2 id="radio-group" className="mb-7 xl:mb-6 text-20med leading-[123%]">
+          Оплата
+        </h2>
+        <div className="flex flex-col gap-y-6">
+          <RadioButtonInput
+            fieldName="payment"
+            label="Картою кур’єру"
+            value="Картою кур’єру"
+          />
+          <RadioButtonInput
+            fieldName="payment"
+            label="Сплатити при отриманні"
+            value="Сплатити при отриманні"
+          />
+        </div>
+        <div className="w-full h-[129px] mt-8 p-5 rounded-[6px] bg-discount">
+          <h3
+            className="max-w-[204px] xl:max-w-[253px] px-[30px] py-[6.5px] xl:py-[3px] mx-auto text-20extra xl:text-26extra leading-[123%] text-center uppercase 
+          text-transparent bg-white rounded-full"
+          >
+            <span className="text-transparent bg-clip-text bg-discountText">
+              Знижка
+            </span>
+          </h3>
+          <p className="mt-[18px] text-white text-center text-10reg xl:text-12reg leading-[123%]">
+            Якщо ви сплачуєте при отриманні, ми даруємо знижку 10%
+          </p>
+        </div>
       </div>
     </>
   );

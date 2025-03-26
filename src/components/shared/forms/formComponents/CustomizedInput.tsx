@@ -48,13 +48,7 @@ export default function CustomizedInput({
 
   return (
     <label className={`${labelStyles} ${labelClassName}`}>
-      <div
-        className={`${fieldWrapperStyles} ${wrapperClassName} ${
-          errors[fieldName] && touched[fieldName]
-            ? "before:bg-inputError"
-            : "before:bg-transparent group-hover:before:bg-yellow focus-within:before:bg-yellow"
-        }`}
-      >
+      <div className={`${fieldWrapperStyles} ${wrapperClassName}`}>
         <Field
           as={as}
           mask={mask}
@@ -66,7 +60,7 @@ export default function CustomizedInput({
           className={`${fieldStyles} ${fieldClassName} ${
             errors[fieldName] && touched[fieldName]
               ? "border-red"
-              : "border-black focus:border-green"
+              : "border-greyDark focus:border-green"
           }`}
         ></Field>
       </div>

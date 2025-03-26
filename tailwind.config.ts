@@ -56,6 +56,7 @@ export default {
         "24med": ["24px", { fontWeight: "500" }],
         "24semi": ["24px", { fontWeight: "600" }],
         "24bold": ["24px", { fontWeight: "700" }],
+        "26extra": ["26px", { fontWeight: "800" }],
         "28bold": ["28px", { fontWeight: "700" }],
         "32semi": ["32px", { fontWeight: "600" }],
         "32bold": ["32px", { fontWeight: "700" }],
@@ -76,6 +77,7 @@ export default {
         green: "#23921B",
         pink: "#F31260",
         grey: "#A1A1AA",
+        greyDark: "#545454",
         red: "#C65528",
       },
       backgroundImage: {
