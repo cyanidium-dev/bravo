@@ -27,7 +27,7 @@ export default function Hero() {
             Саме тому створили сервіс доставки збалансованого харчування.
           </p>
           <Link
-            href="/menu"
+            href="/menu/all-dishes"
             className="block w-full max-w-[326px] mx-auto md:mx-0"
           >
             <MainButton className="w-full">Зробити замовлення</MainButton>
