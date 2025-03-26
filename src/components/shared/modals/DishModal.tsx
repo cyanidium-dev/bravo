@@ -74,7 +74,7 @@ export default function DishModal({
             )}
           </div>
           <p className="mt-3 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
-            *Страва містить алергени, якщо бажаєте їх прибрати, повідомте про
+            *Страва містить алергени, якщо бажаєте їх прибрати, повідомте про це
             менеджеру під час оформлення замовлення
           </p>
         </div>

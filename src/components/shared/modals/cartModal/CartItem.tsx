@@ -6,14 +6,20 @@ import IconButton from "../../buttons/IconButton";
 
 interface CartItemProps {
   cartItem: CartItem;
+  className?: string;
 }
 
-export default function CartListItem({ cartItem }: CartItemProps) {
+export default function CartListItem({
+  cartItem,
+  className = "",
+}: CartItemProps) {
   const { removeFromCart } = useCartStore();
   const { id, title, price, image } = cartItem;
 
   return (
-    <div className="flex gap-x-[11px] py-[14px] lg:py-4 px-3 border-[1.5px] border-black rounded-[8px]">
+    <li
+      className={`flex gap-x-[11px] py-[14px] lg:py-4 px-3 border-[1.5px] border-black rounded-[8px] ${className}`}
+    >
       <div className="relative aspect-[73/91] lg:aspect-[90/106] w-[73px] lg:w-[90px] overflow-hidden rounded-[6px]">
         <Image
           src={image.url}
@@ -44,6 +50,6 @@ export default function CartListItem({ cartItem }: CartItemProps) {
           className="size-[18px] lg:size-6"
         />
       </IconButton>
-    </div>
+    </li>
   );
 }

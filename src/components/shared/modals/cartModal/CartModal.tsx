@@ -46,7 +46,7 @@ export default function CartModal({
           <CartList />
         </div>
       </div>
-      <CartTotal />
+      <CartTotal setIsPopUpShown={setIsPopUpShown} />
     </div>
   );
 }

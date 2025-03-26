@@ -56,9 +56,11 @@ export default {
         "24med": ["24px", { fontWeight: "500" }],
         "24semi": ["24px", { fontWeight: "600" }],
         "24bold": ["24px", { fontWeight: "700" }],
+        "26extra": ["26px", { fontWeight: "800" }],
         "28bold": ["28px", { fontWeight: "700" }],
         "32semi": ["32px", { fontWeight: "600" }],
         "32bold": ["32px", { fontWeight: "700" }],
+        "36semi": ["36px", { fontWeight: "600" }],
         "36bold": ["36px", { fontWeight: "700" }],
         "40semi": ["40px", { fontWeight: "600" }],
         "40bold": ["40px", { fontWeight: "700" }],
@@ -74,6 +76,9 @@ export default {
         black: "#02170C",
         green: "#23921B",
         pink: "#F31260",
+        grey: "#A1A1AA",
+        greyDark: "#545454",
+        red: "#C65528",
       },
       backgroundImage: {
         article:
@@ -84,6 +89,19 @@ export default {
           "linear-gradient(89.73deg, #062614 1.83%, #0A771C 28.37%, #21AA38 49.89%, #176023 80.53%, #06280C 97.4%)",
       },
       boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
+      keyframes: {
+        rotate: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+      },
+      animation: {
+        rotation: "rotate 1600ms linear infinite",
+      },
     },
   },
   plugins: [
