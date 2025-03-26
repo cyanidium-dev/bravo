@@ -1,4 +1,6 @@
 import CustomizedInput from "@/components/shared/forms/formComponents/CustomizedInput";
+import MaskedInput from "react-text-mask";
+import { PHONE_NUMBER_MASK } from "@/regex/regex";
 
 interface CheckoutFormProps {
   formik: FormikProps<ValuesCheckoutFormType>;
@@ -14,7 +16,7 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
         <h2 className="mb-7 xl:mb-6 text-20med leading-[123%]">
           Особисті дані
         </h2>
-        <div className="flex flex-col gap-y-[14px]">
+        <div className="flex flex-col gap-y-4">
           <CustomizedInput
             fieldName="name"
             label={"Ім’я"}
@@ -25,6 +27,8 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
           />
           <CustomizedInput
             fieldName="phone"
+            as={MaskedInput}
+            mask={PHONE_NUMBER_MASK}
             inputType="tel"
             label={"Номер телефону"}
             required={true}

@@ -1,6 +1,5 @@
 import { ErrorMessage, Field, FormikErrors, FormikTouched } from "formik";
-import React from "react";
-// import MaskedInput from "react-text-mask";
+import MaskedInput from "react-text-mask";
 import { useFormikContext } from "formik";
 
 interface Values {
@@ -14,7 +13,7 @@ interface CustomizedInputProps {
   placeholder: string;
   errors: FormikErrors<Values>;
   touched: FormikTouched<Values>;
-  as?: string;
+  as?: string | typeof MaskedInput;
   labelClassName?: string;
   wrapperClassName?: string;
   fieldClassName?: string;
@@ -30,7 +29,7 @@ const fieldStyles =
   "relative w-full h-full pl-6 pr-5 py-[13.5px] xl:py-3 text-dark placeholder-grey border rounded-[6px] outline-none transition duration-300 ease-out";
 const fieldWrapperStyles =
   "relative group before:content-[''] before:absolute before:top-0 before:left-0 before:rounded-full before:w-full before:h-full before:blur-[3px] before:transition before:duration-300 before:ease-out before:will-change-transform";
-const errorStyles = "absolute bottom-[-14px] left-2 text-10med text-inputError";
+const errorStyles = "absolute bottom-[-16px] left-2 text-10reg text-red";
 
 export default function CustomizedInput({
   errors,

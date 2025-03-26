@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { nameRegex, phoneRegex } from "@/regex/regex";
 
-export const CheckoutValidation = () => {
+export const checkoutValidation = () => {
   const checkoutFormValidationSchema = yup.object().shape({
     name: yup
       .string()
@@ -18,7 +18,11 @@ export const CheckoutValidation = () => {
         (value) => !!value && value.length >= 6 && value[5] === "0"
       )
       .required("Дане поле є обов'язковим до заповнення"),
-    address: yup.string().required("Дане поле є обов'язковим до заповнення"),
+    address: yup
+      .string()
+      .min(10, "Адреса має містити від 10 до 300 символів")
+      .max(300, "Адреса має містити від 10 до 300 символів")
+      .required("Дане поле є обов'язковим до заповнення"),
     payment: yup.string().required("Дане поле є обов'язковим до заповнення"),
   });
 

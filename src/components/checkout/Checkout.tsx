@@ -1,5 +1,6 @@
 "use client";
 import { Form, Formik, FormikHelpers } from "formik";
+import { checkoutValidation } from "@/schemas/checkoutFormValidation";
 import OrderInfo from "./OrderInfo";
 import CheckoutForm from "../shared/forms/CheckoutForm";
 
@@ -18,6 +19,8 @@ export default function Checkout() {
     payment: "Сплатити при отриманні",
   };
 
+  const validationSchema = checkoutValidation();
+
   return (
     <section className="overflow-hidden">
       <div className="container xl:max-w-[1280px] pt-[108px] xl:pt-[136px] pb-[120px] xl:pb-[120px]">
@@ -26,6 +29,7 @@ export default function Checkout() {
         </h1>
         <Formik
           initialValues={initialValues}
+          validationSchema={validationSchema}
           onSubmit={() => console.log("submit form")}
         >
           {(formik) => (
