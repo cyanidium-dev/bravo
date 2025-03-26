@@ -24,7 +24,7 @@ interface CustomizedInputProps {
 }
 
 const labelStyles =
-  "relative flex flex-col w-full before:content-['*'] before:text-red before:absolute before:z-10 before:top-[15px] before:left-4";
+  "relative flex flex-col w-full before:content-['*'] before:text-red before:absolute before:z-[5] before:top-[15px] before:left-4";
 const fieldStyles =
   "relative w-full h-full pl-6 pr-5 py-[13.5px] xl:py-3 text-dark placeholder-grey border rounded-[6px] outline-none transition duration-300 ease-out";
 const fieldWrapperStyles =

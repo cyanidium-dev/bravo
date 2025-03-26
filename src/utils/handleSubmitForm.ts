@@ -83,7 +83,7 @@ export const handleSubmitForm = async <T>(
     setTimeout(() => {
       resetForm();
       clearCart();
-    }, 1000);
+    }, 2000);
   } catch (error) {
     setIsNotificationShown(true);
     return error;

@@ -47,7 +47,7 @@ export default function Checkout() {
   return (
     <section className="overflow-hidden">
       <div className="container xl:max-w-[1280px] pt-[108px] xl:pt-[136px] pb-[120px] xl:pb-[120px]">
-        <h1 className="mb-10 text-24semi xl:text-36semi leading-[123%]">
+        <h1 className="mb-10 xl:mr-2 text-24semi xl:text-36semi leading-[123%]">
           Оформлення замовлення
         </h1>
         <Formik
@@ -56,16 +56,16 @@ export default function Checkout() {
           onSubmit={submitForm}
         >
           {(formik) => (
-            <Form className="flex flex-col xl:flex-row gap-y-10 xl:gap-x-5">
+            <Form className="flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 max-w-[440px] md:max-w-full mx-auto">
               <CheckoutForm formik={formik} />
-              <div className="xl:w-[402px] xl:p-7 xl:border xl:border-black xl:rounded-[8px]">
+              <div className="xl:w-[402px] xl:py-7 xl:pl-7 xl:pr-5 xl:border xl:border-black xl:rounded-[8px]">
                 <OrderInfo />
                 <SubmitButton
                   onClick={formik.submitForm}
                   dirty={formik.dirty}
                   isValid={formik.isValid}
                   isLoading={isLoading}
-                  className="py-[15px] w-full max-w-[346px] mx-auto text-14med"
+                  className="py-[15px] w-full max-w-[346px] mx-auto xl:mr-2 text-14med"
                 >
                   Оформити замовлення
                 </SubmitButton>

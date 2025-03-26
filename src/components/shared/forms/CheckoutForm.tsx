@@ -11,8 +11,8 @@ interface CheckoutFormProps {
 
 export default function CheckoutForm({ formik }: CheckoutFormProps) {
   return (
-    <>
-      <div className="h-fit xl:w-[349px] p-7 border border-black rounded-[8px]">
+    <div className="flex flex-col md:flex-row gap-5">
+      <div className="h-fit md:w-[calc(50%-11px)] xl:w-[349px] p-7 border border-black rounded-[8px]">
         <h2 className="mb-7 xl:mb-6 text-20med leading-[123%]">
           Особисті дані
         </h2>
@@ -49,7 +49,7 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
       <div
         role="group"
         aria-labelledby="radio-group"
-        className="h-fit xl:w-[349px] p-7 border border-black rounded-[8px]"
+        className="h-fit md:w-[calc(50%-11px)] xl:w-[349px] p-7 border border-black rounded-[8px]"
       >
         <h2 id="radio-group" className="mb-7 xl:mb-6 text-20med leading-[123%]">
           Оплата
@@ -75,11 +75,11 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
               Знижка
             </span>
           </h3>
-          <p className="mt-[18px] text-white text-center text-10reg xl:text-12reg leading-[123%]">
+          <p className="max-w-[204px] xl:max-w-[253px] mt-[18px] text-white text-center text-10reg xl:text-12reg leading-[123%] mx-auto">
             Якщо ви сплачуєте готівкою при отриманні, ми даруємо знижку 10%
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
