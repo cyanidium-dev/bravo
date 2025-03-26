@@ -7,7 +7,6 @@ import CheckoutForm from "../shared/forms/CheckoutForm";
 import SubmitButton from "../shared/forms/formComponents/SubmitButton";
 import { useRouter } from "next/navigation";
 import { handleSubmitForm } from "@/utils/handleSubmitForm";
-import { generateOrderNumber } from "@/utils/generateOrderNumber";
 import { useCartStore } from "@/store/cartStore";
 
 export interface ValuesCheckoutFormType {
@@ -31,47 +30,18 @@ export default function Checkout() {
 
   const router = useRouter();
 
-  const { getTotalAmount, cartItems } = useCartStore();
-
   const validationSchema = checkoutValidation();
 
   const submitForm = async (
     values: ValuesCheckoutFormType,
     formikHelpers: FormikHelpers<ValuesCheckoutFormType>
   ) => {
-    const orderNumber = generateOrderNumber();
-    const totalSum = getTotalAmount();
-    // Формуємо дату та час замовлення
-    const now = new Date();
-    // Форматуємо дату
-    const formattedDate = now.toLocaleDateString("uk-UA");
-    // Форматуємо час
-    const formattedTime = now.toLocaleTimeString("uk-UA");
-    // Об'єднуємо дату та час
-    const orderDate = `${formattedDate} ${formattedTime}`;
-    const orderedListProducts = cartItems
-      .map(
-        (cartItem) =>
-          `- ${cartItem.title}, ціна: ${cartItem.price}, кількість: ${cartItem.quantity}`
-      )
-      .join("\n");
-
-    const data =
-      `<b>Замовлення #${orderNumber}</b>\n` +
-      `<b>Дата замовлення:</b> ${orderDate}\n` +
-      `<b>Ім'я:</b> ${values.name.trim()}\n` +
-      `<b>Телефон:</b> ${values.phone.replace(/[^\d+]/g, "")}\n` +
-      `<b>Адреса:</b> ${values.address.trim()}\n` +
-      `<b>Оплата:</b> ${values.payment.trim()}\n` +
-      `<b>Список страв:</b>\n${orderedListProducts}\n` +
-      `<b>Сума замовлення:</b> ${totalSum} грн\n`;
-
     await handleSubmitForm<ValuesCheckoutFormType>(
       formikHelpers,
       setIsLoading,
       setIsError,
       setIsNotificationShown,
-      data,
+      values,
       router
     );
   };
