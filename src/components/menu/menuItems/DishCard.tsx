@@ -42,7 +42,7 @@ export default function DishCard({
       {promotion ? (
         <Marquee
           autoFill={true}
-          className="marquee-absolute top-[15px] h-6 xl:h-9 bg-black"
+          className="marquee-absolute top-[15px] xl:top-5 h-6 xl:h-9 bg-black"
         >
           <span className="text-14bold xl:text-20bold uppercase leading-[123%] text-white">
             Акція
