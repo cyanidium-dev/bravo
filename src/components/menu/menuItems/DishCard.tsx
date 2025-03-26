@@ -40,18 +40,15 @@ export default function DishCard({
         className="relative -z-10 object-cover"
       />
       {promotion ? (
-        <div className="absolute top-[15px]">
-          <Marquee
-            autoFill={true}
-            pauseOnHover={true}
-            className="h-6 xl:h-9 bg-black"
-          >
-            <span className="text-14bold xl:text-20bold uppercase leading-[123%] text-white">
-              Акція
-            </span>
-            &nbsp; &nbsp;
-          </Marquee>
-        </div>
+        <Marquee
+          autoFill={true}
+          className="marquee-absolute top-[15px] h-6 xl:h-9 bg-black"
+        >
+          <span className="text-14bold xl:text-20bold uppercase leading-[123%] text-white">
+            Акція
+          </span>
+          &nbsp; &nbsp;
+        </Marquee>
       ) : null}
       <div className="px-2 xl:px-4 py-[7px] xl:py-5">
         <div className="px-[10px] xl:px-[18px] py-2 xl:py-[15px] rounded-[6px] bg-white bg-opacity-[16%] backdrop-blur-[30px] shadow-inner-custom">
