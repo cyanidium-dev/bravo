@@ -52,18 +52,6 @@ export const GET_MENU_BANNER = `query GetMenuBanner {
 }`;
 
 export const GET_ALL_DISHES = `query GetAllDishes {
-
-  banner {
-    bannerDesk {
-      alt
-      url
-    }
-    bannerMob {
-      alt
-      url
-    }
-  }
-
   allCategories {
     url
     title

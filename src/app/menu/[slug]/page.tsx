@@ -8,6 +8,7 @@ export default async function MenuCategoryPage({
   params,
 }: MenuCategoryPageProps) {
   const { slug } = await params;
+
   return (
     <>
       <Menu slug={slug} />
