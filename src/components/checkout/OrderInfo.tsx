@@ -12,7 +12,7 @@ export default function OrderInfo() {
   }, [getTotalAmount, cartItems]);
 
   return (
-    <div className="xl:p-7 xl:border xl:border-black xl:rounded-[8px]">
+    <div className="">
       <h2 className="mb-6 text-20med leading-[123%]">Ваше замовлення</h2>
       <>
         {cartItems.length > 0 ? (

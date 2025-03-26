@@ -75,6 +75,8 @@ export default {
         black: "#02170C",
         green: "#23921B",
         pink: "#F31260",
+        grey: "#A1A1AA",
+        red: "#C65528",
       },
       backgroundImage: {
         article:
