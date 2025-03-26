@@ -35,6 +35,8 @@ export default function DishesList({ dishesList }: DishesListProps) {
                   dish={dish}
                   setIsDishModalOpened={setIsDishModalOpened}
                   setSelectedDish={setSelectedDish}
+                  className="w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
+                      xl:w-[calc(33.3%-13.3px)]"
                 />
               </Fragment>
             ))}

@@ -52,18 +52,6 @@ export const GET_MENU_BANNER = `query GetMenuBanner {
 }`;
 
 export const GET_ALL_DISHES = `query GetAllDishes {
-
-  banner {
-    bannerDesk {
-      alt
-      url
-    }
-    bannerMob {
-      alt
-      url
-    }
-  }
-
   allCategories {
     url
     title
@@ -81,5 +69,18 @@ export const GET_ALL_DISHES = `query GetAllDishes {
         alt
       }
     }
+  }
+
+    allDishes(filter: {shownOnMain: {eq: "true"}}) {
+    image {
+      alt
+      url
+    }
+    id
+    description
+    calories
+    price
+    title
+    weight
   }
 }`;

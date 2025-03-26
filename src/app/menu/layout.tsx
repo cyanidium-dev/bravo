@@ -1,12 +1,10 @@
-import { GET_ALL_DISHES } from "@/lib/datoCmsQueries";
+import { GET_MENU_BANNER } from "@/lib/datoCmsQueries";
 import { getDataFromCms } from "@/utils/getDataFromCms";
-import { Category } from "@/types/category";
 import Footer from "@/components/shared/footer/Footer";
 import Header from "@/components/shared/header/Header";
 import Hero from "@/components/menu/hero/Hero";
 import Loader from "@/components/shared/loader/Loader";
 import { ReactNode, Suspense } from "react";
-import HydrateStore from "@/store/hydrate-store";
 
 interface CmsResponse {
   data: {
@@ -20,7 +18,6 @@ interface CmsResponse {
         alt: string;
       };
     };
-    allCategories: Category[];
   };
 }
 
@@ -29,11 +26,9 @@ interface LayoutProps {
 }
 
 export default async function Layout({ children }: LayoutProps) {
-  const res: CmsResponse = await getDataFromCms(GET_ALL_DISHES);
+  const res: CmsResponse = await getDataFromCms(GET_MENU_BANNER);
 
   const banner = res?.data?.banner;
-
-  const allCategories = res?.data?.allCategories;
 
   return (
     <div>
@@ -41,7 +36,7 @@ export default async function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         <Suspense fallback={<Loader />}>
           <Hero banner={banner} />
-          <HydrateStore categories={allCategories}> {children}</HydrateStore>
+          {children}
         </Suspense>
       </main>
       <Footer />
