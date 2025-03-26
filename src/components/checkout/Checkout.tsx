@@ -7,7 +7,7 @@ import CheckoutForm from "../shared/forms/CheckoutForm";
 import SubmitButton from "../shared/forms/formComponents/SubmitButton";
 import { useRouter } from "next/navigation";
 import { handleSubmitForm } from "@/utils/handleSubmitForm";
-import { useCartStore } from "@/store/cartStore";
+import NotificationPopUp from "../shared/pop-ups/NotificationPopUp";
 
 export interface ValuesCheckoutFormType {
   name: string;
@@ -20,12 +20,11 @@ const initialValues: ValuesCheckoutFormType = {
   name: "",
   phone: "",
   address: "",
-  payment: "Сплатити при отриманні",
+  payment: "Готівкою при отриманні",
 };
 
 export default function Checkout() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
   const [isNotificationShown, setIsNotificationShown] = useState(false);
 
   const router = useRouter();
@@ -39,7 +38,6 @@ export default function Checkout() {
     await handleSubmitForm<ValuesCheckoutFormType>(
       formikHelpers,
       setIsLoading,
-      setIsError,
       setIsNotificationShown,
       values,
       router
@@ -76,6 +74,10 @@ export default function Checkout() {
           )}
         </Formik>
       </div>
+      <NotificationPopUp
+        isNotificationShown={isNotificationShown}
+        setIsNotificationShown={setIsNotificationShown}
+      />
     </section>
   );
 }

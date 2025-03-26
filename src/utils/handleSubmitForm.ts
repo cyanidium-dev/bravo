@@ -10,7 +10,6 @@ import { ValuesCheckoutFormType } from "@/components/checkout/Checkout";
 export const handleSubmitForm = async <T>(
   { resetForm }: FormikHelpers<T>,
   setIsLoading: Dispatch<SetStateAction<boolean>>,
-  setIsError: Dispatch<SetStateAction<boolean>>,
   setIsNotificationShown: Dispatch<SetStateAction<boolean>>,
   values: ValuesCheckoutFormType,
   router: AppRouterInstance
@@ -80,10 +79,12 @@ export const handleSubmitForm = async <T>(
     });
 
     router.push("/confirmation");
-    resetForm();
-    clearCart();
+
+    setTimeout(() => {
+      resetForm();
+      clearCart();
+    }, 1000);
   } catch (error) {
-    setIsError(true);
     setIsNotificationShown(true);
     return error;
   } finally {

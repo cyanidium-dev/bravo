@@ -65,8 +65,8 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
           />
           <RadioButtonInput
             fieldName="payment"
-            label="Сплатити при отриманні"
-            value="Сплатити при отриманні"
+            label="Готівкою при отриманні"
+            value="Готівкою при отриманні"
           />
         </div>
         <div className="w-full h-[129px] mt-8 p-5 rounded-[6px] bg-discount">

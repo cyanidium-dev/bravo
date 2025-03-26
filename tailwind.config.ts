@@ -89,6 +89,19 @@ export default {
           "linear-gradient(89.73deg, #062614 1.83%, #0A771C 28.37%, #21AA38 49.89%, #176023 80.53%, #06280C 97.4%)",
       },
       boxShadow: { hero: "0px 2.25px 7.09px 0px #FFFFFF" },
+      keyframes: {
+        rotate: {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
+      },
+      animation: {
+        rotation: "rotate 1600ms linear infinite",
+      },
     },
   },
   plugins: [
