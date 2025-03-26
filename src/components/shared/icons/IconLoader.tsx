@@ -2,7 +2,7 @@ export default function IconLoader() {
   return (
     <svg
       aria-hidden="true"
-      className="ml-4 w-6 h-6 text-white/50 animate-rotation fill-green"
+      className="ml-4 w-[18px] h-[18px] text-white/50 animate-rotation fill-green"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

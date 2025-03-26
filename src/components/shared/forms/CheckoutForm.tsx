@@ -7,9 +7,6 @@ import { ValuesCheckoutFormType } from "@/components/checkout/Checkout";
 
 interface CheckoutFormProps {
   formik: FormikProps<ValuesCheckoutFormType>;
-  // setIsLoading: Dispatch<SetStateAction<boolean>>;
-  // setIsError: Dispatch<SetStateAction<boolean>>;
-  // setIsNotificationShown: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function CheckoutForm({ formik }: CheckoutFormProps) {
@@ -79,7 +76,7 @@ export default function CheckoutForm({ formik }: CheckoutFormProps) {
             </span>
           </h3>
           <p className="mt-[18px] text-white text-center text-10reg xl:text-12reg leading-[123%]">
-            Якщо ви сплачуєте при отриманні, ми даруємо знижку 10%
+            Якщо ви сплачуєте готівкою при отриманні, ми даруємо знижку 10%
           </p>
         </div>
       </div>
