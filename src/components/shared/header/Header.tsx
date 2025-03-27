@@ -28,7 +28,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 120);
+    setIsScrolled(latest > 80);
   });
 
   return (
