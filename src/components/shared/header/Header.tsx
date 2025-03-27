@@ -28,22 +28,24 @@ export default function Header({ variant = "white" }: HeaderProps) {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 80);
+    setIsScrolled(latest > 100);
   });
 
   return (
     <>
       <Navbar
         shouldHideOnScroll
-        isBlurred={isScrolled ? true : false}
+        isBlurred={false}
         maxWidth="2xl"
         classNames={{ wrapper: "px-0" }}
-        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform ${
+        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform transition duration-500 ease-out ${
           variant === "white"
             ? `text-white ${
-                isScrolled ? "bg-black bg-opacity-30" : "bg-transparent"
+                isScrolled
+                  ? "bg-black bg-opacity-30 backdrop-blur-lg"
+                  : "bg-transparent bg-opacity-0 backdrop-blur-none"
               }`
-            : "text-black"
+            : "text-black backdrop-blur-lg"
         }`}
       >
         <div className="flex items-center container xl:max-w-[1280px] py-4 lg:py-6 ">
