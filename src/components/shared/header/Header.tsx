@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import SecondaryButton from "../buttons/SecondaryButton";
@@ -21,17 +22,27 @@ interface HeaderProps {
 export default function Header({ variant = "white" }: HeaderProps) {
   const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
   const [isCartModalOpened, setIsCartModalOpened] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const toggleHeaderMenuOpen = () => setIsHeaderMenuOpened(!isHeaderMenuOpened);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 120);
+  });
 
   return (
     <>
       <Navbar
         shouldHideOnScroll
+        isBlurred={isScrolled ? true : false}
         maxWidth="2xl"
         classNames={{ wrapper: "px-0" }}
-        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform backdrop-blur-lg ${
+        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform ${
           variant === "white"
-            ? "text-white bg-black bg-opacity-30"
+            ? `text-white ${
+                isScrolled ? "bg-black bg-opacity-30" : "bg-transparent"
+              }`
             : "text-black"
         }`}
       >
