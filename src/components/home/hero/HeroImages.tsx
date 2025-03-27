@@ -6,7 +6,7 @@ export default function HeroImages() {
   return (
     <>
       <AnimatedWrapper
-        animation={fadeInAnimation({ scale: 0.8, delay: 2.8 })}
+        animation={fadeInAnimation({ scale: 0.8, y: 20, x: 20, delay: 2.6 })}
         className="absolute -z-10 top-[107px] left-[-52px] w-[111px] h-auto"
       >
         <Image
@@ -18,7 +18,7 @@ export default function HeroImages() {
         />
       </AnimatedWrapper>
       <AnimatedWrapper
-        animation={fadeInAnimation({ scale: 0.8, delay: 1.6 })}
+        animation={fadeInAnimation({ scale: 0.8, y: 50, delay: 2.6 })}
         className="absolute -z-10 bottom-[-135px] xl:bottom-[-115px] left-[-110px] xl:left-auto xl:right-[-132px] w-[275px] h-auto"
       >
         <Image
@@ -38,7 +38,7 @@ export default function HeroImages() {
           className="relative -z-10 w-full h-full backdrop-blur-[16px] rounded-full bg-white bg-opacity-[12%] shadow-inner-custom"
         ></AnimatedWrapper>
         <AnimatedWrapper
-          animation={fadeInAnimation({ scale: 0.8, delay: 2.2 })}
+          animation={fadeInAnimation({ scale: 0.8, delay: 1.8 })}
           className="xl:hidden absolute -z-10 top-[244px] right-[-38px] w-[100px] h-auto"
         >
           <Image
@@ -50,7 +50,7 @@ export default function HeroImages() {
           />
         </AnimatedWrapper>
         <AnimatedWrapper
-          animation={fadeInAnimation({ scale: 0.8, delay: 2.2 })}
+          animation={fadeInAnimation({ x: -50, scale: 0.8, delay: 1.6 })}
           className="hidden xl:block absolute -z-10 top-[686px] left-[874px] w-[226px] h-auto"
         >
           {" "}
@@ -77,7 +77,7 @@ export default function HeroImages() {
         />
       </AnimatedWrapper>
       <AnimatedWrapper
-        animation={fadeInAnimation({ scale: 0.8, delay: 1.6 })}
+        animation={fadeInAnimation({ x: -50, y: -50, scale: 0.8, delay: 1.6 })}
         className="hidden xl:block absolute -z-30 top-[491px] left-[530px] w-[307px] h-auto"
       >
         <Image
