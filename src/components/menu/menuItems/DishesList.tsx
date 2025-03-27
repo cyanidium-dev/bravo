@@ -11,20 +11,15 @@ interface DishesListProps {
   dishesList: Dish[];
 }
 
-const SECTION_ID = "dishes-list";
-
 export default function DishesList({ dishesList }: DishesListProps) {
   const [isDishModalOpened, setIsDishModalOpened] = useState(false);
   const [selectedDish, setSelectedDish] = useState<Dish>(dishesList[0]);
 
   return (
-    <div
-      id={SECTION_ID}
-      className="flex flex-col justify-center items-center w-full"
-    >
+    <div className="flex flex-col justify-center items-center w-full">
       <Pagination
         items={dishesList}
-        scrollTargetId={SECTION_ID}
+        scrollTargetId="menu"
         useItemsPerPage={useDishesPerPage}
         className="w-full mb-[26px] xl:mb-[70px]"
         renderItems={(currentItems) => (

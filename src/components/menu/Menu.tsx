@@ -22,7 +22,7 @@ export default function Menu({ slug }: MenuProps) {
       : categories.find((category) => category?.url === slug)?.dishes;
 
   return (
-    <section className="overflow-hidden">
+    <section id="menu" className="overflow-hidden">
       <MenuNavigationMob currentCategory={slug} />
       <div className="container w-full xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px] overflow-auto xl:overflow-visible">
         <MenuNavigationDesk currentCategory={slug} />

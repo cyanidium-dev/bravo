@@ -38,7 +38,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
         isBlurred={false}
         maxWidth="2xl"
         classNames={{ wrapper: "px-0" }}
-        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform transition duration-500 ease-out ${
+        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform transition duration-700 ease-out ${
           variant === "white"
             ? `text-white ${
                 isScrolled
