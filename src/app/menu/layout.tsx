@@ -6,27 +6,12 @@ import Hero from "@/components/menu/hero/Hero";
 import Loader from "@/components/shared/loader/Loader";
 import { ReactNode, Suspense } from "react";
 
-interface CmsResponse {
-  data: {
-    banner: {
-      bannerMob: {
-        url: string;
-        alt: string;
-      };
-      bannerDesk: {
-        url: string;
-        alt: string;
-      };
-    };
-  };
-}
-
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default async function Layout({ children }: LayoutProps) {
-  const res: CmsResponse = await getDataFromCms(GET_MENU_BANNER);
+  const res = await getDataFromCms(GET_MENU_BANNER);
 
   const banner = res?.data?.banner;
 
