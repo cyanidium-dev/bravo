@@ -15,7 +15,7 @@ export default function AnimatedWrapper({
   as: Component = motion.div, // За замовчуванням анімований div
   className = "",
   animation = fadeInAnimation({}),
-  viewport = { once: true },
+  viewport = { once: true, amount: 0.2 },
   children,
 }: AnimatedWrapperProps) {
   return (
