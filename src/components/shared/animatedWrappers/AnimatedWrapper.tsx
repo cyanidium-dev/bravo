@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants, AnimatePresence } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ElementType, PropsWithChildren } from "react";
 import { fadeInAnimation } from "@/helpers/animation";
 
@@ -19,16 +19,14 @@ export default function AnimatedWrapper({
   children,
 }: AnimatedWrapperProps) {
   return (
-    <AnimatePresence mode="wait">
-      <Component
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        variants={animation}
-        className={className}
-      >
-        {children}
-      </Component>
-    </AnimatePresence>
+    <Component
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      variants={animation}
+      className={className}
+    >
+      {children}
+    </Component>
   );
 }

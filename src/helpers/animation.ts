@@ -18,7 +18,7 @@ export const fadeInAnimation = ({
   },
   exit: {
     opacity: 0,
-    x: x * -0.5, // Невеликий зміщений вихід для динамічності
+    x: x * -0.5,
     y: y * -0.5,
     scale: 0.95,
     transition: { duration: 0.2, ease: "easeInOut" },
@@ -39,11 +39,26 @@ export const listVariants = ({
   },
 });
 
-export const itemVariants = ({ x = 80, duration = 1 } = {}) => ({
-  hidden: { opacity: 0, x },
+export const cartItemVariants = {
+  hidden: { opacity: 0, y: 0 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { duration },
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
   },
-});
+  exit: {
+    opacity: 0,
+    x: 30,
+    transition: { duration: 0.3, ease: "easeIn" },
+  },
+};
+
+export const cartModalVariants = {
+  hidden: { x: "100%", opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+  exit: {
+    x: "100%",
+    opacity: 0,
+    transition: { duration: 0.6, ease: "easeIn" },
+  },
+};

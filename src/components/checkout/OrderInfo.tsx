@@ -22,11 +22,10 @@ export default function OrderInfo() {
       scrollbar-track-rounded-full scrollbar-thumb-transparent scrollbar-track-green/70"
           >
             {cartItems.map((cartItem, idx) => (
-              <CartListItem
-                key={idx}
-                cartItem={cartItem}
-                className="md:w-[calc(50%-10px)] xl:w-full"
-              />
+              <li key={idx} className="md:w-[calc(50%-10px)] xl:w-full">
+                {" "}
+                <CartListItem cartItem={cartItem} />
+              </li>
             ))}
           </ul>
         ) : (

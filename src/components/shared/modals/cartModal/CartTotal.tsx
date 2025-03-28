@@ -3,6 +3,8 @@ import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import Link from "next/link";
 import MainButton from "../../buttons/MainButton";
 import { useCartStore } from "@/store/cartStore";
+import AnimatedWrapper from "../../animatedWrappers/AnimatedWrapper";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface CartTotalProps {
   setIsPopUpShown: Dispatch<SetStateAction<boolean>>;
@@ -17,7 +19,10 @@ export default function CartTotal({ setIsPopUpShown }: CartTotalProps) {
   }, [getTotalAmount, cartItems]);
 
   return (
-    <div className="fixed bottom-0 left-0 w-full px-[30px] lg:px-9 py-9 bg-black rounded-tr-[16px] rounded-tl-[16px]">
+    <AnimatedWrapper
+      animation={fadeInAnimation({ y: 30, delay: 1.2 })}
+      className="fixed bottom-0 right-0 w-full max-w-[515px] px-[30px] lg:px-9 py-9 bg-black rounded-tr-[16px] rounded-tl-[16px]"
+    >
       <div className="flex flex-row items-center justify-between mb-8 lg:mb-7 text-white">
         <p>Загальна вартість</p>
         <p className="text-20med lg:text-24med leading-[123%]">
@@ -29,6 +34,6 @@ export default function CartTotal({ setIsPopUpShown }: CartTotalProps) {
           Оформити замовлення
         </MainButton>
       </Link>
-    </div>
+    </AnimatedWrapper>
   );
 }
