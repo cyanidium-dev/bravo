@@ -3,6 +3,7 @@ import { useState } from "react";
 import DishCard from "@/components/menu/menuItems/DishCard";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
+import CartModal from "@/components/shared/modals/cartModal/CartModal";
 import { Dish } from "@/types/dish";
 import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
@@ -16,6 +17,7 @@ export default function PromotionListDesk({
   promotion,
 }: PromotionListDeskProps) {
   const [isDishModalOpened, setIsDishModalOpened] = useState(false);
+  const [isCartModalOpened, setIsCartModalOpened] = useState(false);
   const [selectedDish, setSelectedDish] = useState<Dish>(promotion[0]);
 
   return (
@@ -41,10 +43,18 @@ export default function PromotionListDesk({
         dish={selectedDish}
         isDishModalOpened={isDishModalOpened}
         setIsDishModalOpened={setIsDishModalOpened}
+        setIsCartModalOpened={setIsCartModalOpened}
+      />
+      <CartModal
+        isPopUpShown={isCartModalOpened}
+        setIsPopUpShown={setIsCartModalOpened}
       />
       <Backdrop
-        isVisible={isDishModalOpened}
-        onClick={() => setIsDishModalOpened(false)}
+        isVisible={isDishModalOpened || isCartModalOpened}
+        onClick={() => {
+          setIsDishModalOpened(false);
+          setIsCartModalOpened(false);
+        }}
       />
     </>
   );
