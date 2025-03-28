@@ -19,7 +19,7 @@ export default function NoDishes({ children, currentCategory }: NoDishesProps) {
 
   return (
     <AnimatedWrapper
-      animation={fadeInAnimation({ y: 30 })}
+      animation={fadeInAnimation({ y: 30, delay: 0.4 })}
       key={key}
       className="mx-auto pt-[200px] pb-[120px]"
     >
