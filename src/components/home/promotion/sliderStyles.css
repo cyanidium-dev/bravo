@@ -1,6 +1,6 @@
 .swiper {
   padding-left: 30px;
-  padding-bottom: 74px;
+  padding-bottom: 84px;
 }
 
 .swiper-slide {
@@ -11,22 +11,22 @@
 }
 
 .swiper-button-prev {
-  left: calc(50% - 54px);
+  left: calc(50% - 100px);
 }
 
 .swiper-button-next {
-  right: calc(50% - 54px);
+  right: calc(50% - 100px);
 }
 
 .swiper-button-next,
 .swiper-button-prev {
-  top: calc(100% - 22px);
-  width: 42px;
-  height: 42px;
+  top: calc(100% - 32px);
+  width: 52px;
+  height: 52px;
   transition: filter 300ms ease-out;
   border-width: 1.33px;
   border-color: var(--foreground);
-  border-radius: 12px;
+  border-radius: 16px;
   background-color: var(--foreground);
 }
 
