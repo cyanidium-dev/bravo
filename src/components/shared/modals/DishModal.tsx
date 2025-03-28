@@ -5,6 +5,8 @@ import { Dish } from "@/types/dish";
 import GreenButton from "@/components/shared/buttons/GreenButton";
 import { useCartStore } from "@/store/cartStore";
 import Counter from "./Counter";
+import AnimatedWrapper from "../animatedWrappers/AnimatedWrapper";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface DishModalProps {
   dish: Dish | null;
@@ -61,30 +63,41 @@ export default function DishModal({
             <p className="mb-10 lg:mb-9 text-12light lg:text-14light leading-[123%]">
               {description}
             </p>
-
-            {isDishInCart ? (
-              <>
-                <Counter id={id} className="w-full px-6" />
-                <GreenButton
-                  onClick={() => {
-                    setIsDishModalOpened(false);
-                    setIsCartModalOpened(true);
+            <AnimatePresence>
+              {isDishInCart ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.6, delay: 0.1 },
                   }}
-                  className="mt-3 w-full py-[11px]"
+                  exit={{ opacity: 0, transition: { duration: 0.3 } }}
                 >
-                  Перейти до кошика
-                </GreenButton>
-              </>
-            ) : (
-              <GreenButton
-                onClick={() =>
-                  addToCart({ id, title, price, image, quantity: 1 })
-                }
-                className="w-full text-12med py-[10px] lg:py-3"
-              >
-                Додати в кошик
-              </GreenButton>
-            )}
+                  <Counter id={id} className="w-full px-6" />
+                  <GreenButton
+                    onClick={() => {
+                      setIsDishModalOpened(false);
+                      setIsCartModalOpened(true);
+                    }}
+                    className="mt-3 w-full text-12med py-[10px] lg:py-3"
+                  >
+                    Перейти до кошика
+                  </GreenButton>
+                </motion.div>
+              ) : (
+                <AnimatedWrapper>
+                  <GreenButton
+                    onClick={() =>
+                      addToCart({ id, title, price, image, quantity: 1 })
+                    }
+                    className="w-full text-12med py-[10px] lg:py-3"
+                  >
+                    Додати в кошик
+                  </GreenButton>
+                </AnimatedWrapper>
+              )}
+            </AnimatePresence>
           </div>
           <p className="mt-3 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
             *Страва містить алергени, якщо бажаєте їх прибрати, повідомте про це

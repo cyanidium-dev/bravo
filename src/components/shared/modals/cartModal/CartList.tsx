@@ -38,10 +38,10 @@ export default function CartList() {
           animate={{
             opacity: 1,
             y: 0,
-            transition: { duration: 0.5, delay: 0.9 },
+            transition: { duration: 1, delay: 0.9 },
           }}
           exit={{ opacity: 0, y: 30, transition: { duration: 0.3 } }}
-          className="text-16reg lg:text-18reg leading-[123%] text-center py-[100px] text-black/50"
+          className="text-16reg lg:text-18reg leading-[123%] text-center py-[140px] text-black/50"
         >
           Ваш кошик порожній
         </motion.div>
