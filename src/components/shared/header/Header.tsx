@@ -34,25 +34,23 @@ export default function Header({ variant = "white" }: HeaderProps) {
 
   return (
     <>
-      <AnimatedWrapper
-        className={`fixed top-0 left-0 z-10 justify-center w-dvw`}
+      <Navbar
+        shouldHideOnScroll
+        isBlurred={false}
+        maxWidth="2xl"
+        classNames={{ wrapper: "px-0" }}
+        className={`fixed top-0 left-0 z-10 justify-center w-dvw will-change-transform transition duration-700 ease-out  ${
+          variant === "white"
+            ? `text-white ${
+                isScrolled
+                  ? "bg-black bg-opacity-30 backdrop-blur-lg"
+                  : "bg-transparent bg-opacity-0 backdrop-blur-none"
+              }`
+            : "text-black backdrop-blur-lg"
+        }`}
       >
-        <Navbar
-          shouldHideOnScroll
-          isBlurred={false}
-          maxWidth="2xl"
-          classNames={{ wrapper: "px-0" }}
-          className={` will-change-transform transition duration-700 ease-out  ${
-            variant === "white"
-              ? `text-white ${
-                  isScrolled
-                    ? "bg-black bg-opacity-30 backdrop-blur-lg"
-                    : "bg-transparent bg-opacity-0 backdrop-blur-none"
-                }`
-              : "text-black backdrop-blur-lg"
-          }`}
-        >
-          <div className="flex items-center container xl:max-w-[1280px] py-4 lg:py-6 ">
+        <AnimatedWrapper className="container xl:max-w-[1280px] py-4 lg:py-6">
+          <div className="flex items-center  ">
             <NavbarBrand className="mr-10 xl:mr-20">
               <Logo className="text-24bold leading-[120%]" />
             </NavbarBrand>
@@ -97,8 +95,9 @@ export default function Header({ variant = "white" }: HeaderProps) {
               setIsCartModalOpened={setIsCartModalOpened}
             />
           </div>
-        </Navbar>
-      </AnimatedWrapper>
+        </AnimatedWrapper>
+      </Navbar>
+
       <CartModal
         isPopUpShown={isCartModalOpened}
         setIsPopUpShown={setIsCartModalOpened}
