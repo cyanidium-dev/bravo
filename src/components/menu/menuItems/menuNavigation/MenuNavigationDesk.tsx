@@ -1,9 +1,6 @@
 "use client";
 import { useMenuStore } from "@/store/menuStore";
 import MenuItemDesk from "./MenuItemDesk";
-import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
-import { motion } from "framer-motion";
-import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationDeskProps {
   currentCategory: string;
@@ -25,12 +22,7 @@ export default function MenuNavigationDesk({
 
   return (
     <nav className="hidden xl:block">
-      <AnimatedWrapper
-        as={motion.ul}
-        viewport={{ once: true, amount: 0.4 }}
-        animation={fadeInAnimation({ x: -50 })}
-        className="flex flex-col gap-y-3"
-      >
+      <ul className="flex flex-col gap-y-3">
         {sortedCategories.map((category, idx) => (
           <MenuItemDesk
             key={idx}
@@ -38,7 +30,7 @@ export default function MenuNavigationDesk({
             category={category}
           />
         ))}
-      </AnimatedWrapper>
+      </ul>
     </nav>
   );
 }

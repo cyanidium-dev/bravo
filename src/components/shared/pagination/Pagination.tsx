@@ -1,5 +1,5 @@
 "use client";
-import { useState, useLayoutEffect, ReactNode } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import ArrowInCircleIcon from "../icons/ArrowinCircleIcon";
 import { useSearchParams, useRouter } from "next/navigation";
 
@@ -31,7 +31,7 @@ export default function Pagination<T>({
     currentPage * itemsPerPage
   );
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setCurrentPage(parseInt(searchParams.get("page") || "1", 10));
   }, [searchParams]);
 

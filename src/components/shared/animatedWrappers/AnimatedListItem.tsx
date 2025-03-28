@@ -11,7 +11,7 @@ interface AnimatedListItemProps {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
@@ -26,12 +26,7 @@ export default function AnimatedListItem({
   onClick,
 }: AnimatedListItemProps) {
   return (
-    <motion.li
-      variants={variants}
-      viewport={{ once: true }}
-      className={className}
-      onClick={onClick}
-    >
+    <motion.li variants={variants} className={className} onClick={onClick}>
       {children}
     </motion.li>
   );
