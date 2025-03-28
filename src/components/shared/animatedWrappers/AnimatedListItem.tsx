@@ -1,10 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { Variants } from "framer-motion";
 
 interface AnimatedListItemProps {
   children: ReactNode;
   className: string;
+  variants?: Variants;
   onClick?: () => void;
 }
 
@@ -20,10 +22,16 @@ const itemVariants = {
 export default function AnimatedListItem({
   children,
   className = "",
+  variants = itemVariants,
   onClick,
 }: AnimatedListItemProps) {
   return (
-    <motion.li variants={itemVariants} className={className} onClick={onClick}>
+    <motion.li
+      variants={variants}
+      viewport={{ once: true }}
+      className={className}
+      onClick={onClick}
+    >
       {children}
     </motion.li>
   );

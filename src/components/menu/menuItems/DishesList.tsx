@@ -6,6 +6,9 @@ import { useDishesPerPage } from "@/hooks/useDishesPerPage";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import CartModal from "@/components/shared/modals/cartModal/CartModal";
+import { motion } from "framer-motion";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { Dish } from "@/types/dish";
 
 interface DishesListProps {
@@ -25,7 +28,15 @@ export default function DishesList({ dishesList }: DishesListProps) {
         useItemsPerPage={useDishesPerPage}
         className="w-full mb-[26px] xl:mb-[70px]"
         renderItems={(currentItems) => (
-          <ul className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0">
+          <AnimatedWrapper
+            as={motion.ul}
+            viewport={{ once: true, amount: 0.4 }}
+            animation={listVariants({
+              staggerChildren: 0.5,
+              delayChildren: 1,
+            })}
+            className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0"
+          >
             {currentItems.map((dish, idx) => (
               <Fragment key={idx}>
                 <DishCard
@@ -37,7 +48,7 @@ export default function DishesList({ dishesList }: DishesListProps) {
                 />
               </Fragment>
             ))}
-          </ul>
+          </AnimatedWrapper>
         )}
       />
       <DishModal
