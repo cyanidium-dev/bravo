@@ -41,11 +41,15 @@ export const GET_ARTICLE_BY_SLUG = `query GetArticle($code: String!) {
 export const GET_MENU_BANNER = `query GetMenuBanner {
   banner {
     bannerDesk {
-      alt
       url
     }
     bannerMob {
-      alt
+      url
+    }
+    bannerMobxl {
+      url
+    }
+    bannerTab {
       url
     }
   }
