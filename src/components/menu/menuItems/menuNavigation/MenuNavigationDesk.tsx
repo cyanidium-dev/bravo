@@ -3,7 +3,7 @@ import { useMenuStore } from "@/store/menuStore";
 import MenuItemDesk from "./MenuItemDesk";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { motion } from "framer-motion";
-import { fadeInAnimation, listVariants } from "@/helpers/animation";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationDeskProps {
   currentCategory: string;

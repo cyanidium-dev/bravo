@@ -33,7 +33,7 @@ export default function DishesList({ dishesList }: DishesListProps) {
             viewport={{ once: true, amount: 0.4 }}
             animation={listVariants({
               staggerChildren: 0.5,
-              delayChildren: 1,
+              delayChildren: 0.4,
             })}
             className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0"
           >
