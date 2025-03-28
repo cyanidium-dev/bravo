@@ -9,6 +9,8 @@ import { Dish } from "@/types/dish";
 import DishCard from "@/components/menu/menuItems/DishCard";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface PromotionListMobProps {
   promotion: Dish[];
@@ -19,7 +21,10 @@ export default function PromotionListMob({ promotion }: PromotionListMobProps) {
   const [selectedDish, setSelectedDish] = useState<Dish>(promotion[0]);
 
   return (
-    <div className="sm:hidden">
+    <AnimatedWrapper
+      className="sm:hidden"
+      animation={fadeInAnimation({ y: 50 })}
+    >
       <Swiper
         slidesPerView="auto"
         spaceBetween={20}
@@ -49,6 +54,6 @@ export default function PromotionListMob({ promotion }: PromotionListMobProps) {
         isVisible={isDishModalOpened}
         onClick={() => setIsDishModalOpened(false)}
       />
-    </div>
+    </AnimatedWrapper>
   );
 }
