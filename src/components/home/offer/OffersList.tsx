@@ -28,7 +28,7 @@ export default function OffersList() {
     <div className="flex justify-center items-center">
       <AnimatedWrapper
         as={motion.ul}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.3 }}
         animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.4 })}
         className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full"
       >
