@@ -1,3 +1,5 @@
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
+
 interface OfferItemProps {
   offer: {
     subtitle: string;
@@ -10,7 +12,7 @@ interface OfferItemProps {
 export default function OfferItem({ offer }: OfferItemProps) {
   const { subtitle, description, quantity, text } = offer;
   return (
-    <li className="flex flex-col justify-between max-w-[580px] md:w-[calc(33%-13.3px)] min-h-full">
+    <AnimatedListItem className="flex flex-col justify-between max-w-[580px] md:w-[calc(33%-13.3px)] min-h-full">
       <div>
         <h3 className="mb-[14px] text-24bold xl:text-36bold leading-[125%] text-white uppercase text-center">
           {subtitle}
@@ -27,6 +29,6 @@ export default function OfferItem({ offer }: OfferItemProps) {
           {text}
         </p>
       </div>
-    </li>
+    </AnimatedListItem>
   );
 }
