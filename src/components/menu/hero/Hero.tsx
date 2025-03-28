@@ -18,7 +18,6 @@ interface HeroProps {
 }
 
 export default function Hero({ banner }: HeroProps) {
-  console.log(banner);
   if (!banner) {
     return null;
   }
