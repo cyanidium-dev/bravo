@@ -26,7 +26,12 @@ export default function AnimatedListItem({
   onClick,
 }: AnimatedListItemProps) {
   return (
-    <motion.li variants={variants} className={className} onClick={onClick}>
+    <motion.li
+      variants={variants}
+      viewport={{ once: true }}
+      className={className}
+      onClick={onClick}
+    >
       {children}
     </motion.li>
   );
