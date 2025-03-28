@@ -6,7 +6,7 @@ export default function HeroImages() {
   return (
     <>
       <AnimatedWrapper
-        animation={fadeInAnimation({ scale: 0.8, y: 20, x: 20, delay: 2.6 })}
+        animation={fadeInAnimation({ scale: 0.8, y: 20, x: 20, delay: 2 })}
         className="absolute -z-10 top-[107px] left-[-52px] w-[111px] h-auto"
       >
         <Image
@@ -18,7 +18,7 @@ export default function HeroImages() {
         />
       </AnimatedWrapper>
       <AnimatedWrapper
-        animation={fadeInAnimation({ scale: 0.8, y: 50, delay: 2.6 })}
+        animation={fadeInAnimation({ scale: 0.8, y: 50, delay: 2 })}
         className="absolute -z-10 bottom-[-135px] xl:bottom-[-115px] left-[-110px] xl:left-auto xl:right-[-132px] w-[275px] h-auto"
       >
         <Image
