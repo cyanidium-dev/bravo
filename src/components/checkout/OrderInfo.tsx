@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/cartStore";
 import CartListItem from "../shared/modals/cartModal/CartItem";
+import { AnimatePresence, motion } from "framer-motion";
+import { cartItemVariants } from "@/helpers/animation";
 
 export default function OrderInfo() {
   const { getTotalAmount, cartItems } = useCartStore();
@@ -12,21 +14,30 @@ export default function OrderInfo() {
   }, [getTotalAmount, cartItems]);
 
   return (
-    <div className="">
+    <>
       <h2 className="mb-6 text-20med leading-[123%]">Ваше замовлення</h2>
       <>
         {cartItems.length > 0 ? (
           <ul
             className="flex flex-col md:flex-row md:flex-wrap xl:flex-col xl:flex-nowrap gap-y-4 xl:gap-y-[15px] md:gap-x-5 
-          xl:h-[294px] xl:overflow-y-auto xl:pr-2 scrollbar scrollbar-w-[3px] scrollbar-thumb-rounded-full 
+          xl:h-[294px] overflow-hidden xl:overflow-y-auto xl:pr-2 scrollbar scrollbar-w-[3px] scrollbar-thumb-rounded-full 
       scrollbar-track-rounded-full scrollbar-thumb-transparent scrollbar-track-green/70"
           >
-            {cartItems.map((cartItem, idx) => (
-              <li key={idx} className="md:w-[calc(50%-10px)] xl:w-full">
-                {" "}
-                <CartListItem cartItem={cartItem} />
-              </li>
-            ))}
+            <AnimatePresence>
+              {cartItems.map((cartItem) => (
+                <motion.li
+                  variants={cartItemVariants}
+                  key={cartItem.id}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  layout
+                  className="xl:mr-2 md:w-[calc(50%-10px)] xl:w-full flex gap-x-[11px] py-[14px] lg:py-4 px-3 border-[1.5px] border-black rounded-[8px]"
+                >
+                  <CartListItem cartItem={cartItem} />
+                </motion.li>
+              ))}
+            </AnimatePresence>
           </ul>
         ) : (
           <div className="text-16reg lg:text-18reg leading-[123%] text-center py-[100px] text-black/50">
@@ -40,6 +51,6 @@ export default function OrderInfo() {
           </p>
         </div>
       </>
-    </div>
+    </>
   );
 }
