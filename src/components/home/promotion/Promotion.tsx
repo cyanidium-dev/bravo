@@ -12,13 +12,13 @@ export default function Promotion() {
       <div className="container xl:max-w-[1280px]">
         <div className="flex flex-col gap-y-9 md:flex-row items-center justify-between mb-8 lg:mb-10">
           <AnimatedWrapper
-            animation={fadeInAnimation({ x: -50 })}
+            animation={fadeInAnimation({ y: 30 })}
             className="text-center md:text-left"
           >
             <SectionTitle>Акційні товари</SectionTitle>
           </AnimatedWrapper>
           <AnimatedWrapper
-            animation={fadeInAnimation({ x: 50 })}
+            animation={fadeInAnimation({ y: 30, delay: 0.4 })}
             className="w-full max-w-[326px] mx-auto md:mx-0"
           >
             <Link href="/menu/all-dishes">

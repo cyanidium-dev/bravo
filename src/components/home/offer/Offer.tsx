@@ -12,7 +12,7 @@ export default function Offer() {
         <div className="md:flex md:justify-between mb-[225px] md:mb-[147px]">
           <OffersImages />
           <AnimatedWrapper
-            animation={fadeInAnimation({ x: -50 })}
+            animation={fadeInAnimation({ y: 30 })}
             className="md:max-w-[412px] xl:max-w-[512px] mb-5 lg:mb-0"
           >
             <SectionTitle variant="white">
@@ -21,7 +21,7 @@ export default function Offer() {
           </AnimatedWrapper>
           <AnimatedWrapper
             as={motion.p}
-            animation={fadeInAnimation({ x: 50 })}
+            animation={fadeInAnimation({ y: 30 })}
             className="md:max-w-[202px] text-white"
           >
             Ми – це не просто доставка їжі, а ваш партнер у здоровому

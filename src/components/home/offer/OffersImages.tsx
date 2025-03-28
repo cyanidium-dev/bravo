@@ -18,7 +18,7 @@ export default function OffersImages() {
         />
       </AnimatedWrapper>
       <AnimatedWrapper
-        animation={fadeInAnimation({ delay: 0.8 })}
+        animation={fadeInAnimation({ scale: 0.8, delay: 0.8 })}
         className="md:hidden absolute top-[195px] right-[-42px] lg:right-[272px]"
       >
         <Image

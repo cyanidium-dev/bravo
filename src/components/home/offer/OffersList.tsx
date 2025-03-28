@@ -29,7 +29,7 @@ export default function OffersList() {
       <AnimatedWrapper
         as={motion.ul}
         viewport={{ once: true, amount: 0.3 }}
-        animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.4 })}
+        animation={listVariants({ staggerChildren: 0.5 })}
         className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full"
       >
         {offersList.map((offer, idx) => (

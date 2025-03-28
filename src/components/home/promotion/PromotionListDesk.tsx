@@ -25,7 +25,7 @@ export default function PromotionListDesk({
       <AnimatedWrapper
         as={motion.ul}
         viewport={{ once: true, amount: 0.4 }}
-        animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.4 })}
+        animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.8 })}
         className="hidden sm:flex gap-x-5"
       >
         {promotion.slice(0, 4).map((dish) => (

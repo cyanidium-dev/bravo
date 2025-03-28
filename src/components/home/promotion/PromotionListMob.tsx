@@ -26,7 +26,7 @@ export default function PromotionListMob({ promotion }: PromotionListMobProps) {
     <>
       <AnimatedWrapper
         className="sm:hidden"
-        animation={fadeInAnimation({ y: 50, delay: 0.6 })}
+        animation={fadeInAnimation({ y: 50, delay: 0.8 })}
       >
         <Swiper
           slidesPerView="auto"

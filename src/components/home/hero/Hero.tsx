@@ -29,7 +29,7 @@ export default function Hero() {
               Смакуй нешкідливе – замовляй смачну їжу вже зараз!
             </PageTitle>
           </AnimatedWrapper>
-          <AnimatedWrapper animation={fadeInAnimation({ y: 50, delay: 0.8 })}>
+          <AnimatedWrapper animation={fadeInAnimation({ y: 30, delay: 0.8 })}>
             <p className="max-w-[300px] xl:max-w-[460px] mb-12 text-white">
               Готуємо для вас свіжу, збалансовану та корисну їжу, яка дарує
               енергію та насолоду без шкоди для здоров’я. Замовляйте легко –
@@ -44,7 +44,7 @@ export default function Hero() {
           </AnimatedWrapper>
         </div>
         <AnimatedWrapper
-          animation={fadeInAnimation({ x: 50 })}
+          animation={fadeInAnimation({ y: 30, delay: 0.8 })}
           as={motion.p}
           className="md:max-w-[225px] md:mt-auto text-20bold xl:text-32bold leading-[123%] text-white uppercase text-center md:text-left"
         >
