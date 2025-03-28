@@ -10,11 +10,13 @@ interface DishModalProps {
   dish: Dish | null;
   isDishModalOpened: boolean;
   setIsDishModalOpened: Dispatch<SetStateAction<boolean>>;
+  setIsCartModalOpened: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function DishModal({
   isDishModalOpened,
   setIsDishModalOpened,
+  setIsCartModalOpened,
   dish,
 }: DishModalProps) {
   const { cartItems, addToCart } = useCartStore();
@@ -61,7 +63,18 @@ export default function DishModal({
             </p>
 
             {isDishInCart ? (
-              <Counter id={id} className="w-full px-6" />
+              <>
+                <Counter id={id} className="w-full px-6" />
+                <GreenButton
+                  onClick={() => {
+                    setIsDishModalOpened(false);
+                    setIsCartModalOpened(true);
+                  }}
+                  className="mt-3 w-full py-[11px]"
+                >
+                  Перейти до кошика
+                </GreenButton>
+              </>
             ) : (
               <GreenButton
                 onClick={() =>

@@ -5,6 +5,7 @@ import Pagination from "@/components/shared/pagination/Pagination";
 import { useDishesPerPage } from "@/hooks/useDishesPerPage";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
+import CartModal from "@/components/shared/modals/cartModal/CartModal";
 import { Dish } from "@/types/dish";
 
 interface DishesListProps {
@@ -13,6 +14,7 @@ interface DishesListProps {
 
 export default function DishesList({ dishesList }: DishesListProps) {
   const [isDishModalOpened, setIsDishModalOpened] = useState(false);
+  const [isCartModalOpened, setIsCartModalOpened] = useState(false);
   const [selectedDish, setSelectedDish] = useState<Dish>(dishesList[0]);
 
   return (
@@ -42,10 +44,18 @@ export default function DishesList({ dishesList }: DishesListProps) {
         dish={selectedDish}
         isDishModalOpened={isDishModalOpened}
         setIsDishModalOpened={setIsDishModalOpened}
+        setIsCartModalOpened={setIsCartModalOpened}
+      />
+      <CartModal
+        isPopUpShown={isCartModalOpened}
+        setIsPopUpShown={setIsCartModalOpened}
       />
       <Backdrop
-        isVisible={isDishModalOpened}
-        onClick={() => setIsDishModalOpened(false)}
+        isVisible={isDishModalOpened || isCartModalOpened}
+        onClick={() => {
+          setIsDishModalOpened(false);
+          setIsCartModalOpened(false);
+        }}
       />
     </div>
   );
