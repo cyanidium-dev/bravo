@@ -7,6 +7,7 @@ interface AnimatedListItemProps {
   children: ReactNode;
   className: string;
   variants?: Variants;
+  viewport?: { once?: boolean; amount?: number };
   onClick?: () => void;
 }
 
@@ -23,12 +24,13 @@ export default function AnimatedListItem({
   children,
   className = "",
   variants = itemVariants,
+  viewport = { once: true, amount: 0.2 },
   onClick,
 }: AnimatedListItemProps) {
   return (
     <motion.li
       variants={variants}
-      viewport={{ once: true }}
+      viewport={viewport}
       className={className}
       onClick={onClick}
     >
