@@ -8,7 +8,7 @@ import { fadeInAnimation } from "@/helpers/animation";
 
 export default function Promotion() {
   return (
-    <section className="pt-[120px] pb-[99px]  overflow-hidden">
+    <section className="pt-[120px] pb-[99px] overflow-hidden min-h-[708px] sm:min-h-[606px] md:min-h-[593px] lg:min-h-[715px] xl:min-[750px]">
       <div className="container xl:max-w-[1280px]">
         <div className="flex flex-col gap-y-9 md:flex-row items-center justify-between mb-8 lg:mb-10">
           <AnimatedWrapper

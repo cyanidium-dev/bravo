@@ -1,4 +1,7 @@
 import OfferItem from "./OfferItem";
+import { motion } from "framer-motion";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 
 export default function OffersList() {
   const offersList = [
@@ -23,11 +26,16 @@ export default function OffersList() {
   ];
   return (
     <div className="flex justify-center items-center">
-      <ul className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full">
+      <AnimatedWrapper
+        as={motion.ul}
+        viewport={{ once: true, amount: 0.4 }}
+        animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.4 })}
+        className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full"
+      >
         {offersList.map((offer, idx) => (
           <OfferItem key={idx} offer={offer} />
         ))}
-      </ul>
+      </AnimatedWrapper>
     </div>
   );
 }
