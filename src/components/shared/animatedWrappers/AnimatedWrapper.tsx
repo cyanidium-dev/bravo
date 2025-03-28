@@ -22,6 +22,7 @@ export default function AnimatedWrapper({
     <Component
       initial="hidden"
       whileInView="visible"
+      exit="exit"
       viewport={viewport}
       variants={animation}
       className={className}

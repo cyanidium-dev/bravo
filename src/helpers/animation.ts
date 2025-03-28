@@ -18,10 +18,8 @@ export const fadeInAnimation = ({
   },
   exit: {
     opacity: 0,
-    x: x * -0.5,
-    y: y * -0.5,
-    scale: 0.95,
-    transition: { duration: 0.2, ease: "easeInOut" },
+    y: 30,
+    transition: { duration: 1, ease: "easeIn" },
   },
 });
 
@@ -36,6 +34,11 @@ export const listVariants = ({
       staggerChildren,
       delayChildren,
     },
+  },
+  exit: {
+    opacity: 0,
+    y: 30,
+    transition: { duration: 1, ease: "easeIn" },
   },
 });
 
