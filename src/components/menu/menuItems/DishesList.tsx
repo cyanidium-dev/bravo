@@ -40,9 +40,9 @@ export default function DishesList({ dishesList }: DishesListProps) {
         renderItems={(currentItems) => (
           <AnimatedWrapper
             as={motion.ul}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
             animation={listVariants({
-              staggerChildren: 0.5,
+              staggerChildren: 0.4,
               delayChildren: 0.4,
             })}
             key={key}

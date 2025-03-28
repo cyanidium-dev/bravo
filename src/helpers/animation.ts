@@ -16,6 +16,13 @@ export const fadeInAnimation = ({
     transform: "translate3d(0, 0, 0) scale3d(1, 1, 1)",
     transition: { duration, delay, ease: "easeOut" },
   },
+  exit: {
+    opacity: 0,
+    x: x * -0.5, // Невеликий зміщений вихід для динамічності
+    y: y * -0.5,
+    scale: 0.95,
+    transition: { duration: 0.2, ease: "easeInOut" },
+  },
 });
 
 export const listVariants = ({
