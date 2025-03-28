@@ -8,6 +8,9 @@ import SubmitButton from "../shared/forms/formComponents/SubmitButton";
 import { useRouter } from "next/navigation";
 import { handleSubmitForm } from "@/utils/handleSubmitForm";
 import NotificationPopUp from "../shared/pop-ups/NotificationPopUp";
+import AnimatedWrapper from "../shared/animatedWrappers/AnimatedWrapper";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/helpers/animation";
 
 export interface ValuesCheckoutFormType {
   name: string;
@@ -47,9 +50,13 @@ export default function Checkout() {
   return (
     <section className="overflow-hidden">
       <div className="container xl:max-w-[1280px] pt-[108px] xl:pt-[136px] pb-[120px] xl:pb-[120px]">
-        <h1 className="mb-10 xl:mr-2 text-24semi xl:text-36semi leading-[123%]">
+        <AnimatedWrapper
+          as={motion.h1}
+          animation={fadeInAnimation({ y: 30 })}
+          className="mb-10 xl:mr-2 text-24semi xl:text-36semi leading-[123%]"
+        >
           Оформлення замовлення
-        </h1>
+        </AnimatedWrapper>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -58,7 +65,10 @@ export default function Checkout() {
           {(formik) => (
             <Form className="flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 max-w-[440px] md:max-w-full mx-auto">
               <CheckoutForm formik={formik} />
-              <div className="xl:w-[402px] xl:py-7 xl:pl-7 xl:pr-5 xl:border xl:border-black xl:rounded-[8px]">
+              <AnimatedWrapper
+                animation={fadeInAnimation({ y: 30, delay: 1.2 })}
+                className="xl:w-[402px] xl:py-7 xl:pl-7 xl:pr-5 xl:border xl:border-black xl:rounded-[8px]"
+              >
                 <OrderInfo />
                 <SubmitButton
                   onClick={formik.submitForm}
@@ -69,7 +79,7 @@ export default function Checkout() {
                 >
                   Оформити замовлення
                 </SubmitButton>
-              </div>
+              </AnimatedWrapper>
             </Form>
           )}
         </Formik>
