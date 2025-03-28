@@ -1,6 +1,11 @@
 "use client";
 import { useMenuStore } from "@/store/menuStore";
 import MenuItemDesk from "./MenuItemDesk";
+import { generateOrderNumber } from "@/utils/generateOrderNumber";
+import { useState, useEffect } from "react";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationDeskProps {
   currentCategory: string;
@@ -10,6 +15,13 @@ export default function MenuNavigationDesk({
   currentCategory,
 }: MenuNavigationDeskProps) {
   const { categories } = useMenuStore((state) => state);
+  const initialKey = generateOrderNumber();
+  const [key, setKey] = useState(initialKey);
+
+  useEffect(() => {
+    const key = generateOrderNumber();
+    setKey(key);
+  }, [currentCategory]);
 
   if (!categories?.length) {
     return null;
@@ -22,7 +34,12 @@ export default function MenuNavigationDesk({
 
   return (
     <nav className="hidden xl:block">
-      <ul className="flex flex-col gap-y-3">
+      <AnimatedWrapper
+        as={motion.ul}
+        key={key}
+        animation={fadeInAnimation({ y: 30 })}
+        className="flex flex-col gap-y-3"
+      >
         {sortedCategories.map((category, idx) => (
           <MenuItemDesk
             key={idx}
@@ -30,7 +47,7 @@ export default function MenuNavigationDesk({
             category={category}
           />
         ))}
-      </ul>
+      </AnimatedWrapper>
     </nav>
   );
 }

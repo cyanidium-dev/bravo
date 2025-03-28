@@ -1,11 +1,17 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import DishCard from "./DishCard";
 import Pagination from "@/components/shared/pagination/Pagination";
 import { useDishesPerPage } from "@/hooks/useDishesPerPage";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
+import CartModal from "@/components/shared/modals/cartModal/CartModal";
+import { motion } from "framer-motion";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { Dish } from "@/types/dish";
+import { generateOrderNumber } from "@/utils/generateOrderNumber";
 
 interface DishesListProps {
   dishesList: Dish[];
@@ -13,7 +19,16 @@ interface DishesListProps {
 
 export default function DishesList({ dishesList }: DishesListProps) {
   const [isDishModalOpened, setIsDishModalOpened] = useState(false);
+  const [isCartModalOpened, setIsCartModalOpened] = useState(false);
   const [selectedDish, setSelectedDish] = useState<Dish>(dishesList[0]);
+
+  const searchParams = useSearchParams();
+  const [key, setKey] = useState(searchParams.toString());
+
+  useEffect(() => {
+    const key = generateOrderNumber();
+    setKey(key);
+  }, [searchParams]);
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
@@ -23,9 +38,18 @@ export default function DishesList({ dishesList }: DishesListProps) {
         useItemsPerPage={useDishesPerPage}
         className="w-full mb-[26px] xl:mb-[70px]"
         renderItems={(currentItems) => (
-          <ul className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0">
-            {currentItems.map((dish, idx) => (
-              <Fragment key={idx}>
+          <AnimatedWrapper
+            as={motion.ul}
+            viewport={{ once: true, amount: 0.1 }}
+            animation={listVariants({
+              staggerChildren: 0.4,
+              delayChildren: 0.4,
+            })}
+            key={key}
+            className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0"
+          >
+            {currentItems.map((dish) => (
+              <Fragment key={`${dish.id}-${window.location.search}`}>
                 <DishCard
                   dish={dish}
                   setIsDishModalOpened={setIsDishModalOpened}
@@ -35,17 +59,25 @@ export default function DishesList({ dishesList }: DishesListProps) {
                 />
               </Fragment>
             ))}
-          </ul>
+          </AnimatedWrapper>
         )}
       />
       <DishModal
         dish={selectedDish}
         isDishModalOpened={isDishModalOpened}
         setIsDishModalOpened={setIsDishModalOpened}
+        setIsCartModalOpened={setIsCartModalOpened}
+      />
+      <CartModal
+        isPopUpShown={isCartModalOpened}
+        setIsPopUpShown={setIsCartModalOpened}
       />
       <Backdrop
-        isVisible={isDishModalOpened}
-        onClick={() => setIsDishModalOpened(false)}
+        isVisible={isDishModalOpened || isCartModalOpened}
+        onClick={() => {
+          setIsDishModalOpened(false);
+          setIsCartModalOpened(false);
+        }}
       />
     </div>
   );

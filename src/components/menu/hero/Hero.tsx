@@ -1,4 +1,6 @@
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import Image from "next/image";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface HeroProps {
   banner: {
@@ -26,7 +28,8 @@ export default function Hero({ banner }: HeroProps) {
 
   return (
     <section className="container xl:max-w-[1280px] overflow-hidden pt-[108px] pb-[84px] md:pb-[52px]">
-      <div
+      <AnimatedWrapper
+        animation={fadeInAnimation({ y: 20 })}
         className="aspect-[300/439] xs:aspect-[440/439] sm:aspect-[768/439] lg:aspect-[1140/429] rounded-[10px] md:rounded-[20px] 
       overflow-hidden"
       >
@@ -58,7 +61,7 @@ export default function Hero({ banner }: HeroProps) {
           height={429}
           className="hidden lg:block w-full h-full object-cover"
         />
-      </div>
+      </AnimatedWrapper>
     </section>
   );
 }

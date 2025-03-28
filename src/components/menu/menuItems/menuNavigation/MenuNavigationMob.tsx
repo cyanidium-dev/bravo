@@ -1,6 +1,11 @@
 "use client";
+import { generateOrderNumber } from "@/utils/generateOrderNumber";
+import { useState, useEffect } from "react";
 import { useMenuStore } from "@/store/menuStore";
 import MenuItemMob from "./MenuItemMob";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationMobProps {
   currentCategory: string;
@@ -10,6 +15,14 @@ export default function MenuNavigationMob({
   currentCategory,
 }: MenuNavigationMobProps) {
   const { categories } = useMenuStore((state) => state);
+
+  const initialKey = generateOrderNumber();
+  const [key, setKey] = useState(initialKey);
+
+  useEffect(() => {
+    const key = generateOrderNumber();
+    setKey(key);
+  }, [currentCategory]);
 
   if (!categories?.length) {
     return null;
@@ -21,7 +34,10 @@ export default function MenuNavigationMob({
   ].sort((a, b) => a.order - b.order);
 
   return (
-    <nav
+    <AnimatedWrapper
+      as={motion.nav}
+      key={key}
+      animation={fadeInAnimation({ y: 30 })}
       className="xl:hidden pl-[30px] xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] 
       md:ml-[calc((100vw-708px-60px)/2)] lg:ml-[calc((100vw-964px-60px)/2)] overflow-x-auto 
       scrollbar scrollbar-h-[2px] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-transparent 
@@ -36,6 +52,6 @@ export default function MenuNavigationMob({
           />
         ))}
       </ul>
-    </nav>
+    </AnimatedWrapper>
   );
 }
