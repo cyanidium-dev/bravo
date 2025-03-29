@@ -24,7 +24,7 @@ export default function NoDishes({ children, currentCategory }: NoDishesProps) {
       key={key}
       className="mx-auto pt-[200px] pb-[120px]"
     >
-      <p className="xl:w-full text-24bold leading-[123%] text-black/50 uppercase text-center">
+      <p className="xl:w-full text-16reg xl:text-18reg leading-[123%] text-black/50 text-center">
         {children}
       </p>
     </AnimatedWrapper>
