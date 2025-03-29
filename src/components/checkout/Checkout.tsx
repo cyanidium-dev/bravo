@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { handleSubmitForm } from "@/utils/handleSubmitForm";
 import NotificationPopUp from "../shared/pop-ups/NotificationPopUp";
 import AnimatedWrapper from "../shared/animatedWrappers/AnimatedWrapper";
-import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/helpers/animation";
 
 export interface ValuesCheckoutFormType {
@@ -51,7 +50,7 @@ export default function Checkout() {
     <section className="overflow-hidden">
       <div className="container xl:max-w-[1280px] pt-[108px] xl:pt-[136px] pb-[120px] xl:pb-[120px]">
         <AnimatedWrapper
-          as={motion.h1}
+          as="h1"
           animation={fadeInAnimation({ y: 30 })}
           className="mb-10 xl:mr-2 text-24semi xl:text-36semi leading-[123%]"
         >

@@ -5,21 +5,23 @@ import { ElementType, PropsWithChildren } from "react";
 import { fadeInAnimation } from "@/helpers/animation";
 
 interface AnimatedWrapperProps extends PropsWithChildren {
-  as?: ElementType; // Будь-який HTML-елемент
+  as?: ElementType;
   className?: string;
-  animation?: Variants; // Кастомна анімація
+  animation?: Variants;
   viewport?: { once?: boolean; amount?: number };
 }
 
 export default function AnimatedWrapper({
-  as: Component = motion.div, // За замовчуванням анімований div
+  as: Component = "div", // ✅ Тепер це коректно працює
   className = "",
   animation = fadeInAnimation({}),
   viewport = { once: true, amount: 0.2 },
   children,
 }: AnimatedWrapperProps) {
+  const MotionComponent = motion(Component) as ElementType; // 🔥 Основний фікс!
+
   return (
-    <Component
+    <MotionComponent
       initial="hidden"
       whileInView="visible"
       exit="exit"
@@ -28,6 +30,6 @@ export default function AnimatedWrapper({
       className={className}
     >
       {children}
-    </Component>
+    </MotionComponent>
   );
 }

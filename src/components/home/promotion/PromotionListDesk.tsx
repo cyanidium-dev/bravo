@@ -5,7 +5,6 @@ import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import CartModal from "@/components/shared/modals/cartModal/CartModal";
 import { Dish } from "@/types/dish";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 
@@ -23,7 +22,7 @@ export default function PromotionListDesk({
   return (
     <>
       <AnimatedWrapper
-        as={motion.ul}
+        as="ul"
         viewport={{ once: true, amount: 0.4 }}
         animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.8 })}
         className="hidden sm:flex gap-x-5"

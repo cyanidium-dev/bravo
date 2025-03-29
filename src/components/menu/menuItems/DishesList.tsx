@@ -7,7 +7,6 @@ import { useDishesPerPage } from "@/hooks/useDishesPerPage";
 import DishModal from "../../shared/modals/DishModal";
 import Backdrop from "@/components/shared/backdrop/Backdrop";
 import CartModal from "@/components/shared/modals/cartModal/CartModal";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { Dish } from "@/types/dish";
@@ -39,7 +38,7 @@ export default function DishesList({ dishesList }: DishesListProps) {
         className="w-full mb-[26px] xl:mb-[70px]"
         renderItems={(currentItems) => (
           <AnimatedWrapper
-            as={motion.ul}
+            as="ul"
             viewport={{ once: true, amount: 0.1 }}
             animation={listVariants({
               staggerChildren: 0.4,

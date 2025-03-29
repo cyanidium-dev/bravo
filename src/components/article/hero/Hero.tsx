@@ -3,7 +3,6 @@ import Image from "next/image";
 import { calculateReadingTime } from "@/utils/calculateReadingTime";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 interface HeroProps {
   article: Article;
@@ -32,14 +31,14 @@ export default function Hero({ article }: HeroProps) {
       lg:h-[810px] md:h-[708px] xl:h-[1068px] backdrop-blur-[7px] xl:backdrop-blur-[14px] rounded-full bg-white bg-opacity-[12%] shadow-inner-custom"
           ></AnimatedWrapper>
           <AnimatedWrapper
-            as={motion.h1}
+            as="h1"
             animation={fadeInAnimation({ y: 30 })}
             className="mb-6 text-36bold xl:text-48bold leading-[123%] uppercase text-white"
           >
             {title}
           </AnimatedWrapper>
           <AnimatedWrapper
-            as={motion.p}
+            as="p"
             animation={fadeInAnimation({ y: 30 })}
             className="mb-6 text-white"
           >

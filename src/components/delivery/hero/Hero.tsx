@@ -2,7 +2,6 @@ import Image from "next/image";
 import HeroImages from "./HeroImages";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -17,14 +16,14 @@ export default function Hero() {
       />
       <div className="relative container xl:max-w-[1280px] pt-[404px] pb-[60px] xl:pt-[334px] xl:pb-[73px]">
         <AnimatedWrapper
-          as={motion.h2}
+          as="h2"
           animation={fadeInAnimation({ y: 30 })}
           className="max-w-[274px] lg:max-w-[501px] mb-5 mx-auto text-36bold xl:text-48bold leading-[123%] uppercase text-center text-white"
         >
           Умови доставки
         </AnimatedWrapper>
         <AnimatedWrapper
-          as={motion.p}
+          as="p"
           animation={fadeInAnimation({ y: 30 })}
           className="max-w-[280px] xl:max-w-[495px] mx-auto text-white text-center"
         >

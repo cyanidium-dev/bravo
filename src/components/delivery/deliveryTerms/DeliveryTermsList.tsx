@@ -1,5 +1,4 @@
 import DeliveryTermItem from "./DeliveryTermItem";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 
@@ -11,7 +10,7 @@ export default function DeliveryTermsList() {
   ];
   return (
     <AnimatedWrapper
-      as={motion.ul}
+      as="ul"
       viewport={{ once: true, amount: 0.4 }}
       animation={listVariants({ staggerChildren: 0.5, delayChildren: 0.8 })}
       className="flex flex-col gap-6"

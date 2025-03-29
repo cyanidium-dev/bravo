@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -45,7 +44,7 @@ export default function Hero() {
         </div>
         <AnimatedWrapper
           animation={fadeInAnimation({ y: 30, delay: 0.8 })}
-          as={motion.p}
+          as="p"
           className="md:max-w-[225px] md:mt-auto text-20bold xl:text-32bold leading-[123%] text-white uppercase text-center md:text-left"
         >
           Швидка доставка до 30 хв нешкідливих страв для вас!

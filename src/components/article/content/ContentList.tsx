@@ -1,4 +1,7 @@
 import { Paragraph } from "@/types/article";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 interface ContentListProps {
   content: Paragraph[];
@@ -6,10 +9,19 @@ interface ContentListProps {
 
 export default function ContentList({ content }: ContentListProps) {
   return (
-    <ul className="flex flex-col gap-y-12">
+    <AnimatedWrapper
+      as="ul"
+      viewport={{ once: true, amount: 0.1 }}
+      animation={listVariants({
+        staggerChildren: 0.5,
+      })}
+      className="flex flex-col gap-y-12"
+    >
       {content.map((item, idx) => (
-        <p key={idx}>{item.paragraph}</p>
+        <AnimatedListItem key={idx}>
+          <p>{item.paragraph}</p>
+        </AnimatedListItem>
       ))}
-    </ul>
+    </AnimatedWrapper>
   );
 }

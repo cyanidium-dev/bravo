@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useMenuStore } from "@/store/menuStore";
 import MenuItemMob from "./MenuItemMob";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
-import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationMobProps {
@@ -35,7 +34,7 @@ export default function MenuNavigationMob({
 
   return (
     <AnimatedWrapper
-      as={motion.nav}
+      as="nav"
       key={key}
       animation={fadeInAnimation({ y: 30 })}
       className="xl:hidden pl-[30px] xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] 
