@@ -6,7 +6,6 @@ import {
 } from "@/constants/constants";
 import { headerPhoneRegex } from "@/regex/regex";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
@@ -14,7 +13,7 @@ import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListI
 export default function ContactsList() {
   return (
     <AnimatedWrapper
-      as={motion.ul}
+      as="ul"
       viewport={{ once: true, amount: 0.3 }}
       animation={listVariants({ staggerChildren: 0.5 })}
       className="flex flex-col lg:flex-row gap-5 max-w-[370px] lg:max-w-full mx-auto"

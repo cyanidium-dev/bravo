@@ -1,5 +1,4 @@
 import OfferItem from "./OfferItem";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 
@@ -27,7 +26,7 @@ export default function OffersList() {
   return (
     <div className="flex justify-center items-center">
       <AnimatedWrapper
-        as={motion.ul}
+        as="ul"
         viewport={{ once: true, amount: 0.3 }}
         animation={listVariants({ staggerChildren: 0.5 })}
         className="flex flex-col gap-y-[70px] md:flex-row gap-x-5 md:max-w-[708px] xl:max-w-full"

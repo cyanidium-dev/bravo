@@ -2,7 +2,6 @@ import SectionTitle from "@/components/shared/titles/SectionTitle";
 import Image from "next/image";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 export default function Mission() {
   return (
@@ -16,7 +15,7 @@ export default function Mission() {
             <SectionTitle>Наша місія</SectionTitle>
           </AnimatedWrapper>
           <AnimatedWrapper
-            as={motion.p}
+            as="p"
             animation={fadeInAnimation({ y: 30 })}
             className="md:w-[39%]"
           >

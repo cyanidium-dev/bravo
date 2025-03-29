@@ -6,10 +6,10 @@ import ArticleItem from "./ArticleItem";
 import Pagination from "@/components/shared/pagination/Pagination";
 import { Suspense } from "react";
 import { useItemsPerPage } from "@/hooks/useItemsPerPage";
-import { motion } from "framer-motion";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { generateOrderNumber } from "@/utils/generateOrderNumber";
+import Loader from "@/components/shared/loader/Loader";
 
 interface ArticlesListProps {
   articles: Article[];
@@ -28,7 +28,7 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
 
   return (
     <div id={SECTION_ID} className="flex flex-col justify-center items-center">
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Pagination
           items={articles}
           scrollTargetId={SECTION_ID}
@@ -36,7 +36,7 @@ export default function ArticlesList({ articles }: ArticlesListProps) {
           className="w-full max-w-[320px] sm:max-w-[660px] lg:max-w-[1000px] xl:max-w-full mb-10 xl:mb-[62px]"
           renderItems={(currentItems) => (
             <AnimatedWrapper
-              as={motion.ul}
+              as="ul"
               viewport={{ once: true, amount: 0.1 }}
               animation={listVariants({
                 staggerChildren: 0.4,

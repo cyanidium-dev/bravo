@@ -1,7 +1,6 @@
 import DeliveryTermsList from "./DeliveryTermsList";
 import Image from "next/image";
 import Discount from "./Discount";
-import { motion } from "framer-motion";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
 
@@ -12,7 +11,7 @@ export default function DeliveryTerms() {
         <div className="flex flex-col md:flex-row gap-x-9 xl:gap-x-12">
           <div className="md:w-[48.1%]">
             <AnimatedWrapper
-              as={motion.h2}
+              as="h2"
               animation={fadeInAnimation({ y: 30 })}
               className="mb-8 lg:mb-[42px] text-28bold xl:text-40bold leading-[123%] uppercase"
             >

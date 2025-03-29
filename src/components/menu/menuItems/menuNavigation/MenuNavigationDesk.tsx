@@ -4,7 +4,6 @@ import MenuItemDesk from "./MenuItemDesk";
 import { generateOrderNumber } from "@/utils/generateOrderNumber";
 import { useState, useEffect } from "react";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
-import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/helpers/animation";
 
 interface MenuNavigationDeskProps {
@@ -35,7 +34,7 @@ export default function MenuNavigationDesk({
   return (
     <nav className="hidden xl:block">
       <AnimatedWrapper
-        as={motion.ul}
+        as="ul"
         key={key}
         animation={fadeInAnimation({ y: 30 })}
         className="flex flex-col gap-y-3"

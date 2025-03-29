@@ -3,7 +3,6 @@ import OffersList from "./OffersList";
 import OffersImages from "./OffersImages";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 export default function Offer() {
   return (
@@ -20,7 +19,7 @@ export default function Offer() {
             </SectionTitle>
           </AnimatedWrapper>
           <AnimatedWrapper
-            as={motion.p}
+            as="p"
             animation={fadeInAnimation({ y: 30 })}
             className="md:max-w-[202px] text-white"
           >
