@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 import { menuList } from "@/helpers/menuList";
 import MenuLinkMob from "./MenuLinkMob";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 
 interface NavMenuMobProps {
   setIsHeaderMenuOpened: Dispatch<SetStateAction<boolean>>;
@@ -9,7 +11,11 @@ interface NavMenuMobProps {
 export default function NavMenuMob({ setIsHeaderMenuOpened }: NavMenuMobProps) {
   return (
     <nav>
-      <ul>
+      <AnimatedWrapper
+        as="ul"
+        viewport={{ once: true, amount: 0.3 }}
+        animation={listVariants({ staggerChildren: 0.3, delayChildren: 1.2 })}
+      >
         {menuList.map((menuItem, idx) => (
           <MenuLinkMob
             key={idx}
@@ -17,7 +23,7 @@ export default function NavMenuMob({ setIsHeaderMenuOpened }: NavMenuMobProps) {
             setIsHeaderMenuOpened={setIsHeaderMenuOpened}
           />
         ))}
-      </ul>
+      </AnimatedWrapper>
     </nav>
   );
 }

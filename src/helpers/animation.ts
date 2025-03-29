@@ -65,3 +65,22 @@ export const cartModalVariants = {
     transition: { duration: 0.6, ease: "easeIn" },
   },
 };
+
+export const burgerMenuVariants = {
+  hidden: { x: "-100%", opacity: 1 },
+  visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: { duration: 0.6, ease: "easeIn" },
+  },
+};
+
+export const burgerMenuButtonVariants = {
+  hidden: { y: 0, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
+  exit: {
+    opacity: 0,
+    transition: { duration: 1, ease: "easeIn" },
+  },
+};
