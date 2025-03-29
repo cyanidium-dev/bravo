@@ -15,7 +15,7 @@ export default function CallbackInfo({
 }: CallbackInfoProps) {
   return (
     <AnimatedWrapper
-      animation={fadeInAnimation({ y: 30, delay: 0.8 })}
+      animation={fadeInAnimation({ y: 30, delay: 0.4 })}
       className="max-w-[380px] sm:mx-auto"
     >
       <h2 className="mt-7 mb-[26px] text-36bold uppercase leading-[130%] sm:text-center">

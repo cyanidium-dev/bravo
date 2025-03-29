@@ -14,7 +14,7 @@ export default function NavMenuMob({ setIsHeaderMenuOpened }: NavMenuMobProps) {
       <AnimatedWrapper
         as="ul"
         viewport={{ once: true, amount: 0.3 }}
-        animation={listVariants({ staggerChildren: 0.3, delayChildren: 1.2 })}
+        animation={listVariants({ staggerChildren: 0.3, delayChildren: 0.8 })}
       >
         {menuList.map((menuItem, idx) => (
           <MenuLinkMob
