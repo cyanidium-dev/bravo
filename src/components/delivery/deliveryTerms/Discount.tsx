@@ -1,8 +1,13 @@
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import Image from "next/image";
+import { fadeInAnimation } from "@/helpers/animation";
 
 export default function Discount() {
   return (
-    <div className="relative -z-20 mt-[90px] pt-[51px] pb-[136px] md:py-10 h-[346px] md:h-[245px] rounded-[10px] md:rounded-[16px] bg-discount overflow-hidden">
+    <AnimatedWrapper
+      animation={fadeInAnimation({ y: 30 })}
+      className="relative -z-20 mt-[90px] pt-[51px] pb-[136px] md:py-10 h-[346px] md:h-[245px] rounded-[10px] md:rounded-[16px] bg-discount overflow-hidden"
+    >
       <h3 className="max-w-[300px] md:max-w-[405px] px-[37px] md:px-[57px] py-[6px] mx-auto text-48extra md:text-64extra leading-[123%] text-center uppercase text-transparent bg-white rounded-full">
         <span className="text-transparent bg-clip-text bg-discountText">
           Знижка
@@ -39,6 +44,6 @@ export default function Discount() {
         height={466}
         className="hidden md:block absolute bottom-0 right-0 -z-10 w-[183px] lg:w-[253px] h-auto"
       ></Image>
-    </div>
+    </AnimatedWrapper>
   );
 }

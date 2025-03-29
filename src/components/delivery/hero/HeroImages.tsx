@@ -1,7 +1,6 @@
 import Image from "next/image";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { fadeInAnimation } from "@/helpers/animation";
-import { motion } from "framer-motion";
 
 export default function HeroImages() {
   return (
