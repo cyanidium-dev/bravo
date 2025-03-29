@@ -2,6 +2,7 @@ import { Article } from "@/types/article";
 import Image from "next/image";
 import Link from "next/link";
 import { calculateReadingTime } from "@/utils/calculateReadingTime";
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 interface ArticleItemProps {
   article: Article;
@@ -11,7 +12,7 @@ export default function ArticleItem({ article }: ArticleItemProps) {
   const { title, description, mainImage, slug } = article;
   const readingTime = calculateReadingTime(article);
   return (
-    <li className="relative max-w-[320px] xl:max-w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.3%-13.3px)] min-h-full aspect-[300/454] xl:aspect-[366/454] rounded-[16px] text-white overflow-hidden">
+    <AnimatedListItem className="relative max-w-[320px] xl:max-w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.3%-13.3px)] min-h-full aspect-[300/454] xl:aspect-[366/454] rounded-[16px] text-white overflow-hidden">
       <Image
         src={mainImage?.url}
         alt={mainImage.alt}
@@ -57,6 +58,6 @@ export default function ArticleItem({ article }: ArticleItemProps) {
           </Link>
         </div>
       </div>
-    </li>
+    </AnimatedListItem>
   );
 }
