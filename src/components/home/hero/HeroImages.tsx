@@ -34,7 +34,7 @@ export default function HeroImages() {
       xl:h-[1114px] "
       >
         <AnimatedWrapper
-          animation={fadeInAnimation({ scale: 0.9, delay: 1.6 })}
+          animation={fadeInAnimation({ delay: 1.6 })}
           className="relative -z-10 w-full h-full backdrop-blur-[16px] rounded-full bg-white bg-opacity-[12%] shadow-inner-custom"
         ></AnimatedWrapper>
         <AnimatedWrapper

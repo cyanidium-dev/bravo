@@ -40,9 +40,18 @@ export default function OrderInfo() {
             </AnimatePresence>
           </ul>
         ) : (
-          <div className="text-16reg lg:text-18reg leading-[123%] text-center py-[100px] text-black/50">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.2 },
+            }}
+            exit={{ opacity: 0, y: 30, transition: { duration: 0.3 } }}
+            className="text-16reg lg:text-18reg leading-[123%] text-center py-[100px] text-black/50"
+          >
             Ваш кошик порожній
-          </div>
+          </motion.div>
         )}
         <div className="flex flex-row items-center justify-between mt-6 mb-4 xl:pr-2">
           <p>Загальна вартість</p>
