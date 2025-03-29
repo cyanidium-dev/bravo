@@ -12,14 +12,13 @@ interface AnimatedWrapperProps extends PropsWithChildren {
 }
 
 export default function AnimatedWrapper({
-  as: Component = "div", // ✅ Тепер це коректно працює
+  as: Component = "div", //
   className = "",
   animation = fadeInAnimation({}),
   viewport = { once: true, amount: 0.2 },
   children,
 }: AnimatedWrapperProps) {
-  const MotionComponent = motion(Component) as ElementType; // 🔥 Основний фікс!
-
+  const MotionComponent = motion(Component) as ElementType;
   return (
     <MotionComponent
       initial="hidden"
