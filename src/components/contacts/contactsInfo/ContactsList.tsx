@@ -6,11 +6,20 @@ import {
 } from "@/constants/constants";
 import { headerPhoneRegex } from "@/regex/regex";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { listVariants } from "@/helpers/animation";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 export default function ContactsList() {
   return (
-    <ul className="flex flex-col lg:flex-row gap-5 max-w-[370px] lg:max-w-full mx-auto">
-      <li className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
+    <AnimatedWrapper
+      as={motion.ul}
+      viewport={{ once: true, amount: 0.3 }}
+      animation={listVariants({ staggerChildren: 0.5 })}
+      className="flex flex-col lg:flex-row gap-5 max-w-[370px] lg:max-w-full mx-auto"
+    >
+      <AnimatedListItem className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
         <Image
           src="/images/icons/phone.svg"
           alt="phone icon"
@@ -32,8 +41,8 @@ export default function ContactsList() {
             {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
           </a>
         </div>
-      </li>{" "}
-      <li className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
+      </AnimatedListItem>
+      <AnimatedListItem className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
         <Image
           src="/images/icons/email.svg"
           alt="email icon"
@@ -55,8 +64,8 @@ export default function ContactsList() {
             {EMAIL}
           </a>
         </div>
-      </li>{" "}
-      <li className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
+      </AnimatedListItem>{" "}
+      <AnimatedListItem className="flex items-center gap-x-[13px] max-w-[370px] lg:w-[calc(33.3%-13.3px)] px-[22px] py-10 xl:py-[52px] xl:px-7 rounded-[16px] bg-green text-white">
         <Image
           src="/images/icons/location.svg"
           alt="location icon"
@@ -78,7 +87,7 @@ export default function ContactsList() {
             <p>{ADDRESS_FIRST}</p>
           </a>
         </div>
-      </li>
-    </ul>
+      </AnimatedListItem>
+    </AnimatedWrapper>
   );
 }
