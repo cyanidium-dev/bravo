@@ -3,6 +3,8 @@ import PageTitle from "@/components/shared/titles/PageTitle";
 import Link from "next/link";
 import Image from "next/image";
 import HeroImages from "./HeroImages";
+import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import { fadeInAnimation } from "@/helpers/animation";
 
 export default function Hero() {
   return (
@@ -18,20 +20,25 @@ export default function Hero() {
       <div className="relative container xl:max-w-[1280px] pt-[237px] md:pt-[235px] pb-[193px] md:pb-[75px]">
         <HeroImages />
         <div className="max-w-[300px] xl:max-w-[513px]">
-          {" "}
-          <PageTitle className="mb-5">
-            Про нас – здорове харчування з любов’ю 
-          </PageTitle>
-          <p className="mb-8 text-white">
-            Ми віримо, що корисна їжа може бути смачною, доступною та зручною.
-            Саме тому створили сервіс доставки збалансованого харчування.
-          </p>
-          <Link
-            href="/menu/all-dishes"
-            className="block w-full max-w-[326px] mx-auto md:mx-0"
+          <AnimatedWrapper
+            animation={fadeInAnimation({ x: -30 })}
+            className="mb-5"
           >
-            <MainButton className="w-full">Зробити замовлення</MainButton>
-          </Link>
+            <PageTitle>Про нас – здорове харчування з любов’ю </PageTitle>
+          </AnimatedWrapper>
+
+          <AnimatedWrapper animation={fadeInAnimation({ y: 30 })}>
+            <p className="mb-8 text-white">
+              Ми віримо, що корисна їжа може бути смачною, доступною та зручною.
+              Саме тому створили сервіс доставки збалансованого харчування.
+            </p>
+            <Link
+              href="/menu/all-dishes"
+              className="block w-full max-w-[326px] mx-auto md:mx-0"
+            >
+              <MainButton className="w-full">Зробити замовлення</MainButton>
+            </Link>
+          </AnimatedWrapper>
         </div>
       </div>
     </section>
