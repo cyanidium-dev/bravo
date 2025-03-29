@@ -1,5 +1,5 @@
 "use client";
-
+import { useMemo } from "react";
 import { motion, Variants } from "framer-motion";
 import { ElementType, PropsWithChildren } from "react";
 import { fadeInAnimation } from "@/helpers/animation";
@@ -18,7 +18,8 @@ export default function AnimatedWrapper({
   viewport = { once: true, amount: 0.2 },
   children,
 }: AnimatedWrapperProps) {
-  const MotionComponent = motion(Component) as ElementType;
+  const MotionComponent = useMemo(() => motion(Component), [Component]);
+
   return (
     <MotionComponent
       initial="hidden"
