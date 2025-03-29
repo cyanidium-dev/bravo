@@ -36,7 +36,7 @@ export default function Counter({ id, className = "" }: CounterProps) {
       className={`flex items-center justify-between py-[7px] lg:py-[9px] border-[1.5px] border-black rounded-full ${className}`}
     >
       <button
-        className="group flex items-center justify-center size-5 enabled:active:scale-95 transition duration-300 ease-out"
+        className="group flex items-center justify-center size-5"
         onClick={onMinusClick}
         disabled={count === 0}
         aria-label="minus"
@@ -45,7 +45,7 @@ export default function Counter({ id, className = "" }: CounterProps) {
       </button>
       <span className="">{count}</span>
       <button
-        className="flex items-center justify-center size-5 enabled:active:scale-95 transition duration-300 ease-out"
+        className="flex items-center justify-center size-5"
         onClick={onPlusClick}
         aria-label="plus"
       >
