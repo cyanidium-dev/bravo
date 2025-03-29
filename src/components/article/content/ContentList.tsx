@@ -11,7 +11,7 @@ export default function ContentList({ content }: ContentListProps) {
   return (
     <AnimatedWrapper
       as="ul"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.4 }}
       animation={listVariants({
         staggerChildren: 0.5,
       })}
