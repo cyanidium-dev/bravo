@@ -97,7 +97,7 @@ export default function Mission() {
             />
           </AnimatedWrapper>
           <AnimatedWrapper
-            animation={fadeInAnimation({ scale: 0.8, delay: 1.6 })}
+            animation={fadeInAnimation({ scale: 0.8, delay: 0.8 })}
             className="hidden md:block absolute -z-10 bottom-[-72px] left-[-197px] lg:left-[-127px] xl:left-[-197px]"
           >
             <Image
