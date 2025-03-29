@@ -3,6 +3,8 @@ import GreenButton from "../buttons/GreenButton";
 import { PHONE } from "@/constants/constants";
 import { headerPhoneRegex } from "@/regex/regex";
 import PhoneIcon from "../icons/PhoneIcon";
+import AnimatedWrapper from "../animatedWrappers/AnimatedWrapper";
+import { fadeInAnimation } from "@/helpers/animation";
 
 interface CallbackInfoProps {
   setIsHeaderMenuOpened: Dispatch<SetStateAction<boolean>>;
@@ -12,7 +14,10 @@ export default function CallbackInfo({
   setIsHeaderMenuOpened,
 }: CallbackInfoProps) {
   return (
-    <div className="max-w-[380px] sm:mx-auto">
+    <AnimatedWrapper
+      animation={fadeInAnimation({ y: 30, delay: 0.4 })}
+      className="max-w-[380px] sm:mx-auto"
+    >
       <h2 className="mt-7 mb-[26px] text-36bold uppercase leading-[130%] sm:text-center">
         Маєте додаткові питання?
       </h2>
@@ -29,6 +34,6 @@ export default function CallbackInfo({
           {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
         </GreenButton>
       </a>
-    </div>
+    </AnimatedWrapper>
   );
 }

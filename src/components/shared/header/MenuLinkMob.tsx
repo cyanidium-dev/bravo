@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Link from "next/link";
+import AnimatedListItem from "../animatedWrappers/AnimatedListItem";
 
 interface MenuLinkProps {
   menuItem: {
@@ -18,7 +19,7 @@ export default function MenuLinkMob({
   const { title, link } = menuItem;
 
   return (
-    <li
+    <AnimatedListItem
       className={`relative before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-black ${className}`}
     >
       <Link
@@ -29,6 +30,6 @@ export default function MenuLinkMob({
       >
         {title}
       </Link>
-    </li>
+    </AnimatedListItem>
   );
 }

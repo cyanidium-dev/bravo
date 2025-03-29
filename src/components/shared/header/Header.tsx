@@ -49,41 +49,48 @@ export default function Header({ variant = "white" }: HeaderProps) {
             : "text-black backdrop-blur-lg"
         }`}
       >
-        <AnimatedWrapper className="container xl:max-w-[1280px] py-4 lg:py-6">
+        <div className="container xl:max-w-[1280px] py-4 lg:py-6">
           <div className="flex items-center  ">
-            <NavbarBrand className="mr-10 xl:mr-20">
-              <Logo className="text-24bold leading-[120%]" />
-            </NavbarBrand>
-            <NavbarContent className="hidden lg:flex gap-x-6 xl:gap-x-[44px]">
-              {menuList.map(({ title, link }, idx) => (
-                <NavbarItem
-                  key={idx}
-                  className="xl:hover:text-green focus-visible:text-green transition duration-300 ease-in-out"
-                >
-                  <Link href={link}>{title}</Link>
-                </NavbarItem>
-              ))}
-            </NavbarContent>
-            <NavbarContent className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
-              <div className="flex items-center gap-x-6 ">
-                <CartButton
-                  variant={variant}
-                  onClick={() => setIsCartModalOpened(true)}
-                />
-                <a
-                  href={`tel:+${PHONE.replace(/\D/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  aria-label="phone number"
-                  className="hidden lg:block"
-                >
-                  <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
-                    <PhoneIcon className="size-5" />
-                    {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
-                  </SecondaryButton>
-                </a>
-              </div>
-            </NavbarContent>
+            <AnimatedWrapper>
+              <NavbarBrand className="mr-10 xl:mr-20">
+                <Logo className="text-24bold leading-[120%]" />
+              </NavbarBrand>
+            </AnimatedWrapper>
+            <AnimatedWrapper>
+              {" "}
+              <NavbarContent className="hidden lg:flex gap-x-6 xl:gap-x-[44px]">
+                {menuList.map(({ title, link }, idx) => (
+                  <NavbarItem
+                    key={idx}
+                    className="xl:hover:text-green focus-visible:text-green transition duration-300 ease-in-out"
+                  >
+                    <Link href={link}>{title}</Link>
+                  </NavbarItem>
+                ))}
+              </NavbarContent>
+            </AnimatedWrapper>
+            <AnimatedWrapper className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
+              <NavbarContent>
+                <div className="flex items-center gap-x-6 ">
+                  <CartButton
+                    variant={variant}
+                    onClick={() => setIsCartModalOpened(true)}
+                  />
+                  <a
+                    href={`tel:+${PHONE.replace(/\D/g, "")}`}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    aria-label="phone number"
+                    className="hidden lg:block"
+                  >
+                    <SecondaryButton className="hidden lg:flex gap-x-[14px] items-center w-[221px]">
+                      <PhoneIcon className="size-5" />
+                      {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
+                    </SecondaryButton>
+                  </a>
+                </div>
+              </NavbarContent>
+            </AnimatedWrapper>
             <BurgerMenuButton
               isHeaderMenuOpened={isHeaderMenuOpened}
               toggleHeaderMenuOpen={toggleHeaderMenuOpen}
@@ -95,7 +102,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
               setIsCartModalOpened={setIsCartModalOpened}
             />
           </div>
-        </AnimatedWrapper>
+        </div>
       </Navbar>
 
       <CartModal
