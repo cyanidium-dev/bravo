@@ -67,10 +67,10 @@ export const cartModalVariants = {
 };
 
 export const burgerMenuVariants = {
-  hidden: { x: "-100%", opacity: 1 },
+  hidden: { x: 0, opacity: 1 },
   visible: { x: 0, opacity: 1, transition: { duration: 1, ease: "easeOut" } },
   exit: {
-    x: "-100%",
+    x: 0,
     opacity: 0,
     transition: { duration: 0.6, ease: "easeIn" },
   },

@@ -70,7 +70,6 @@ export default function Header({ variant = "white" }: HeaderProps) {
               </NavbarContent>
             </AnimatedWrapper>
             <AnimatedWrapper className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
-              {" "}
               <NavbarContent>
                 <div className="flex items-center gap-x-6 ">
                   <CartButton

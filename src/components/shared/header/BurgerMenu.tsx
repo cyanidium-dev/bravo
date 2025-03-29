@@ -21,6 +21,7 @@ export default function BurgerMenu({
     <AnimatePresence>
       {isHeaderMenuOpened && (
         <motion.div
+          viewport={{ once: true, amount: 0.2 }}
           initial="hidden"
           animate="visible"
           exit="exit"
@@ -31,14 +32,17 @@ export default function BurgerMenu({
        overflow-y-auto`}
         >
           <div className="container">
-            <div className="sticky z-[60] top-0 left-[30px] flex items-center justify-between py-4 pr-[54px] sm:pr-[100px] mx-auto bg-white">
+            <div className="sticky z-[60] top-0 left-[30px] flex items-center justify-between py-4 pr-[56px] sm:pr-[100px] mx-auto bg-white">
               <Logo
                 setIsHeaderMenuOpened={setIsHeaderMenuOpened}
                 className="text-24bold leading-[120%] relative z-[60] text-black"
               />
               <CartButton
                 variant="black"
-                onClick={() => setIsCartModalOpened(true)}
+                onClick={() => {
+                  setIsHeaderMenuOpened(false);
+                  setIsCartModalOpened(true);
+                }}
               />
             </div>
             <CallbackInfo setIsHeaderMenuOpened={setIsHeaderMenuOpened} />
