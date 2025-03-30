@@ -11,9 +11,9 @@ export default function ContentList({ content }: ContentListProps) {
   return (
     <AnimatedWrapper
       as="ul"
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.2 }}
       animation={listVariants({
-        staggerChildren: 0.5,
+        staggerChildren: 0.6,
       })}
       className="flex flex-col gap-y-12"
     >

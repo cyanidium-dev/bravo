@@ -11,12 +11,21 @@ interface CartState {
   removeSingleItem: (itemId: string) => void;
   clearCart: () => void;
   getTotalAmount: () => number;
+  isCartAnimating: boolean;
+  cartAnimationKey: number;
+  animatingImage: { url: string; alt: string } | null;
+  setCartAnimation: (isAnimating: boolean) => void;
+  setCartAnimationKey: () => void;
+  setAnimatingImage: (image: { url: string; alt: string } | null) => void;
 }
 
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
       cartItems: [],
+      isCartAnimating: false,
+      cartAnimationKey: Date.now(),
+      animatingImage: null,
 
       addToCart: (newItem) => {
         set((state) => {
@@ -25,7 +34,6 @@ export const useCartStore = create<CartState>()(
           );
 
           if (existingItemIndex !== -1) {
-            // Товар вже є в кошику; збільшуємо його кількість
             const updatedCartItems = state.cartItems.map((item, index) =>
               index === existingItemIndex
                 ? { ...item, quantity: item.quantity + 1 }
@@ -33,7 +41,6 @@ export const useCartStore = create<CartState>()(
             );
             return { cartItems: updatedCartItems };
           } else {
-            // Товару ще немає в кошику; додаємо його з кількістю 1
             return {
               cartItems: [...state.cartItems, { ...newItem, quantity: 1 }],
             };
@@ -70,6 +77,7 @@ export const useCartStore = create<CartState>()(
           0
         );
       },
+
       increaseQuantity: (itemId) => {
         set((state) => {
           const updatedCartItems = state.cartItems.map((item) =>
@@ -94,7 +102,6 @@ export const useCartStore = create<CartState>()(
               );
               return { cartItems: updatedCartItems };
             } else {
-              // If the quantity is 1, remove the item from the cart
               return {
                 cartItems: state.cartItems.filter((item) => item.id !== itemId),
               };
@@ -102,6 +109,18 @@ export const useCartStore = create<CartState>()(
           }
           return state;
         });
+      },
+
+      setCartAnimation: (isAnimating) => {
+        set({ isCartAnimating: isAnimating });
+      },
+
+      setCartAnimationKey: () => {
+        set({ cartAnimationKey: Date.now() });
+      },
+
+      setAnimatingImage: (image) => {
+        set({ animatingImage: image });
       },
     }),
     {

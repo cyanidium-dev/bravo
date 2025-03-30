@@ -16,6 +16,7 @@ export default function CartButton({
 
   return (
     <button
+      id="cart-button"
       onClick={onClick}
       data-label={cartItems?.length.toString()}
       className={`relative flex items-center justify-center size-[44px] rounded-[14px] ${

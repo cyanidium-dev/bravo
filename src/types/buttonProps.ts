@@ -8,5 +8,6 @@ export interface ButtonProps {
   variant?: "primary" | "secondary";
   disabled?: boolean;
   isLoading?: boolean;
+  id?: string;
   onClick?: () => void | Dispatch<SetStateAction<boolean>> | Promise<void>;
 }

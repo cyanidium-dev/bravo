@@ -21,7 +21,13 @@ export default function DishModal({
   setIsCartModalOpened,
   dish,
 }: DishModalProps) {
-  const { cartItems, addToCart } = useCartStore();
+  const {
+    cartItems,
+    addToCart,
+    setCartAnimation,
+    setCartAnimationKey,
+    setAnimatingImage,
+  } = useCartStore();
 
   if (!dish) {
     return null;
@@ -64,39 +70,50 @@ export default function DishModal({
               {description}
             </p>
             <AnimatePresence>
-              {isDishInCart ? (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.6, delay: 0.1 },
-                  }}
-                  exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                >
-                  <Counter id={id} className="w-full px-6" />
-                  <GreenButton
-                    onClick={() => {
-                      setIsDishModalOpened(false);
-                      setIsCartModalOpened(true);
+              <div className="relative w-full h-[83px] lg:h-[91px]">
+                {" "}
+                {isDishInCart ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.6, delay: 0.1 },
                     }}
-                    className="mt-3 w-full text-12med py-[10px] lg:py-3"
+                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                    className="absolute top-0 left-0 w-full"
                   >
-                    Перейти до кошика
-                  </GreenButton>
-                </motion.div>
-              ) : (
-                <AnimatedWrapper>
-                  <GreenButton
-                    onClick={() =>
-                      addToCart({ id, title, price, image, quantity: 1 })
-                    }
-                    className="w-full text-12med py-[10px] lg:py-3"
-                  >
-                    Додати в кошик
-                  </GreenButton>
-                </AnimatedWrapper>
-              )}
+                    <Counter id={id} className="w-full px-6" />
+                    <GreenButton
+                      onClick={() => {
+                        setIsDishModalOpened(false);
+                        setIsCartModalOpened(true);
+                      }}
+                      className="mt-3 w-full text-12med py-[10px] lg:py-3"
+                    >
+                      Перейти до кошика
+                    </GreenButton>
+                  </motion.div>
+                ) : (
+                  <AnimatedWrapper>
+                    <GreenButton
+                      id="add-to-cart-button"
+                      onClick={() => {
+                        setAnimatingImage(image);
+                        setCartAnimationKey();
+                        setCartAnimation(true);
+                        setTimeout(() => {
+                          setCartAnimation(false);
+                          addToCart({ id, title, price, image, quantity: 1 });
+                        }, 1500);
+                      }}
+                      className="w-full text-12med py-[10px] lg:py-3"
+                    >
+                      Додати в кошик
+                    </GreenButton>
+                  </AnimatedWrapper>
+                )}
+              </div>
             </AnimatePresence>
           </div>
           <p className="mt-3 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
