@@ -40,10 +40,10 @@ export default function DishModal({
     <Modal
       isPopUpShown={isDishModalOpened}
       setIsPopUpShown={setIsDishModalOpened}
-      className="min-w-[300px] max-w-[368px] tab:max-w-[496px] lg:max-w-[909px] w-[83.33%] tab:w-[496px] lg:w-[909px]"
+      className="min-w-[300px] max-w-[368px] tab:max-w-[496px] lg:max-w-[909px] w-[83.33%] tab:w-[496px] lg:w-[909px] h-[100px] max-h-[calc(100dvh-160px)] lg:max-h-[calc(100dvh-188px)] "
     >
       <div className="w-full lg:flex">
-        <div className="relative w-full lg:w-[48%] lg:h-full aspect-[300/219] lg:aspect-[437/640] rounded-[16px] overflow-hidden">
+        <div className="relative w-full lg:w-[45.8%] lg:h-full aspect-[300/219] lg:aspect-[437/640] rounded-[16px] overflow-hidden">
           <Image
             src={image.url}
             alt={image.alt}

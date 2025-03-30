@@ -17,7 +17,7 @@ export default async function Layout({ children }: LayoutProps) {
 
   return (
     <div>
-      <Header variant="black" />
+      <Header shouldHideOnScroll={false} variant="black" />
       <main className="flex-1">
         <Suspense fallback={<Loader />}>
           <Hero banner={banner} />

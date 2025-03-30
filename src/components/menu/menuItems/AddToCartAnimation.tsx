@@ -27,16 +27,14 @@ export default function AddToCartAnimation() {
           }}
           initial={{ scale: 1 }}
           animate={{
-            scale: 0.4,
+            scale: 0.3,
             y:
               cartButtonTop !== undefined && addToCartButtonTop !== undefined
                 ? cartButtonTop - addToCartButtonTop
                 : 0,
             x: [
               0,
-              cartButtonLeft !== undefined && addToCartButtonLeft !== undefined
-                ? (addToCartButtonLeft - cartButtonLeft) * 0.4
-                : 0,
+              -54,
               cartButtonLeft !== undefined && addToCartButtonLeft !== undefined
                 ? cartButtonLeft - addToCartButtonLeft
                 : 0,
