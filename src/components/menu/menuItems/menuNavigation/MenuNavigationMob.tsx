@@ -37,7 +37,7 @@ export default function MenuNavigationMob({
       as="nav"
       key={key}
       animation={fadeInAnimation({ y: 30 })}
-      className="xl:hidden pl-[30px] xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] 
+      className="xl:hidden pl-[30px] pb-4 xs:ml-[calc((100vw-460px-60px)/2)] sm:ml-[calc((100vw-580px-60px)/2)] 
       md:ml-[calc((100vw-708px-60px)/2)] lg:ml-[calc((100vw-964px-60px)/2)] overflow-x-auto 
       scrollbar scrollbar-h-[2px] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-transparent 
       scrollbar-track-transparent"
