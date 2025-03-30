@@ -15,14 +15,6 @@ export default function AddToCartAnimation() {
   const addToCartButtonTop = addToCartButton?.getBoundingClientRect()?.top;
   const addToCartButtonLeft = addToCartButton?.getBoundingClientRect()?.left;
 
-  if (cartButtonLeft && addToCartButtonLeft) {
-    console.log(cartButtonLeft - addToCartButtonLeft);
-  }
-
-  console.log(cartButtonTop, cartButtonLeft);
-  console.log(addToCartButtonTop, addToCartButtonLeft);
-  console.log(animatingImage);
-
   return (
     <>
       {isCartAnimating && (
@@ -30,7 +22,7 @@ export default function AddToCartAnimation() {
           key={cartAnimationKey} // змінюємо ключ, щоб перезапустити анімацію
           className="fixed z-[100]"
           style={{
-            top: addToCartButtonTop, // Відстань від кнопки
+            top: addToCartButtonTop,
             left: addToCartButtonLeft,
           }}
           initial={{ scale: 1 }}
@@ -39,15 +31,15 @@ export default function AddToCartAnimation() {
             y:
               cartButtonTop !== undefined && addToCartButtonTop !== undefined
                 ? cartButtonTop - addToCartButtonTop
-                : 0, // Безпечне значення за замовчуванням
+                : 0,
             x: [
               0,
               cartButtonLeft !== undefined && addToCartButtonLeft !== undefined
                 ? (addToCartButtonLeft - cartButtonLeft) * 0.4
-                : 0, // Безпечне значення за замовчуванням,
+                : 0,
               cartButtonLeft !== undefined && addToCartButtonLeft !== undefined
                 ? cartButtonLeft - addToCartButtonLeft
-                : 0, // Безпечне значення за замовчуванням
+                : 0,
             ],
             opacity: 0,
             transition: {
@@ -57,13 +49,15 @@ export default function AddToCartAnimation() {
             },
           }}
         >
-          <Image
-            src={animatingImage?.url || ""}
-            alt={animatingImage?.alt || ""}
-            width={50}
-            height={50}
-            className="rounded-full"
-          />
+          <div className="relative w-[50px] lg:w-[70px] h-[50px] lg:h-[70px] overflow-hidden rounded-[12px]">
+            {" "}
+            <Image
+              src={animatingImage?.url || ""}
+              alt={animatingImage?.alt || ""}
+              fill
+              className="w-full h-hull object-cover"
+            />
+          </div>
         </motion.div>
       )}
     </>
