@@ -21,7 +21,13 @@ export default function DishModal({
   setIsCartModalOpened,
   dish,
 }: DishModalProps) {
-  const { cartItems, addToCart } = useCartStore();
+  const {
+    cartItems,
+    addToCart,
+    setCartAnimation,
+    setCartAnimationKey,
+    setAnimatingImage,
+  } = useCartStore();
 
   if (!dish) {
     return null;
@@ -88,9 +94,16 @@ export default function DishModal({
               ) : (
                 <AnimatedWrapper>
                   <GreenButton
-                    onClick={() =>
-                      addToCart({ id, title, price, image, quantity: 1 })
-                    }
+                    id="add-to-cart-button"
+                    onClick={() => {
+                      setAnimatingImage(image);
+                      setCartAnimationKey();
+                      setCartAnimation(true);
+                      setTimeout(() => {
+                        setCartAnimation(false);
+                        addToCart({ id, title, price, image, quantity: 1 });
+                      }, 1500);
+                    }}
                     className="w-full text-12med py-[10px] lg:py-3"
                   >
                     Додати в кошик

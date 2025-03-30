@@ -6,10 +6,12 @@ export default function GreenButton({
   className = "",
   disabled = false,
   isLoading = false,
+  id,
   onClick,
 }: ButtonProps) {
   return (
     <button
+      id={id}
       onClick={onClick}
       disabled={disabled}
       className={`group relative overflow-hidden flex items-center justify-center px-4 leading-[130%] rounded-full 

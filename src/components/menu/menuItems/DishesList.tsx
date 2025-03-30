@@ -11,6 +11,7 @@ import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
 import { Dish } from "@/types/dish";
 import { generateOrderNumber } from "@/utils/generateOrderNumber";
+import AddToCartAnimation from "./AddToCartAnimation";
 
 interface DishesListProps {
   dishesList: Dish[];
@@ -78,6 +79,7 @@ export default function DishesList({ dishesList }: DishesListProps) {
           setIsCartModalOpened(false);
         }}
       />
+      <AddToCartAnimation />
     </div>
   );
 }
