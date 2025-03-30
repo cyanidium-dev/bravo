@@ -18,9 +18,13 @@ import AnimatedWrapper from "../animatedWrappers/AnimatedWrapper";
 
 interface HeaderProps {
   variant?: "white" | "black";
+  shouldHideOnScroll?: boolean;
 }
 
-export default function Header({ variant = "white" }: HeaderProps) {
+export default function Header({
+  variant = "white",
+  shouldHideOnScroll = true,
+}: HeaderProps) {
   const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
   const [isCartModalOpened, setIsCartModalOpened] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +39,7 @@ export default function Header({ variant = "white" }: HeaderProps) {
   return (
     <>
       <Navbar
-        shouldHideOnScroll
+        shouldHideOnScroll={shouldHideOnScroll}
         isBlurred={false}
         maxWidth="2xl"
         classNames={{ wrapper: "px-0" }}

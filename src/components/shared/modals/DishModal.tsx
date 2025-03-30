@@ -43,7 +43,7 @@ export default function DishModal({
       className="min-w-[300px] max-w-[368px] tab:max-w-[496px] lg:max-w-[909px] w-[83.33%] tab:w-[496px] lg:w-[909px]"
     >
       <div className="w-full lg:flex">
-        <div className="relative w-full lg:w-[48%] lg:h-full aspect-[300/219] lg:aspect-[437/640] rounded-[16px] overflow-hidden">
+        <div className="relative w-full lg:w-[45.8%] lg:h-full aspect-[300/219] lg:aspect-[437/640] rounded-[16px] overflow-hidden">
           <Image
             src={image.url}
             alt={image.alt}
@@ -52,7 +52,7 @@ export default function DishModal({
             className="relative -z-10 object-cover"
           />
         </div>
-        <div className="lg:flex flex-col justify-between lg:w-[472px] px-5 lg:px-9 py-6 lg:py-12 mt-3 lg:mt-0">
+        <div className="lg:flex flex-col justify-between lg:w-[472px] px-5 lg:px-9 py-4 lg:py-12">
           <div>
             <h3 className="mb-2 lg:mb-3 text-20bold lg:text-24bold uppercase leading-[123%]">
               {title}
@@ -66,7 +66,7 @@ export default function DishModal({
             <p className="mb-5 lg:mb-8 lg:text-16reg leading-[123%]">
               Калорійність:&nbsp;{calories}&nbsp;ккал
             </p>
-            <p className="mb-10 lg:mb-9 text-12light lg:text-14light leading-[123%]">
+            <p className="mb-6 lg:mb-9 text-12light lg:text-14light leading-[123%]">
               {description}
             </p>
             <AnimatePresence>
@@ -116,7 +116,7 @@ export default function DishModal({
               </div>
             </AnimatePresence>
           </div>
-          <p className="mt-3 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
+          <p className="mt-6 lg:mt-0 text-12light lg:text-14light leading-[123%] text-green">
             *Страва містить алергени, якщо бажаєте їх прибрати, повідомте про це
             менеджеру під час оформлення замовлення
           </p>
