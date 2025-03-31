@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 
 interface ArticlePageProps {
-  params: { article: string };
+  params: Promise<{ article: string }>;
 }
 
 export async function generateMetadata({
