@@ -6,4 +6,6 @@ export interface Category {
   url: string;
   order: number;
   dishes: Dish[] | [];
+  metaTitle: string;
+  metaDescription: string;
 }

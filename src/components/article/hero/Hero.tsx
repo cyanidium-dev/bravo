@@ -19,6 +19,7 @@ export default function Hero({ article }: HeroProps) {
         src={mainImage.url}
         alt={mainImage.alt}
         fill
+        priority
         sizes="100vw"
         className="absolute top-0 left-0 -z-20 w-full h-full object-cover"
       ></Image>

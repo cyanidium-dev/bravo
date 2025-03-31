@@ -88,3 +88,10 @@ export const GET_ALL_DISHES = `query GetAllDishes {
     weight
   }
 }`;
+
+export const GET_CATEGORY_METADATA = `query GetCategoryMetadata($code: String!) {
+  category(filter: {url: {eq: $code}}) {
+    metaTitle
+    metaDescription
+  }
+}`;
