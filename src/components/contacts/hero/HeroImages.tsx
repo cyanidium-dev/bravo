@@ -42,7 +42,7 @@ export default function HeroImages() {
           src="/images/contacts/hero/tomatoeSmallDesk.webp"
           alt="tomatoe"
           width={446}
-          height={534}
+          height={524}
           priority
           className="w-[223px] h-auto"
         />
