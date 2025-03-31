@@ -14,7 +14,6 @@ export default function HeroImages() {
           alt="leaves"
           width={223}
           height={273}
-          priority
         />
       </AnimatedWrapper>
       <AnimatedWrapper
@@ -26,7 +25,6 @@ export default function HeroImages() {
           alt="tomatoe"
           width={275}
           height={275}
-          priority
         />
       </AnimatedWrapper>
       <div
@@ -46,7 +44,6 @@ export default function HeroImages() {
             alt="tomatoe"
             width={201}
             height={240}
-            priority
           />
         </AnimatedWrapper>
         <AnimatedWrapper
@@ -59,7 +56,6 @@ export default function HeroImages() {
             alt="tomatoe"
             width={451}
             height={477}
-            priority
           />
         </AnimatedWrapper>
       </div>
@@ -73,7 +69,6 @@ export default function HeroImages() {
           alt="tomatoe"
           width={137}
           height={137}
-          priority
         />
       </AnimatedWrapper>
       <AnimatedWrapper
@@ -85,7 +80,6 @@ export default function HeroImages() {
           alt="tomatoe"
           width={614}
           height={614}
-          priority
         />
       </AnimatedWrapper>
     </>

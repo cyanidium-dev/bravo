@@ -7,6 +7,7 @@ import CartModal from "@/components/shared/modals/cartModal/CartModal";
 import { Dish } from "@/types/dish";
 import { listVariants } from "@/helpers/animation";
 import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrapper";
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 interface PromotionListDeskProps {
   promotion: Dish[];
@@ -28,14 +29,14 @@ export default function PromotionListDesk({
         className="hidden sm:flex gap-x-5"
       >
         {promotion.slice(0, 4).map((dish) => (
-          <DishCard
-            key={dish.id}
-            dish={dish}
-            promotion={true}
-            setIsDishModalOpened={setIsDishModalOpened}
-            setSelectedDish={setSelectedDish}
-            className="w-[calc(25%-15px)]"
-          />
+          <AnimatedListItem key={dish.id} className="w-[calc(25%-15px)]">
+            <DishCard
+              dish={dish}
+              promotion={true}
+              setIsDishModalOpened={setIsDishModalOpened}
+              setSelectedDish={setSelectedDish}
+            />
+          </AnimatedListItem>
         ))}
       </AnimatedWrapper>
       <DishModal

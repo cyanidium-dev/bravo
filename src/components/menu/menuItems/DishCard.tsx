@@ -4,7 +4,6 @@ import DishCardButton from "@/components/shared/buttons/DishCardButton";
 import { Dish } from "@/types/dish";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 interface DishCardProps {
   dish: Dish;
@@ -29,7 +28,7 @@ export default function DishCard({
   };
 
   return (
-    <AnimatedListItem
+    <div
       onClick={handleClick}
       className={`cursor-pointer relative flex flex-col justify-end overflow-hidden aspect-[140/250] xl:aspect-[270/432] rounded-[8px] xl:rounded-[16px] ${className}`}
     >
@@ -67,6 +66,6 @@ export default function DishCard({
           <DishCardButton onClick={handleClick}>Замовити</DishCardButton>
         </div>
       </div>
-    </AnimatedListItem>
+    </div>
   );
 }

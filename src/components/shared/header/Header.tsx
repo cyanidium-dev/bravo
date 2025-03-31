@@ -75,7 +75,7 @@ export default function Header({
             </AnimatedWrapper>
             <AnimatedWrapper className="ml-auto mr-4 sm:mr-[60px] lg:mr-0">
               <NavbarContent>
-                <div className="flex items-center gap-x-6 ">
+                <li className="flex items-center gap-x-6 ">
                   <CartButton
                     variant={variant}
                     onClick={() => setIsCartModalOpened(true)}
@@ -92,7 +92,7 @@ export default function Header({
                       {PHONE.replace(headerPhoneRegex, "$1-$2-$3-$4-$5")}
                     </SecondaryButton>
                   </a>
-                </div>
+                </li>
               </NavbarContent>
             </AnimatedWrapper>
             <BurgerMenuButton
