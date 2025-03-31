@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import DishCard from "./DishCard";
 import Pagination from "@/components/shared/pagination/Pagination";
@@ -12,6 +12,7 @@ import AnimatedWrapper from "@/components/shared/animatedWrappers/AnimatedWrappe
 import { Dish } from "@/types/dish";
 import { generateOrderNumber } from "@/utils/generateOrderNumber";
 import AddToCartAnimation from "./AddToCartAnimation";
+import AnimatedListItem from "@/components/shared/animatedWrappers/AnimatedListItem";
 
 interface DishesListProps {
   dishesList: Dish[];
@@ -49,15 +50,17 @@ export default function DishesList({ dishesList }: DishesListProps) {
             className="flex flex-wrap gap-x-5 gap-y-6 xl:gap-y-5 mt-10 xl:mt-0"
           >
             {currentItems.map((dish) => (
-              <Fragment key={`${dish.id}-${window.location.search}`}>
+              <AnimatedListItem
+                key={`${dish.id}-${window.location.search}`}
+                className="w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
+              xl:w-[calc(33.3%-13.3px)]"
+              >
                 <DishCard
                   dish={dish}
                   setIsDishModalOpened={setIsDishModalOpened}
                   setSelectedDish={setSelectedDish}
-                  className="w-[calc(50%-10px)] xs:w-[calc(33.3%-13.3px)] lg:w-[calc(25%-15px)] 
-                      xl:w-[calc(33.3%-13.3px)]"
                 />
-              </Fragment>
+              </AnimatedListItem>
             ))}
           </AnimatedWrapper>
         )}
