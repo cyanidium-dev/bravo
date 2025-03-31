@@ -8,6 +8,7 @@ const DATOCMS_API_TOKEN = process.env.DATOCMS_API_TOKEN || "";
 // Функція для кешування запитів
 const fetchDatoCMS = unstable_cache(
   async (query: string, variables, includeDrafts: boolean) => {
+    console.log("Fetching data from DatoCMS...");
     const response = await axios.post(
       DATOCMS_URL,
       { query, variables },
