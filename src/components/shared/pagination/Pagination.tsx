@@ -86,6 +86,7 @@ export default function Pagination<T>({
         className="inline-flex justify-center items-center gap-[33px]"
       >
         <button
+          aria-label="left"
           className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] 
           border-[1.5px] xl:border-2 border-black transition duration-300 ease-in-out
           enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
@@ -100,6 +101,7 @@ export default function Pagination<T>({
           {pageNumbers.map((page) => (
             <button
               key={page}
+              aria-label={page.toString()}
               className={`px-[8px] py-2 text-16med leading-[123%] transition duration-300 ease-in-out
             ${page === currentPage ? " text-green" : "  hover:text-green"}`}
               onClick={() => handlePageChange(page)}
@@ -110,6 +112,7 @@ export default function Pagination<T>({
         </div>
 
         <button
+          aria-label="right"
           className={`flex justify-center items-center p-3 xl:p-[16.5px] size-[52px] xl:size-[66px] rounded-[16px] transition duration-300 ease-in-out
            border-[1.5px] xl:border-2 border-black enabled:hover:bg-black/85 enabled:active:scale-95 enabled:focus-visible:bg-black/85
           ${
