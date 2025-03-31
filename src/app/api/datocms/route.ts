@@ -18,7 +18,7 @@ const fetchDatoCMS = async (
       ...(includeDrafts ? { "X-Include-Drafts": "true" } : {}),
     },
     body: JSON.stringify({ query, variables }),
-    next: { tags: ["datocms"] }, // Вказуємо тег для кешування
+    next: { revalidate: 3600, tags: ["datocms"] }, // Вказуємо тег для кешування
   });
 
   if (!response.ok) {
