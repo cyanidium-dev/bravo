@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { revalidateTag } from "next/cache";
 
+export const dynamic = "force-dynamic"; // Гарантує, що роут не кешується на Vercel
+
 export async function GET() {
   try {
-    revalidateTag("datocms"); // Примусово оновлюємо кеш
+    revalidateTag("datocms");
     return NextResponse.json({ message: "Кеш оновлено!" });
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
