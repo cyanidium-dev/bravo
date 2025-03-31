@@ -27,10 +27,10 @@ export async function generateMetadata({
       description: articleData?.description || defaultMetadata.description,
       images: [
         {
-          url: articleData?.images[0].url || "/opengraph-image.jpg",
+          url: articleData?.images[0]?.url || "/opengraph-image.jpg",
           width: 1200,
           height: 630,
-          alt: articleData?.images[0].alt || "Bravo",
+          alt: articleData?.images[0]?.alt || "Bravo",
         },
       ],
     },
@@ -41,7 +41,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const { article } = await params;
   const res = await getDataFromCmsByField(GET_ARTICLE_BY_SLUG, article);
   const articleData = res?.data?.allArticles[0];
-  console.log(articleData);
 
   return (
     <>
