@@ -9,7 +9,8 @@ export async function GET() {
   try {
     // Відправка запиту на оновлення кешу
     revalidateTag("datocms");
-    revalidatePath("/");
+    revalidatePath("/api/datocms");
+    revalidatePath("/blog");
 
     return new NextResponse(JSON.stringify({ message: "Кеш оновлено!" }), {
       status: 200,
