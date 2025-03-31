@@ -18,7 +18,7 @@ export default function AnimatedWrapper({
   viewport = { once: true, amount: 0.2 },
   children,
 }: AnimatedWrapperProps) {
-  const MotionComponent = useMemo(() => motion(Component), [Component]);
+  const MotionComponent = useMemo(() => motion.create(Component), [Component]);
 
   return (
     <MotionComponent

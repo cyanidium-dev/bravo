@@ -1,17 +1,13 @@
 import Content from "@/components/article/content/Content";
 import Hero from "@/components/article/hero/Hero";
-import { GET_ARTICLE_BY_SLUG } from "@/lib/datoCmsQueries";
-import { getDataFromCmsByField } from "@/utils/getDataFromCmsByField";
 import NoArticle from "./NoArticle";
+import { Article } from "@/types/article";
 
 interface ArticleProps {
-  article: string;
+  currentArticle: Article;
 }
 
-export default async function Article({ article }: ArticleProps) {
-  const res = await getDataFromCmsByField(GET_ARTICLE_BY_SLUG, article);
-  const currentArticle = res?.data?.allArticles[0];
-
+export default function ArticleInfo({ currentArticle }: ArticleProps) {
   return (
     <>
       {!currentArticle ? (
