@@ -13,7 +13,7 @@ interface MenuProps {
 export default function Menu({ slug }: MenuProps) {
   const { categories } = useMenuStore((state) => state);
 
-  if (!categories?.length) {
+  if (!categories || !categories?.length) {
     return null;
   }
 
@@ -28,13 +28,9 @@ export default function Menu({ slug }: MenuProps) {
       <div className="container w-full xl:max-w-[1280px] flex flex-col xl:flex-row gap-y-10 xl:gap-x-5 pb-[120px] overflow-auto xl:overflow-visible">
         <MenuNavigationDesk currentCategory={slug} />
         {!dishesList ? (
-          <NoDishes currentCategory={slug}>
-            На жаль, такої сторінки не існує
-          </NoDishes>
+          <NoDishes>На жаль, такої сторінки не існує</NoDishes>
         ) : !dishesList?.length ? (
-          <NoDishes currentCategory={slug}>
-            В даній категорії ще немає страв
-          </NoDishes>
+          <NoDishes>В даній категорії ще немає страв</NoDishes>
         ) : (
           <DishesList dishesList={dishesList} />
         )}

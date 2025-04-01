@@ -30,35 +30,39 @@ export default function Hero({ banner }: HeroProps) {
     <section className="container xl:max-w-[1280px] overflow-hidden pt-[108px] pb-[84px] md:pb-[52px]">
       <AnimatedWrapper
         animation={fadeInAnimation({ y: 20 })}
-        className="aspect-[300/439] xs:aspect-[440/439] sm:aspect-[768/439] lg:aspect-[1140/429] rounded-[10px] md:rounded-[20px] 
+        className="relative aspect-[300/439] xs:aspect-[440/439] sm:aspect-[768/439] lg:aspect-[1140/429] rounded-[10px] md:rounded-[20px] 
       overflow-hidden"
       >
         <Image
           src={bannerMob.url}
           alt="menu banner"
-          width={300}
-          height={439}
+          fill
+          sizes="90vw"
+          priority
           className="xs:hidden w-full h-full object-cover"
         />
         <Image
           src={bannerMobxl.url}
           alt="menu banner"
-          width={440}
-          height={439}
+          fill
+          sizes="90vw"
+          priority
           className="hidden xs:block sm:hidden w-full h-full object-cover"
         />
         <Image
           src={bannerTab.url}
           alt="menu banner"
-          width={768}
-          height={439}
+          fill
+          sizes="90vw"
+          priority
           className="hidden sm:block lg:hidden w-full h-full object-cover"
         />
         <Image
           src={bannerDesk.url}
           alt="menu banner"
-          width={1140}
-          height={429}
+          fill
+          sizes="90vw"
+          priority
           className="hidden lg:block w-full h-full object-cover"
         />
       </AnimatedWrapper>
