@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return NextResponse.json({
-      error: "Failed to fetch data from DatoCMS",
+      error: "Failed to fetch data from DatoCms",
     });
   }
 }
