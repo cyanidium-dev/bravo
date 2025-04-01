@@ -16,7 +16,7 @@ export default function MenuItemMob({
     if (category.url === currentCategory && itemRef.current) {
       const item = itemRef.current;
       const itemRect = item.getBoundingClientRect();
-      const container = item.parentElement?.parentElement; // Отримуємо контейнер <nav>
+      const container = item.parentElement; // Отримуємо контейнер <ul>
       const containerRect = container?.getBoundingClientRect();
 
       if (containerRect) {
