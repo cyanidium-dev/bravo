@@ -21,7 +21,7 @@ const fetchDatoCMS = unstable_cache(
     );
     return response.data;
   },
-  ["datocms_query"], // Унікальний ключ кешу
+  ["datocms"], // Унікальний ключ кешу
   { revalidate: 3600, tags: ["datocms"] } // Оновлення кешу раз на годину
 );
 
