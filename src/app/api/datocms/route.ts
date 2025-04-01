@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import axios from "axios";
 import { DATOCMS_URL } from "@/constants/constants";
 import { unstable_cache } from "next/cache";
 
@@ -8,24 +7,24 @@ const DATOCMS_API_TOKEN = process.env.DATOCMS_API_TOKEN || "";
 // Функція для кешування запитів
 const fetchDatoCMS = unstable_cache(
   async (query: string, variables, includeDrafts: boolean) => {
-    const response = await axios.post(
-      DATOCMS_URL,
-      { query, variables },
-      {
-        headers: {
-          Authorization: `Bearer ${DATOCMS_API_TOKEN}`,
-          "Content-Type": "application/json",
-          ...(includeDrafts ? { "X-Include-Drafts": "true" } : {}),
-        },
-      }
-    );
-    return response.data;
+    const response = await fetch(DATOCMS_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${DATOCMS_API_TOKEN}`,
+        "Content-Type": "application/json",
+        ...(includeDrafts ? { "X-Include-Drafts": "true" } : {}),
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data from DatoCMS");
+    }
+
+    return response.json();
   },
-  [
-    // Використовуємо Date.now() для унікальності
-    `datocms-${Date.now()}`,
-  ],
-  { revalidate: 3600, tags: ["datocms"] }
+  ["datocms"],
+  { tags: ["datocms"] }
 );
 
 export async function POST(req: Request) {
