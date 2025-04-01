@@ -22,9 +22,8 @@ const fetchDatoCMS = unstable_cache(
     return response.data;
   },
   [
-    // Масив, що містить конкретні ключі кешу
-    `datocms-${Buffer.from("query").toString("base64")}`, // Ключ для "query"
-    `datocms-${Buffer.from("variables").toString("base64")}`, // Ключ для "variables"
+    // Використовуємо Date.now() для унікальності
+    `datocms-${Date.now()}`,
   ],
   { revalidate: 3600, tags: ["datocms"] }
 );
