@@ -12,27 +12,41 @@ export default function SplashGate({
 }: {
   children: React.ReactNode;
 }) {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showSplash, setShowSplash] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const alreadyPlayed = sessionStorage.getItem("splashPlayed");
 
     if (alreadyPlayed) {
-      setShowSplash(false);
+      setShowContent(true);
       return;
     }
+
+    setShowSplash(true);
 
     const timer = setTimeout(() => {
       sessionStorage.setItem("splashPlayed", "true");
       setShowSplash(false);
-    }, 1500); // тривалість анімації
+      setShowContent(true);
+    }, 2500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
-  if (showSplash) {
-    return <LottieSplashScreen />;
-  }
+  return (
+    <>
+      <LottieSplashScreen visible={showSplash} />
 
-  return <>{children}</>;
+      <div
+        style={{
+          display: showContent ? "block" : "none",
+        }}
+      >
+        {children}
+      </div>
+    </>
+  );
 }
