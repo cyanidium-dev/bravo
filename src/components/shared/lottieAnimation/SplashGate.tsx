@@ -29,7 +29,7 @@ export default function SplashGate({
       sessionStorage.setItem("splashPlayed", "true");
       setShowSplash(false);
       setShowContent(true);
-    }, 2000);
+    }, 1600);
 
     return () => {
       clearTimeout(timer);
