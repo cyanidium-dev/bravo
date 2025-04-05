@@ -9,14 +9,19 @@ import { fadeInAnimation } from "@/helpers/animation";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <Image
-        src="/images/home/hero/heroBg.webp"
-        alt="background"
-        width={2560}
-        height={1664}
-        priority
-        className="absolute -z-30 top-0 left-0 w-full h-full object-cover"
-      />
+      <AnimatedWrapper
+        animation={fadeInAnimation({ duration: 1, opacity: 0.9 })}
+        className="absolute -z-30 top-0 left-0 w-full h-full"
+      >
+        <Image
+          src="/images/home/hero/heroBg.webp"
+          alt="background"
+          width={2560}
+          height={1664}
+          priority
+          className="w-full h-full object-cover"
+        />
+      </AnimatedWrapper>
       <div className="relative container xl:max-w-[1280px] flex flex-col gap-y-[50px] pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] md:flex-row md:justify-between">
         <HeroImages />
         <div className="md:mb-auto xl:pb-[77px]">

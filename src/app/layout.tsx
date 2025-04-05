@@ -9,6 +9,7 @@ import { Category } from "@/types/category";
 import type { Viewport } from "next";
 import { Dish } from "@/types/dish";
 import "./globals.css";
+import SplashGate from "@/components/shared/lottieAnimation/SplashGate";
 
 const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -71,11 +72,16 @@ export default async function RootLayout({
       <body
         className={`${montserrat.variable} ${revival.variable} relative z-[1] antialiased text-14reg lg:text-16reg leading-[123%]`}
       >
-        <Providers>
-          <HydrateStore categories={allCategories} promotion={promotionDishes}>
-            {children}
-          </HydrateStore>
-        </Providers>
+        <SplashGate>
+          <Providers>
+            <HydrateStore
+              categories={allCategories}
+              promotion={promotionDishes}
+            >
+              {children}
+            </HydrateStore>
+          </Providers>
+        </SplashGate>
       </body>
     </html>
   );
