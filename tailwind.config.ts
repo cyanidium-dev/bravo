@@ -76,6 +76,7 @@ export default {
         white: "#FFFFFF",
         black: "#02170C",
         green: "#23921B",
+        greenDark: "#195126",
         pink: "#F31260",
         grey: "#A1A1AA",
         greyDark: "#545454",
