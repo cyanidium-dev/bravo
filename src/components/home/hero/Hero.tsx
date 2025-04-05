@@ -11,7 +11,7 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <AnimatedWrapper
         animation={fadeInAnimation({ duration: 0.5, opacity: 0.8 })}
-        className="absolute -z-30 top-0 left-0"
+        className="absolute -z-30 top-0 left-0 w-full h-full"
       >
         <Image
           src="/images/home/hero/heroBg.webp"
@@ -19,7 +19,7 @@ export default function Hero() {
           width={2560}
           height={1664}
           priority
-          className=" w-full h-full object-cover"
+          className="w-full h-full object-cover"
         />
       </AnimatedWrapper>
       <div className="relative container xl:max-w-[1280px] flex flex-col gap-y-[50px] pt-[173px] pb-[104px] xl:pt-[140px] xl:pb-[50px] md:flex-row md:justify-between">
