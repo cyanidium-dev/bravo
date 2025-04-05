@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden">
       <AnimatedWrapper
-        animation={fadeInAnimation({ duration: 0.5, opacity: 0.8 })}
+        animation={fadeInAnimation({ duration: 1, opacity: 0.9 })}
         className="absolute -z-30 top-0 left-0 w-full h-full"
       >
         <Image
